@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Food Truc"
+run/main_scene="uid://ja056cep4hms"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

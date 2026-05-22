@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://ja056cep4hms"]
 
+[ext_resource type="Script" uid="uid://bgl0mslrqxo1g" path="res://scripts/main.gd" id="1_o5qli"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
+
 [node name="Main" type="Node3D" unique_id=1955109357]
+script = ExtResource("1_o5qli")
+
+[node name="Player" type="Node3D" parent="." unique_id=960234431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3458111, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=2100522607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26580408, 0)
+
+[node name="Environement" type="Node3D" parent="." unique_id=159067661]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environement" unique_id=1081709396]
+transform = Transform3D(2.7598846, 0, 0, 0, 0.21056819, 0, 0, 0, 0.7150619, -0.005827859, 0.038723588, -1.1901507)
+mesh = SubResource("BoxMesh_o5qli")
