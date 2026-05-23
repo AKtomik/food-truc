@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://bvx7iwrv8v3ci"]
+
+[ext_resource type="PackedScene" uid="uid://bk6clexl2rv2h" path="res://scenes/items/food_potato.tscn" id="1_ea4bb"]
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_g4ekm"]
+
+[resource]
+script = ExtResource("2_g4ekm")
+model_scene = ExtResource("1_ea4bb")
+metadata/_custom_type_script = "uid://blvwf8kjqyhqi"

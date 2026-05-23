@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="1_qlro6"]
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="2_72jwp"]
-[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/items/item_slot.tscn" id="3_0546x"]
-[ext_resource type="PackedScene" uid="uid://dnxt0plfh2qya" path="res://scenes/items/item.tscn" id="4_r3dxs"]
+[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="3_0546x"]
+[ext_resource type="PackedScene" uid="uid://dnxt0plfh2qya" path="res://scenes/food/food_test.tscn" id="4_r3dxs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="5_8bina"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="6_60gml"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_8a2q0"]
@@ -56,7 +56,7 @@ unique_name_in_owner = true
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
 
 [node name="WorkingPlate" type="Node3D" parent="Environement" unique_id=1637805169]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094393015, 0.98858917, -1.7462736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094393015, 1.0408585, -1.7462736)
 
 [node name="ItemSlot" parent="Environement/WorkingPlate" unique_id=1571686447 node_paths=PackedStringArray("child_item") instance=ExtResource("3_0546x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21327749, -5.9604645e-08, 0.06179273)
@@ -87,6 +87,7 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environement/CatPlane" unique_id=1336157817]
 shape = SubResource("WorldBoundaryShape3D_3jfeh")
 debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
+debug_fill = false
 
 [node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("6_60gml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2055233, 1.1805078, -1.6393985)
@@ -100,7 +101,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1.9)
 
 [node name="Cubishop" parent="Environement/Shop" unique_id=1121063657 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_72jwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23555827, 0, 0.67807376)
-item_scene = ExtResource("4_r3dxs")
 money_manager = NodePath("../../CashMachine")
 
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
