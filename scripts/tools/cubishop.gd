@@ -1,9 +1,9 @@
 class_name Cubishop
 extends ItemTool
 
-#@export var item: Item
+@export var item_resource: ItemResource
 @export var price: int
-@onready var money_manager: CashMachine = $CashMachine
+@export var money_manager: CashMachine
 
 func can_put(_item: Item) -> bool:
 	return false
@@ -12,9 +12,11 @@ func can_take(_item: Item) -> bool:
 	return money_manager.get_money()
 
 func put(_item: Item) -> bool:
-	push_error("should not be called here")
+	push_error("can't put anything in cubishop")
 	return false
 
 func take() -> Item:
 	money_manager.pay(price)
-	return Item.new()
+	var item = item_resource.model_scene.instantiate()
+	add_child(item)
+	return item
