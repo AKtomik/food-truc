@@ -13,7 +13,7 @@ static func spawn(def: CharacterResource, parent: Node3D, critique : bool, face_
 	characterScene.face_picker = face_picker
 	parent.add_child(characterScene)
 
-	var character = characterScene.get_node("SM_chara_base")
+	var character = characterScene.get_node("SM_chara_base") 
 	character.get_node("Hat").mesh = def.hat_mesh
 	character.get_node("Hair").mesh = def.hair_mesh
 	character.get_node("Eyes").mesh = def.eyes_mesh
@@ -22,10 +22,11 @@ static func spawn(def: CharacterResource, parent: Node3D, critique : bool, face_
 	character.get_node("Jacket").mesh = def.jacket_mesh
 	_apply_color(character)
 	
+	var chara_mesh : MeshInstance3D = character.get_child(0)
 	if (critique) :
-		face_picker.apply_critique_texture(character.mesh)
+		face_picker.apply_critique_texture(chara_mesh)
 	else :
-		face_picker.apply_random_texture(character.mesh)
+		face_picker.apply_random_texture(chara_mesh)
 	return characterScene
 		
 static func _apply_color(character: Node3D) -> void:
