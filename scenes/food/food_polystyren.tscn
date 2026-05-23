@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cj47y4d71l2ut"]
+
+[ext_resource type="ArrayMesh" uid="uid://ddh5up7o8wwhx" path="res://assets/Food/SM_food_component_polystere_geo.obj" id="1_tbsqs"]
+
+[node name="FoodPolystyren" type="Node3D" unique_id=230256206]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0056762565, 0)
+mesh = ExtResource("1_tbsqs")

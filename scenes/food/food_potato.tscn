@@ -1,18 +1,9 @@
-[gd_scene format=3 uid="uid://bk6clexl2rv2h"]
+[gd_scene format=3 uid="uid://cflyjwdujg2eo"]
 
-[ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_tbsqs"]
-[ext_resource type="Resource" uid="uid://bvx7iwrv8v3ci" path="res://resources/food/food_potato.tres" id="2_3ns2o"]
+[ext_resource type="ArrayMesh" uid="uid://3qx1p582w5j8" path="res://assets/Food/SM_food_component_potato_geo.obj" id="1_q3a3g"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3wu5"]
-albedo_color = Color(0.9019608, 1, 0.34901962, 1)
+[node name="FoodPotato" type="Node3D" unique_id=230256206]
 
-[sub_resource type="SphereMesh" id="SphereMesh_r3ghi"]
-material = SubResource("StandardMaterial3D_a3wu5")
-
-[node name="FoodPotato" type="Node3D" unique_id=48571341]
-script = ExtResource("1_tbsqs")
-linked_resource = ExtResource("2_3ns2o")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1368515270]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.048588887, 0)
-mesh = SubResource("SphereMesh_r3ghi")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.019440211, 0)
+mesh = ExtResource("1_q3a3g")

@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
-[ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
+[ext_resource type="Script" path="res://face_picker.gd" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -56,19 +60,91 @@ unique_name_in_owner = true
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5810587, -0.38994026, 2.0261464)
 
-[node name="SM_truckInterior2" parent="Environement" unique_id=1690806146 instance=ExtResource("4_jyhfs")]
+[node name="SM_truckInterior2" parent="Environement" unique_id=728357604 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.31714344, 0, -2.1752987)
 rotation_edit_mode = 2
 
+[node name="CatPlane" parent="Environement" unique_id=634522356 instance=ExtResource("6_choun")]
+
+[node name="CollisionShape3D" parent="Environement/CatPlane" index="0" unique_id=992181962]
+transform = Transform3D(1, -7.1054274e-15, -3.5527137e-15, 0, 1, 6.3607044e-16, 0, 6.3607044e-16, 1, 4.7683716e-07, -1.5659678, -0.5971079)
+
+[node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("7_ya4ey")]
+transform = Transform3D(0.16174164, 0, 0.98683316, 0, 1, 0, -0.98683316, 0, 0.16174164, 1.0545495, 1.0022496, -2.355078)
+
+[node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.18750128, 0, -0.98226434, 0, 1, 0, 0.98226434, 0, 0.18750128, -0.847363, 1.7072831, -2.5739684)
+
+[node name="Shop" type="Node3D" parent="Environement" unique_id=798148202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4080765, 1.0100982, -2.86927)
+
+[node name="Cubishop" parent="Environement/Shop" unique_id=1121063657 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12593225, 5.9604645e-08, 0.11944914)
+
+[node name="Cubishop2" parent="Environement/Shop" unique_id=585777015 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12512913, 5.9604645e-08, 0.33294392)
+
+[node name="Cubishop3" parent="Environement/Shop" unique_id=1539350515 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12945688, 5.9604645e-08, 0.56203604)
+
+[node name="Cubishop4" parent="Environement/Shop" unique_id=904696862 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3649451, 0, 0.12693906)
+
+[node name="Cubishop5" parent="Environement/Shop" unique_id=1468366464 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364142, 0, 0.34043384)
+
+[node name="Cubishop6" parent="Environement/Shop" unique_id=1779521064 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36846974, 0, 0.56952596)
+
+[node name="Cubishop7" parent="Environement/Shop" unique_id=973300898 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6027928, 5.9604645e-08, 0.13412905)
+
+[node name="Cubishop8" parent="Environement/Shop" unique_id=1783359341 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6019897, 5.9604645e-08, 0.34762383)
+
+[node name="Cubishop9" parent="Environement/Shop" unique_id=90359895 instance=ExtResource("8_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6063174, 5.9604645e-08, 0.57671595)
+
 [node name="WorkingPlate" type="Node3D" parent="Environement" unique_id=829531732]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3196117, 1.0676479, -3.1206925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31673527, 1.0676479, -2.814404)
 
-[node name="ItemSlot1" parent="Environement/WorkingPlate" unique_id=1571686447 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41827083, 0, 0.3170169)
+[node name="ItemSlotX1Y1" parent="Environement/WorkingPlate" unique_id=1571686447 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14079762, 0, 0.11772442)
 
-[node name="ItemSlot2" parent="Environement/WorkingPlate" unique_id=424930764 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7147192, 0, 0.28868634)
+[node name="ItemSlotX3Y1" parent="Environement/WorkingPlate" unique_id=1741943771 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8177388, -5.9604645e-08, 0.097827315)
+
+[node name="ItemSlotX2Y1" parent="Environement/WorkingPlate" unique_id=424930764 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45174444, 0, 0.10563636)
+
+[node name="ItemSlotX1Y2" parent="Environement/WorkingPlate" unique_id=1255917413 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14872694, 0, 0.39243698)
+
+[node name="ItemSlotX3Y2" parent="Environement/WorkingPlate" unique_id=1755725670 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8256681, -5.9604645e-08, 0.37253988)
+
+[node name="ItemSlotX2Y2" parent="Environement/WorkingPlate" unique_id=487961926 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45967376, 0, 0.38034892)
+
+[node name="ItemSlotX1Y3" parent="Environement/WorkingPlate" unique_id=1822143207 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14859676, 0, 0.61823165)
+
+[node name="ItemSlotX3Y3" parent="Environement/WorkingPlate" unique_id=2144060727 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8255377, -5.9604645e-08, 0.59833455)
+
+[node name="ItemSlotX2Y3" parent="Environement/WorkingPlate" unique_id=1787256186 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45954335, 0, 0.6061436)
 
 [node name="FacePicker" type="Node" parent="." unique_id=144830767]
 script = ExtResource("7_o6xl0")
-metadata/_custom_type_script = "uid://xr7ofby8pke0"
+
+[editable path="Environement/CatPlane"]
+[editable path="Environement/Shop/Cubishop"]
+[editable path="Environement/Shop/Cubishop2"]
+[editable path="Environement/Shop/Cubishop3"]
+[editable path="Environement/Shop/Cubishop4"]
+[editable path="Environement/Shop/Cubishop5"]
+[editable path="Environement/Shop/Cubishop6"]
+[editable path="Environement/Shop/Cubishop7"]
+[editable path="Environement/Shop/Cubishop8"]
+[editable path="Environement/Shop/Cubishop9"]

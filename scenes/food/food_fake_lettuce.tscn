@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bae236plsypfg"]
+
+[ext_resource type="ArrayMesh" uid="uid://062x1uqitsgi" path="res://assets/Food/SM_food_component_paper_geo.obj" id="1_vr8d5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3pj3"]
+albedo_color = Color(0.33999997, 1, 0.100000024, 1)
+
+[node name="FoodFakeLettuce" type="Node3D" unique_id=230256206]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0019038953, 0)
+material_override = SubResource("StandardMaterial3D_v3pj3")
+mesh = ExtResource("1_vr8d5")
