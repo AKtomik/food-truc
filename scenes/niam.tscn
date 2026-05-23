@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://btr4a4wff8cfs"]
 
-[ext_resource type="Script" uid="uid://bgl0mslrqxo1g" path="res://scripts/main.gd" id="1_3hlib"]
-[ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="2_mwajv"]
-[ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_4kqj1"]
-[ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_3jfeh"]
-[ext_resource type="PackedScene" uid="uid://dnxt0plfh2qya" path="res://scenes/item.tscn" id="4_4kqj1"]
-[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="5_3jfeh"]
-[ext_resource type="Script" uid="uid://dmhrpceusgps8" path="res://scripts/hand.gd" id="5_mwajv"]
-[ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="7_f3voe"]
-[ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/cash_machine.tscn" id="8_sp2it"]
+[ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="1_qlro6"]
+[ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="2_72jwp"]
+[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/items/item_slot.tscn" id="3_0546x"]
+[ext_resource type="PackedScene" uid="uid://dnxt0plfh2qya" path="res://scenes/items/item.tscn" id="4_r3dxs"]
+[ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="5_8bina"]
+[ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="6_60gml"]
+[ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_8a2q0"]
+[ext_resource type="Script" uid="uid://dmhrpceusgps8" path="res://scripts/items/hand.gd" id="8_nt8ir"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,8 +23,7 @@ tonemap_mode = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3jfeh"]
 
-[node name="Main" type="Node3D" unique_id=1955109357]
-script = ExtResource("1_3hlib")
+[node name="Niam" type="Node3D" unique_id=1955109357]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=821951666]
 environment = SubResource("Environment_jyhfs")
@@ -39,7 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3458111, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=2100522607 node_paths=PackedStringArray("point_a", "point_b")]
 transform = Transform3D(1, 0, 0, 0, 0.9837757, 0.17940322, 0, -0.17940322, 0.9837757, 1.1225383, 1.2042263, -0.33242857)
-script = ExtResource("2_mwajv")
+script = ExtResource("1_qlro6")
 point_a = NodePath("A")
 point_b = NodePath("B")
 
@@ -51,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00019592047, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera3D" unique_id=195654680]
 
-[node name="ProgressBar" parent="Player/Camera3D/CanvasLayer" unique_id=1340713327 instance=ExtResource("3_4kqj1")]
+[node name="ProgressBar" parent="Player/Camera3D/CanvasLayer" unique_id=1340713327 instance=ExtResource("2_72jwp")]
 unique_name_in_owner = true
 
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
@@ -59,25 +57,25 @@ unique_name_in_owner = true
 [node name="WorkingPlate" type="Node3D" parent="Environement" unique_id=1637805169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094393015, 0.98858917, -1.7462736)
 
-[node name="ItemSlot" parent="Environement/WorkingPlate" unique_id=1571686447 node_paths=PackedStringArray("child_item") instance=ExtResource("5_3jfeh")]
+[node name="ItemSlot" parent="Environement/WorkingPlate" unique_id=1571686447 node_paths=PackedStringArray("child_item") instance=ExtResource("3_0546x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21327749, -5.9604645e-08, 0.06179273)
 child_item = NodePath("Item")
 
-[node name="Item" parent="Environement/WorkingPlate/ItemSlot" unique_id=444795492 instance=ExtResource("4_4kqj1")]
+[node name="Item" parent="Environement/WorkingPlate/ItemSlot" unique_id=444795492 instance=ExtResource("4_r3dxs")]
 
-[node name="ItemSlot2" parent="Environement/WorkingPlate" unique_id=1457068331 instance=ExtResource("5_3jfeh")]
+[node name="ItemSlot2" parent="Environement/WorkingPlate" unique_id=1457068331 instance=ExtResource("3_0546x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59023595, 0, -0.008711815)
 
-[node name="ItemSlot3" parent="Environement/WorkingPlate" unique_id=956592135 instance=ExtResource("5_3jfeh")]
+[node name="ItemSlot3" parent="Environement/WorkingPlate" unique_id=956592135 instance=ExtResource("3_0546x")]
 transform = Transform3D(0.99967045, 0, -0.025670974, 0, 1, 0, 0.025670974, 0, 0.99967045, 0.20722985, -1.1920929e-07, 0.3610078)
 
-[node name="ItemSlot4" parent="Environement/WorkingPlate" unique_id=1335934041 node_paths=PackedStringArray("child_item") instance=ExtResource("5_3jfeh")]
+[node name="ItemSlot4" parent="Environement/WorkingPlate" unique_id=1335934041 node_paths=PackedStringArray("child_item") instance=ExtResource("3_0546x")]
 transform = Transform3D(0.998682, 0, -0.051325027, 0, 1, 0, 0.051325027, 0, 0.998682, 0.61418885, -2.3841858e-07, 0.35844624)
 child_item = NodePath("Item")
 
-[node name="Item" parent="Environement/WorkingPlate/ItemSlot4" unique_id=1959687459 instance=ExtResource("4_4kqj1")]
+[node name="Item" parent="Environement/WorkingPlate/ItemSlot4" unique_id=1959687459 instance=ExtResource("4_r3dxs")]
 
-[node name="SM_truckInterior2" parent="Environement" unique_id=2109977502 instance=ExtResource("4_3jfeh")]
+[node name="SM_truckInterior2" parent="Environement" unique_id=2109977502 instance=ExtResource("5_8bina")]
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.4234178, 0, -1.1424689)
 rotation_edit_mode = 2
 
@@ -89,15 +87,15 @@ collision_layer = 16
 shape = SubResource("WorldBoundaryShape3D_3jfeh")
 debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
 
-[node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("7_f3voe")]
+[node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("6_60gml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2055233, 1.1805078, -1.6393985)
 
-[node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("8_sp2it")]
+[node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("7_8a2q0")]
 unique_name_in_owner = true
 transform = Transform3D(-0.10185505, 0, 0.99479926, 0, 1, 0, -0.99479926, 0, -0.10185505, -0.70482254, 1.5907985, -1.4995328)
 
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
-script = ExtResource("5_mwajv")
+script = ExtResource("8_nt8ir")
 camera = NodePath("../Player/Camera3D")
 slots_physics = 4
 tools_physics = 8

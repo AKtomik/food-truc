@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjm8wi7c2u1aa"
+path="res://.godot/imported/SM_glasses_01.obj-9c8a92cb9a7a428e2926f8a5be5fa748.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_glasses_01.obj-9c8a92cb9a7a428e2926f8a5be5fa748.mesh"]
+
+source_file="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_01.obj"
+dest_files=["res://.godot/imported/SM_glasses_01.obj-9c8a92cb9a7a428e2926f8a5be5fa748.mesh", "res://.godot/imported/SM_glasses_01.obj-9c8a92cb9a7a428e2926f8a5be5fa748.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

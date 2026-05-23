@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/items/item_slot.tscn" id="4_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

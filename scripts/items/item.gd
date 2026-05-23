@@ -17,4 +17,3 @@ func place_at(place: Node3D):
 # TODO
 func place_at_progress(place: Node3D, time: float):
 	place_at(place)
-
