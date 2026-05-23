@@ -8,6 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 static func spawn(def: CharacterResource, parent: Node3D, critique : bool, face_picker : FacePicker) -> Node3D:
+	return
 	var characterScene = CHARACTER_SCENE.instantiate()
 	characterScene.face_picker = face_picker
 	parent.add_child(characterScene)
