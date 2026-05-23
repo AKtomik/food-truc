@@ -66,8 +66,14 @@ child_item = NodePath("Item")
 [node name="ItemSlot2" parent="Environement/WorkingPlate" unique_id=1457068331 instance=ExtResource("5_3jfeh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59023595, 0, -0.008711815)
 
-[node name="ItemSlot" parent="Environement" unique_id=805909434 instance=ExtResource("5_3jfeh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1583119, 0.7877548, -1.2586039)
+[node name="ItemSlot3" parent="Environement/WorkingPlate" unique_id=956592135 instance=ExtResource("5_3jfeh")]
+transform = Transform3D(0.99967045, 0, -0.025670974, 0, 1, 0, 0.025670974, 0, 0.99967045, 0.20722985, -1.1920929e-07, 0.3610078)
+
+[node name="ItemSlot4" parent="Environement/WorkingPlate" unique_id=1335934041 node_paths=PackedStringArray("child_item") instance=ExtResource("5_3jfeh")]
+transform = Transform3D(0.998682, 0, -0.051325027, 0, 1, 0, 0.051325027, 0, 0.998682, 0.61418885, -2.3841858e-07, 0.35844624)
+child_item = NodePath("Item")
+
+[node name="Item" parent="Environement/WorkingPlate/ItemSlot4" unique_id=1959687459 instance=ExtResource("4_4kqj1")]
 
 [node name="SM_truckInterior2" parent="Environement" unique_id=2109977502 instance=ExtResource("4_3jfeh")]
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.4234178, 0, -1.1424689)
@@ -80,6 +86,7 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environement/CatPlane" unique_id=1336157817]
 shape = SubResource("WorldBoundaryShape3D_3jfeh")
 debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
+debug_fill = false
 
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
 script = ExtResource("5_mwajv")

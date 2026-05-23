@@ -3,7 +3,7 @@ extends Area3D
 
 @export var child_item: Item = null
 
-func fill() -> bool:
+func full() -> bool:
 	return child_item != null
 
 func put_item(item: Item):

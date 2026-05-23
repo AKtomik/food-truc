@@ -22,17 +22,23 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("take"):
-		if (fill()):
+		if (full()):
 			print("must throw")
 			var slot = ray_slot()
 			if (!slot):
 				print("no throw")
+				return
+			if (slot.full()):
+				print("full slot:", slot)
 				return
 			put_slot(slot)
 		else:
 			var slot = ray_slot()
 			if (!slot):
 				print("no take")
+				return
+			if (!slot.full()):
+				print("empty slot:", slot)
 				return
 			print("take slot:", slot)
 			take_slot(slot)
@@ -65,7 +71,7 @@ func ray_slot() -> ItemSlot:
 		return null
 	return result.get("collider") as ItemSlot
 
-func fill() -> bool:
+func full() -> bool:
 	return in_hand != null
 
 func take_slot(slot: ItemSlot) -> bool:
