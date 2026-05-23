@@ -1,7 +1,37 @@
 [gd_resource type="Resource" script_class="CharacterMeshLibrary" format=3 uid="uid://bhogmisqp6bpd"]
 
 [ext_resource type="Script" uid="uid://dxu2s1ib6vs7i" path="res://scripts/CharMeshLibrary.gd" id="1_caet0"]
+[ext_resource type="ArrayMesh" uid="uid://cjm8wi7c2u1aa" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_01.obj" id="1_hetfu"]
+[ext_resource type="ArrayMesh" uid="uid://v13xkikfbl4l" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_02.obj" id="2_qetwl"]
+[ext_resource type="ArrayMesh" uid="uid://dy7gqyw63yyhe" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_03.obj" id="3_guise"]
+[ext_resource type="ArrayMesh" uid="uid://txvayxh22acr" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_04.obj" id="4_gxgf0"]
+[ext_resource type="ArrayMesh" uid="uid://c06d3ko5ekb01" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_01.obj" id="5_eucjw"]
+[ext_resource type="ArrayMesh" uid="uid://78nv2a6phumu" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_02.obj" id="6_jaeb8"]
+[ext_resource type="ArrayMesh" uid="uid://b6jqgj4he3s2f" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_03.obj" id="7_eoawq"]
+[ext_resource type="ArrayMesh" uid="uid://b6wuorca7qxw6" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_04.obj" id="8_a8n4o"]
+[ext_resource type="ArrayMesh" uid="uid://1kytcdd64s61" path="res://assets/Chara/Chara_props/Chara_props_hat/SM_hat_02.obj" id="9_uum40"]
+[ext_resource type="ArrayMesh" uid="uid://o8s03px8npv3" path="res://assets/Chara/Chara_props/Chara_props_hat/SM_hat_01.obj" id="10_ld2fo"]
+[ext_resource type="ArrayMesh" uid="uid://ce76fato7xrr2" path="res://assets/Chara/Chara_props/Chara_props_hat/SM_hat_03.obj" id="11_mwl4q"]
+[ext_resource type="ArrayMesh" uid="uid://dr2d34axu0a2o" path="res://assets/Chara/Chara_props/Chara_props_hat/SM_hat_04.obj" id="12_w4efx"]
+[ext_resource type="ArrayMesh" uid="uid://cci1506b3r2or" path="res://assets/Chara/Chara_props/Chara_Props_coat/SM_coat_01.obj" id="13_alhcn"]
+[ext_resource type="ArrayMesh" uid="uid://dwo7vlqynpcjx" path="res://assets/Chara/Chara_props/Chara_Props_coat/SM_coat_02.obj" id="14_vls4s"]
+[ext_resource type="ArrayMesh" uid="uid://5rgoofni5ecd" path="res://assets/Chara/Chara_props/Chara_Props_coat/SM_coat_03.obj" id="15_2ywgr"]
+[ext_resource type="ArrayMesh" uid="uid://dbwhylwga2ydg" path="res://assets/Chara/Chara_props/Chara_Props_coat/SM_coat_04.obj" id="16_olpxs"]
+[ext_resource type="ArrayMesh" uid="uid://cdxlpds3fg01q" path="res://assets/Chara/Chara_props/Chara_Props_cigs/SM_cigs_01.obj" id="17_ofkee"]
+[ext_resource type="ArrayMesh" uid="uid://dibd0j5rtwfvt" path="res://assets/Chara/Chara_props/Chara_Props_cigs/SM_cigs_02.obj" id="18_nj114"]
+[ext_resource type="ArrayMesh" uid="uid://ypgmrxdtsb3q" path="res://assets/Chara/Chara_props/Chara_Props_cigs/SM_cigs_03.obj" id="19_7vy06"]
+[ext_resource type="ArrayMesh" uid="uid://celm00nwmuerk" path="res://assets/Chara/Chara_props/Chara_Props_cigs/SM_cigs_04.obj" id="20_evkj4"]
+[ext_resource type="ArrayMesh" uid="uid://eo7iopftlns4" path="res://assets/Chara/Chara_props/Chara_Props_tie/SM_tie_01.obj" id="21_o2twr"]
+[ext_resource type="ArrayMesh" uid="uid://dt3mfov1ws4an" path="res://assets/Chara/Chara_props/Chara_Props_tie/SM_tie_02.obj" id="22_i3qcs"]
+[ext_resource type="ArrayMesh" uid="uid://byhlcprjk08ue" path="res://assets/Chara/Chara_props/Chara_Props_tie/SM_tie_03.obj" id="23_m4wyq"]
+[ext_resource type="ArrayMesh" uid="uid://bjc0isrknt444" path="res://assets/Chara/Chara_props/Chara_Props_tie/SM_tie_04.obj" id="24_xipke"]
 
 [resource]
 script = ExtResource("1_caet0")
+hair_meshes = Array[Mesh]([ExtResource("5_eucjw"), ExtResource("6_jaeb8"), ExtResource("7_eoawq"), ExtResource("8_a8n4o")])
+hat_meshes = Array[Mesh]([ExtResource("9_uum40"), ExtResource("10_ld2fo"), ExtResource("11_mwl4q"), ExtResource("12_w4efx")])
+eyes_meshes = Array[Mesh]([ExtResource("1_hetfu"), ExtResource("2_qetwl"), ExtResource("3_guise"), ExtResource("4_gxgf0")])
+mouth_meshes = Array[Mesh]([ExtResource("17_ofkee"), ExtResource("18_nj114"), ExtResource("19_7vy06"), ExtResource("20_evkj4")])
+neck_meshes = Array[Mesh]([ExtResource("21_o2twr"), ExtResource("22_i3qcs"), ExtResource("23_m4wyq"), ExtResource("24_xipke")])
+jacket_meshes = Array[Mesh]([ExtResource("13_alhcn"), ExtResource("14_vls4s"), ExtResource("15_2ywgr"), ExtResource("16_olpxs")])
 metadata/_custom_type_script = "uid://dxu2s1ib6vs7i"

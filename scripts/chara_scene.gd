@@ -1,24 +1,21 @@
 extends Node3D
 
-@export var visage : Material
-
 @onready var anime : AnimationPlayer = %Arrive
-@onready var hat = $SM_chara_base/Hat
-@onready var hair = $SM_chara_base/Hair
-@onready var eyes = $SM_chara_base/Eyes
-@onready var mouth = $SM_chara_base/Mouth
-@onready var neck = $SM_chara_base/Neck
-@onready var jacket = $SM_chara_base/Jacket
+var face_picker : FacePicker
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anime.play("Arrive")
 	#await anime.animation_finished
 	#anime.play("Go")
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func get_face_texture() -> Texture2D :
+	return (self.get_node("SM_chara_base").material_override as StandardMaterial3D).albedo_texture
+
+func is_culinary() -> bool:
+	return get_face_texture() == face_picker.culinary_critique_texture
+	

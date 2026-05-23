@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="FaceBank" format=3 uid="uid://c8piaaxl5p2y0"]
+
+[ext_resource type="Script" uid="uid://dnvybhnlmpepi" path="res://scripts/FaceBank.gd" id="1_nslbl"]
+
+[resource]
+script = ExtResource("1_nslbl")
+metadata/_custom_type_script = "uid://dnvybhnlmpepi"
