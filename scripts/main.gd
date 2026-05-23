@@ -12,13 +12,16 @@ var jacket_chance : int = 80
 
 func _ready() -> void:
 	randomize()
-	generate_random_character(self)
+	generate_random_character(self, false)
 
 func _process(delta: float) -> void:
 	pass
 
 
-func generate_random_character(parent: Node3D) -> Node3D:
+func generate_food_queue() -> void :
+		pass
+
+func generate_random_character(parent: Node3D, critique : bool) -> Node3D:
 	var def = CharacterResource.new()
 	var random : RandomNumberGenerator = RandomNumberGenerator.new() 
 	
@@ -34,4 +37,4 @@ func generate_random_character(parent: Node3D) -> Node3D:
 		def.neck_mesh = mesh_library.neck_meshes.pick_random()
 	if (random.randi_range(1, 100) <= jacket_chance) :
 		def.jacket_mesh = mesh_library.jacket_meshes.pick_random()
-	return CharResourcesSpawner.spawn(def, parent, false, face_picker) # TODO gérer false ou true 
+	return CharResourcesSpawner.spawn(def, parent, critique, face_picker) # TODO gérer false ou true 
