@@ -11,7 +11,7 @@ func can_take(_item: Item) -> bool:
 
 func put(item: Item) -> bool:
 	item.reparent(self)
-	item.global_position = self.global_position
+	item.place_center()
 	items_inside.append(item)
 	return true
 

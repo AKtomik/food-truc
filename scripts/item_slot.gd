@@ -8,14 +8,11 @@ func full() -> bool:
 
 func put_item(item: Item) -> bool:
 	item.reparent(self)
-	item.global_position = self.global_position
+	item.place_center()
 	child_item = item
 	return true
 	
 func take_item() -> Item:
 	var item = child_item
-	# moved to hand.gd
-	#item.reparent(hand)
-	#item.global_position = hand.global_position
 	child_item = null
 	return item

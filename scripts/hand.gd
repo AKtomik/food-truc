@@ -17,8 +17,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	self.global_position = ray_cat() + offset
-	if (in_hand):
-		in_hand.global_position = self.global_position
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("take"):
@@ -107,7 +105,7 @@ func full() -> bool:
 func take_slot(slot: ItemSlot):
 	var item = slot.take_item()
 	item.reparent(self)
-	item.global_position = self.global_position
+	item.place_center()
 	in_hand = item
 	
 func put_slot(slot: ItemSlot):
@@ -117,7 +115,7 @@ func put_slot(slot: ItemSlot):
 func take_tool(tool: ItemTool):
 	var item = tool.take()
 	item.reparent(self)
-	item.global_position = self.global_position
+	item.place_center()
 	in_hand = item
 	
 func put_tool(tool: ItemTool):
