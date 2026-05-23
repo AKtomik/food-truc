@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CharacterMeshLibrary" format=3 uid="uid://bhogmisqp6bpd"]
+
+[ext_resource type="Script" uid="uid://dxu2s1ib6vs7i" path="res://scripts/CharMeshLibrary.gd" id="1_caet0"]
+
+[resource]
+script = ExtResource("1_caet0")
+metadata/_custom_type_script = "uid://dxu2s1ib6vs7i"

@@ -1,6 +1,5 @@
 extends Camera3D
 
-@export var impulse_duration: float = 0.2
 @export var speed: float = 5
 @export var point_a: Node3D
 @export var point_b: Node3D
@@ -17,26 +16,27 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("sidestep") and _timer <= 0.0 :  # Barre espace par défaut
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("sidestep") and _timer <= 0.0 :  # Barre espace par défaut
 		_move()
 	
-	if (Input.is_action_just_pressed("ui_down")) :
+	if (Input.is_action_pressed("ui_down")) :
 		progress_bar.remove_star(1)
-	if (Input.is_action_just_pressed("ui_up")) :
+	if (Input.is_action_pressed("ui_up")) :
 		progress_bar.remove_star(-1)
 	
 	if _timer > 0.0:
-		_timer -= delta
-		global_position += _velocity * delta
+		_timer -= _delta
+		global_position += _velocity * _delta
 
 func _move() -> void:
 	var direction: Vector3
+	var distance: float = point_a.global_position.distance_to(point_b.global_position)
 	
 	if (_hasmoved):
-		direction = (point_a.position - point_b.position).normalized()
+		direction = (point_a.global_position - point_b.global_position).normalized()
 	else :
-		direction = (point_b.position - point_a.position).normalized()
+		direction = (point_b.global_position - point_a.global_position).normalized()
 	_velocity = direction * speed
-	_timer = impulse_duration
+	_timer = distance / speed
 	_hasmoved = !_hasmoved

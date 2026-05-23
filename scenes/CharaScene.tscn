@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://7qlpwahggwum"]
+
+[ext_resource type="PackedScene" uid="uid://dtno5156nhfag" path="res://assets/Chara/SM_chara_base.fbx" id="1_2tvha"]
+[ext_resource type="Script" uid="uid://cgfcpxfevbakv" path="res://scripts/chara_scene.gd" id="1_w1mk4"]
+[ext_resource type="Animation" uid="uid://oekcetaw17pe" path="res://animations/Go.res" id="3_asswx"]
+
+[sub_resource type="Animation" id="Animation_2tvha"]
+resource_name = "Arrive"
+length = 1.4333333
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"Start",
+"time": 0.0
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"Arrive",
+"time": 1.0
+}]
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_chara_base")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0009999999, 1, 0, 0, 0, 0.1, 1, 0, 0.1, 0.198, 0.2, 1, 0, 0, 0.337, 0.3, 1, 0, 0.1, 0.639, 0.4, 1, 0, 0, 0.866, 0.5, 1, 0, 0.1, 1.093, 0.6, 1, 0, 0, 1.417, 0.7, 1, 0, 0.1, 1.525, 0.8, 1, 0, 0, 1.625, 0.9, 1, 0, 0.1, 1.797, 1, 1, 0, 0, 2)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SM_chara_base")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(1, 1, 0, 0, 0, 1, 1.4333, 1, 0, 0.70710677, 0, 0.70710677)
+
+[sub_resource type="Animation" id="Animation_w1mk4"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_chara_base")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.1, 0.198)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_asswx"]
+_data = {
+&"Arrive": SubResource("Animation_2tvha"),
+&"Go": ExtResource("3_asswx"),
+&"RESET": SubResource("Animation_w1mk4")
+}
+
+[node name="CharaScene" type="Node3D" unique_id=1557363681]
+script = ExtResource("1_w1mk4")
+
+[node name="SM_chara_base" parent="." unique_id=1631582998 instance=ExtResource("1_2tvha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.198)
+
+[node name="Hat" type="MeshInstance3D" parent="SM_chara_base" unique_id=735716209]
+
+[node name="Hair" type="MeshInstance3D" parent="SM_chara_base" unique_id=932449328]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Eyes" type="MeshInstance3D" parent="SM_chara_base" unique_id=1655808147]
+
+[node name="Mouth" type="MeshInstance3D" parent="SM_chara_base" unique_id=888818528]
+
+[node name="Neck" type="MeshInstance3D" parent="SM_chara_base" unique_id=1785497933]
+
+[node name="Jacket" type="MeshInstance3D" parent="SM_chara_base" unique_id=1987416590]
+
+[node name="Arrive" type="AnimationPlayer" parent="." unique_id=430713894]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_asswx")
