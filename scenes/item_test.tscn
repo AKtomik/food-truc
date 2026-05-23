@@ -52,7 +52,7 @@ unique_name_in_owner = true
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
 
 [node name="Item" parent="Environement" unique_id=444795492 instance=ExtResource("4_4kqj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094393015, 0.88115287, -1.7462736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094393015, 0.98858917, -1.7462736)
 
 [node name="SM_truckInterior2" parent="Environement" unique_id=1690806146 instance=ExtResource("4_3jfeh")]
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.8057095, 0, -0.7172835)
@@ -61,3 +61,7 @@ rotation_edit_mode = 2
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
 script = ExtResource("5_mwajv")
 camera = NodePath("../Player/Camera3D")
+items_physics = 2
+slots_physics = 4
+tools_physics = 8
+planer_physics = 16
