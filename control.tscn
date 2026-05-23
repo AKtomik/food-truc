@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bighng32kmge2"]
+
+[ext_resource type="Script" uid="uid://drqfmdy4hkaqx" path="res://progress_bar.gd" id="1_0fbet"]
+
+[node name="Control" type="Control" unique_id=1340713327 node_paths=PackedStringArray("p_bar")]
+layout_mode = 3
+anchor_right = 0.33100003
+anchor_bottom = 0.372
+offset_right = -230.31204
+offset_bottom = -210.056
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+p_bar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=822984865]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 12.0
+offset_right = 337.0
+offset_bottom = 59.0
+max_value = 5.0
+show_percentage = false

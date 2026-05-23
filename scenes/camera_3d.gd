@@ -1,10 +1,12 @@
 extends Camera3D
 
-@export var impulse_duration: float = 0.5
+@export var impulse_duration: float = 0.2
 @export var speed: float = 5
 @export var point_a: Node3D
 @export var point_b: Node3D
 
+@onready
+var progress_bar = %ProgressBar
 var _velocity: Vector3 = Vector3.ZERO
 var _timer: float = 0.0
 var _hasmoved: bool = false
@@ -18,6 +20,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("sidestep") and _timer <= 0.0 :  # Barre espace par défaut
 		_move()
+	
+	if (Input.is_action_just_pressed("ui_down")) :
+		progress_bar.remove_star(1)
+	if (Input.is_action_just_pressed("ui_up")) :
+		progress_bar.remove_star(-1)
 	
 	if _timer > 0.0:
 		_timer -= delta
