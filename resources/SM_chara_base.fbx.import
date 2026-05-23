@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtno5156nhfag"
-path="res://.godot/imported/SM_chara_base.fbx-921d222e45194d13b6207e1c8e338eed.scn"
+uid="uid://bnshkqm2of3mk"
+path="res://.godot/imported/SM_chara_base.fbx-ef0573cfa061ca59c52d79910e8f2555.scn"
 
 [deps]
 
-source_file="res://assets/Chara/SM_chara_base.fbx"
-dest_files=["res://.godot/imported/SM_chara_base.fbx-921d222e45194d13b6207e1c8e338eed.scn"]
+source_file="res://resources/SM_chara_base.fbx"
+dest_files=["res://.godot/imported/SM_chara_base.fbx-ef0573cfa061ca59c52d79910e8f2555.scn"]
 
 [params]
 
