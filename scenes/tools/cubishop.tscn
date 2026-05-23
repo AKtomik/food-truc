@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://c6ivwtppl01kq" path="res://scripts/tools/cubishop.gd" id="1_48nja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q10cn"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Cubishop" type="Area3D" unique_id=1121063657]
 collision_layer = 8
 script = ExtResource("1_48nja")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2010661941]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_q10cn")
-debug_color = Color(0.20171374, 0.6412115, 0, 0.41960785)
+debug_color = Color(0.7490196, 0.45882353, 0.16470589, 0.84313726)

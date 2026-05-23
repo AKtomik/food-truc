@@ -8,6 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 static func spawn(def: CharacterResource, parent: Node3D, critique : bool, face_picker : FacePicker) -> Node3D:
+	return
 	var characterScene = CHARACTER_SCENE.instantiate()
 	characterScene.face_picker = face_picker
 	parent.add_child(characterScene)
@@ -19,22 +20,25 @@ static func spawn(def: CharacterResource, parent: Node3D, critique : bool, face_
 	character.get_node("Mouth").mesh = def.mouth_mesh
 	character.get_node("Neck").mesh = def.neck_mesh
 	character.get_node("Jacket").mesh = def.jacket_mesh
-	_apply_color(character)
+	_apply_color(character, critique, face_picker)
 	
-	var chara_mesh : MeshInstance3D = character.get_child(0)
+	var chara_mesh : MeshInstance3D = character.get_node("Face")
 	if (critique) :
 		face_picker.apply_critique_texture(chara_mesh)
 	else :
 		face_picker.apply_random_texture(chara_mesh)
 	return characterScene
 		
-static func _apply_color(character: Node3D) -> void:
+static func _apply_color(character: Node3D, critique : bool, face_picker : FacePicker) -> void:
 	for node in character.find_children("*", "MeshInstance3D"):
 		if not node.visible:
 			continue
 		var mat = StandardMaterial3D.new()
 		if  node.name == "SM_chara_base" :
-			mat.albedo_color = random_skin_color()
+			if (critique) :
+				mat.albedo_color = face_picker.culinary_critique_color
+			else :
+				mat.albedo_color = random_skin_color()
 		elif node.name == "Hat" or node.name == "Jacket" or node.name == "Neck" :
 			mat.albedo_color = random_clothing_color()
 		elif node.name == "Hair" or node.name == "Eyes"  :
