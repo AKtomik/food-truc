@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bqyjbgsbbggr2"]
+
+[ext_resource type="ArrayMesh" uid="uid://bwddobdvj3lc" path="res://assets/Food/SM_food_component_rottenSteak_geo.obj" id="1_x127h"]
+
+[node name="FoodFakeSteak" type="Node3D" unique_id=230256206]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0019038953, 0)
+mesh = ExtResource("1_x127h")
