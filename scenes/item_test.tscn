@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dnxt0plfh2qya" path="res://scenes/item.tscn" id="4_4kqj1"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="5_3jfeh"]
 [ext_resource type="Script" uid="uid://dmhrpceusgps8" path="res://scripts/hand.gd" id="5_mwajv"]
+[ext_resource type="Script" uid="uid://cclqvndmig4ow" path="res://scripts/microwave.gd" id="7_f3voe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,6 +22,10 @@ sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3jfeh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jfeh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3voe"]
 
 [node name="Main" type="Node3D" unique_id=1955109357]
 script = ExtResource("1_3hlib")
@@ -86,7 +91,19 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environement/CatPlane" unique_id=1336157817]
 shape = SubResource("WorldBoundaryShape3D_3jfeh")
 debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
-debug_fill = false
+
+[node name="Microwave" type="Area3D" parent="Environement" unique_id=537856439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2055233, 1.1805078, -1.6393985)
+collision_layer = 8
+script = ExtResource("7_f3voe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environement/Microwave" unique_id=749573649]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("BoxShape3D_3jfeh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environement/Microwave" unique_id=1739968465]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("BoxMesh_f3voe")
 
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
 script = ExtResource("5_mwajv")

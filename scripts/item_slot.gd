@@ -6,7 +6,7 @@ extends Area3D
 func full() -> bool:
 	return child_item != null
 
-func put_item(item: Item):
+func put_item(item: Item) -> bool:
 	item.reparent(self)
 	item.global_position = self.global_position
 	child_item = item
