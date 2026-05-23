@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c6ivwtppl01kq" path="res://scripts/tools/cubishop.gd" id="1_48nja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q10cn"]
-size = Vector3(0.3, 0.2, 0.15)
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Cubishop" type="Area3D" unique_id=1121063657]
 collision_layer = 8
