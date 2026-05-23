@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bbecxug5nqj3h"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3jfeh"]
+
+[node name="CatPlane" type="Area3D" unique_id=634522356]
+transform = Transform3D(1, 0, 0, 0, 0.35628137, -0.93437874, 0, 0.93437874, 0.35628137, 0, 0, 0)
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=992181962]
+shape = SubResource("WorldBoundaryShape3D_3jfeh")
+debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
+debug_fill = false

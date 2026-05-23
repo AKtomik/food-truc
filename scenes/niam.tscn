@@ -5,10 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="3_0546x"]
 [ext_resource type="PackedScene" uid="uid://dnxt0plfh2qya" path="res://scenes/food/food_test.tscn" id="4_r3dxs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="5_8bina"]
+[ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_8a2q0"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="6_60gml"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_8a2q0"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_72jwp"]
 [ext_resource type="Script" uid="uid://dmhrpceusgps8" path="res://scripts/items/hand.gd" id="8_nt8ir"]
+[ext_resource type="Resource" uid="uid://bvx7iwrv8v3ci" path="res://resources/food/food_potato.tres" id="9_0546x"]
+[ext_resource type="Resource" uid="uid://dukhwavsylxfp" path="res://resources/food/food_fries.tres" id="10_8bina"]
+[ext_resource type="Resource" uid="uid://bwmgv5kjpgsxh" path="res://resources/food/food_test.tres" id="11_60gml"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,8 +25,6 @@ sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
 background_mode = 2
 sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3jfeh"]
 
 [node name="Niam" type="Node3D" unique_id=1955109357]
 
@@ -80,14 +82,8 @@ child_item = NodePath("Item")
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.4234178, 0, -1.1424689)
 rotation_edit_mode = 2
 
-[node name="CatPlane" type="Area3D" parent="Environement" unique_id=82239070]
+[node name="CatPlane" parent="Environement" unique_id=634522356 instance=ExtResource("6_8a2q0")]
 transform = Transform3D(1, 0, 0, 0, 0.35628137, -0.93437874, 0, 0.93437874, 0.35628137, 0.032922268, 0, -0.6572824)
-collision_layer = 16
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environement/CatPlane" unique_id=1336157817]
-shape = SubResource("WorldBoundaryShape3D_3jfeh")
-debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
-debug_fill = false
 
 [node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("6_60gml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2055233, 1.1805078, -1.6393985)
@@ -100,7 +96,23 @@ transform = Transform3D(-0.10185505, 0, 0.99479926, 0, 1, 0, -0.99479926, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -1.9)
 
 [node name="Cubishop" parent="Environement/Shop" unique_id=1121063657 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_72jwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23555827, 0, 0.67807376)
+transform = Transform3D(1.8, 0, 0, 0, 1, 0, 0, 0, 0.9, 0.23555827, 0, 0.67807376)
+item_resource = ExtResource("9_0546x")
+money_manager = NodePath("../../CashMachine")
+
+[node name="Cubishop2" parent="Environement/Shop" unique_id=1947260538 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_72jwp")]
+transform = Transform3D(1.8, 0, 0, 0, 1, 0, 0, 0, 0.9, 0.23555827, 0, 0.47815025)
+item_resource = ExtResource("10_8bina")
+money_manager = NodePath("../../CashMachine")
+
+[node name="Cubishop3" parent="Environement/Shop" unique_id=361782976 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_72jwp")]
+transform = Transform3D(1.8, 0, 0, 0, 1, 0, 0, 0, 0.9, 0.21666324, 0, 0.25600028)
+item_resource = ExtResource("11_60gml")
+money_manager = NodePath("../../CashMachine")
+
+[node name="Cubishop4" parent="Environement/Shop" unique_id=1915321224 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_72jwp")]
+transform = Transform3D(1.8, 0, 0, 0, 1, 0, 0, 0, 0.9, 0.21666324, 0, 0.08802724)
+item_resource = ExtResource("11_60gml")
 money_manager = NodePath("../../CashMachine")
 
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
@@ -109,3 +121,8 @@ camera = NodePath("../Player/Camera3D")
 slots_physics = 4
 tools_physics = 8
 cat_physics = 16
+
+[editable path="Environement/Shop/Cubishop"]
+[editable path="Environement/Shop/Cubishop2"]
+[editable path="Environement/Shop/Cubishop3"]
+[editable path="Environement/Shop/Cubishop4"]
