@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bhogmisqp6bpd" path="res://resources/CharMeshLib.tres" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/items/item_slot.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
@@ -20,10 +20,11 @@ background_mode = 2
 sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 
-[node name="Main" type="Node3D" unique_id=1955109357]
+[node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("face_picker")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1766963, 0, 0)
 script = ExtResource("1_o5qli")
 mesh_library = ExtResource("2_tefeu")
+face_picker = NodePath("FacePicker")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=821951666]
 environment = SubResource("Environment_jyhfs")
