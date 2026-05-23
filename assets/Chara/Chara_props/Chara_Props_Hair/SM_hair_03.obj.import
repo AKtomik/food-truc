@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6jqgj4he3s2f"
+path="res://.godot/imported/SM_hair_03.obj-10ec42ce58b306a7f3bfebde1190a8df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_hair_03.obj-10ec42ce58b306a7f3bfebde1190a8df.mesh"]
+
+source_file="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_03.obj"
+dest_files=["res://.godot/imported/SM_hair_03.obj-10ec42ce58b306a7f3bfebde1190a8df.mesh", "res://.godot/imported/SM_hair_03.obj-10ec42ce58b306a7f3bfebde1190a8df.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
