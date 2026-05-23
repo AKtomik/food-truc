@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c03xmquop7f5a"
-path="res://.godot/imported/face_07_COL.png-c0627e95fb8cb25105e7754a0a5bc1ff.ctex"
+uid="uid://gaile6vfokfn"
+path="res://.godot/imported/cardBoard_shd_ACEScg.1001.png-005e79b7a3f62dab6f7c74e200c04945.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TXT/Chara_face/face_07_COL.png"
-dest_files=["res://.godot/imported/face_07_COL.png-c0627e95fb8cb25105e7754a0a5bc1ff.ctex"]
+source_file="res://assets/TXT/Props_TXT/cardBoard_shd_ACEScg.1001.png"
+dest_files=["res://.godot/imported/cardBoard_shd_ACEScg.1001.png-005e79b7a3f62dab6f7c74e200c04945.ctex"]
 
 [params]
 

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3ubikrydywbi"]
+
+[ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_wt4er"]
+[ext_resource type="ArrayMesh" uid="uid://ce72vt20eaw3l" path="res://assets/Food/SM_food_component_cardboard_geo.obj" id="1_wyk6p"]
+
+[node name="FoodCardboard" type="Node3D" unique_id=230256206]
+script = ExtResource("1_wt4er")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0.00048851594, 0)
+mesh = ExtResource("1_wyk6p")

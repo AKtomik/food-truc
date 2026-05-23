@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbhefvsymiucc"]
+
+[ext_resource type="Script" uid="uid://dmhrpceusgps8" path="res://scripts/items/hand.gd" id="1_eyfoh"]
+
+[node name="Hand" type="Node3D" unique_id=1326521668]
+script = ExtResource("1_eyfoh")

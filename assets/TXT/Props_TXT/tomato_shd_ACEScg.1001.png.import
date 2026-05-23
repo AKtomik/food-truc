@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c03xmquop7f5a"
-path="res://.godot/imported/face_07_COL.png-c0627e95fb8cb25105e7754a0a5bc1ff.ctex"
+uid="uid://c11lgol2tkcn5"
+path="res://.godot/imported/tomato_shd_ACEScg.1001.png-4b6a3e6e7dfe48720a7a78ad65247be9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TXT/Chara_face/face_07_COL.png"
-dest_files=["res://.godot/imported/face_07_COL.png-c0627e95fb8cb25105e7754a0a5bc1ff.ctex"]
+source_file="res://assets/TXT/Props_TXT/tomato_shd_ACEScg.1001.png"
+dest_files=["res://.godot/imported/tomato_shd_ACEScg.1001.png-4b6a3e6e7dfe48720a7a78ad65247be9.ctex"]
 
 [params]
 
