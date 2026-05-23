@@ -21,10 +21,13 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("take"):
 		if (full()):
-			print("take throw")
+			print("try throw")
 			
 			var tool = ray_tool()
-			if (tool && tool.can_put(in_hand)):
+			if (tool):
+				if (!tool.can_put(in_hand)):
+					print("full tool:", tool)
+					return
 				print("tool throw")
 				put_tool(tool)
 				return
@@ -45,6 +48,9 @@ func _physics_process(_delta: float) -> void:
 			
 			var tool = ray_tool()
 			if (tool && tool.can_take(in_hand)):
+				if (!tool.can_take(in_hand)):
+					print("full tool:", tool)
+					return
 				print("tool take")
 				take_tool(tool)
 				return

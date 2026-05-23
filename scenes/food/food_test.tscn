@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnxt0plfh2qya"]
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_jlmkw"]
+[ext_resource type="Resource" uid="uid://bwmgv5kjpgsxh" path="res://resources/food/food_test.tres" id="2_141g3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3wu5"]
 
@@ -9,6 +10,7 @@ material = SubResource("StandardMaterial3D_a3wu5")
 
 [node name="FoodTest" type="Node3D" unique_id=48571341]
 script = ExtResource("1_jlmkw")
+linked_resource = ExtResource("2_141g3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1368515270]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.048588887, 0)

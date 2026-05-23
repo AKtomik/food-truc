@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dukhwavsylxfp"]
 
-[ext_resource type="PackedScene" uid="uid://dsb3cso45vcxh" path="res://scenes/items/food_fries.tscn" id="1_y5ykk"]
+[ext_resource type="PackedScene" uid="uid://dsb3cso45vcxh" path="res://scenes/food/food_fries.tscn" id="1_y5ykk"]
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_haeex"]
 
 [resource]

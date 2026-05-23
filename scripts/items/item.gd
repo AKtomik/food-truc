@@ -1,6 +1,8 @@
 class_name Item
 extends Node3D
 
+#@export var linked_resource : ItemResource# no
+
 func _ready() -> void:
 	pass
 
