@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bgl0mslrqxo1g" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/SM_truckInterior.fbx" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,7 +32,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3458111, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=2100522607 node_paths=PackedStringArray("point_a", "point_b")]
-transform = Transform3D(1, 0, 0, 0, 0.9837757, 0.17940322, 0, -0.17940322, 0.9837757, -0.6362508, 1.2042263, -0.9766414)
+transform = Transform3D(1, 0, 0, 0, 0.9837757, 0.17940322, 0, -0.17940322, 0.9837757, -0.22108346, 1.2042263, -1.8018655)
 script = ExtResource("2_0wfyh")
 point_a = NodePath("A")
 point_b = NodePath("B")
@@ -50,5 +51,14 @@ unique_name_in_owner = true
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
 
 [node name="SM_truckInterior2" parent="Environement" unique_id=1690806146 instance=ExtResource("4_jyhfs")]
-transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.8057095, 0, -0.7172835)
+transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.23582113, 0, -2.3420596)
 rotation_edit_mode = 2
+
+[node name="WorkingPlate" type="Node3D" parent="Environement" unique_id=829531732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3196117, 1.0676479, -3.1206925)
+
+[node name="ItemSlot1" parent="Environement/WorkingPlate" unique_id=1571686447 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3369487, 0, 0.15025568)
+
+[node name="ItemSlot2" parent="Environement/WorkingPlate" unique_id=424930764 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.633397, 0, 0.121925116)
