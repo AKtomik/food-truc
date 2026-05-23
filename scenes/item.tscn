@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://dnxt0plfh2qya"]
 
+[ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/item.gd" id="1_4gq7n"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_r3ghi"]
 
-[node name="Item" type="Node3D" unique_id=444795492]
+[sub_resource type="SphereShape3D" id="SphereShape3D_4gq7n"]
+
+[node name="Item" type="StaticBody3D" unique_id=1959687459]
+script = ExtResource("1_4gq7n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1368515270]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.12467809, 0)
 mesh = SubResource("SphereMesh_r3ghi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1898216442]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.12857498, 0)
+shape = SubResource("SphereShape3D_4gq7n")
