@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ja056cep4hms"]
 
 [ext_resource type="Script" uid="uid://bgl0mslrqxo1g" path="res://scripts/main.gd" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scenes/camera_3d.gd" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://control.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://cclqpw6mijd5p" path="res://scenes/SM_truckInterior.fbx" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/SM_truckInterior.fbx" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -49,8 +49,6 @@ unique_name_in_owner = true
 
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environement" unique_id=1081709396]
-transform = Transform3D(2.7598846, 0, 0, 0, 0.21056819, 0, 0, 0, 0.7150619, -0.005827859, 0.038723588, -1.1901507)
-
-[node name="SM_truckInterior" parent="Environement" unique_id=266494651 instance=ExtResource("3_sugp2")]
-transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.44999188, 0, -0.73687387)
+[node name="SM_truckInterior2" parent="Environement" unique_id=1690806146 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.8057095, 0, -0.7172835)
+rotation_edit_mode = 2
