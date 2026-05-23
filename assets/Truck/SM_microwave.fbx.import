@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://u120n0r5e2le"
-path="res://.godot/imported/SM_truckInterior.fbx-866860c7f825d3a89631f54a1c4727db.scn"
+uid="uid://dymsr0jtd17fo"
+path="res://.godot/imported/SM_microwave.fbx-28662c78c7358036b69af35047e7b6f9.scn"
 
 [deps]
 
-source_file="res://assets/Truck/SM_truckInterior.fbx"
-dest_files=["res://.godot/imported/SM_truckInterior.fbx-866860c7f825d3a89631f54a1c4727db.scn"]
+source_file="res://assets/Truck/SM_microwave.fbx"
+dest_files=["res://.godot/imported/SM_microwave.fbx-28662c78c7358036b69af35047e7b6f9.scn"]
 
 [params]
 

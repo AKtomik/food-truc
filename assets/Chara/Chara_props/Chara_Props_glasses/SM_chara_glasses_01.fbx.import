@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://u120n0r5e2le"
-path="res://.godot/imported/SM_truckInterior.fbx-866860c7f825d3a89631f54a1c4727db.scn"
+uid="uid://chynv87uicstd"
+path="res://.godot/imported/SM_chara_glasses_01.fbx-0171fa5bc5e8024c095df0ce5efccccf.scn"
 
 [deps]
 
-source_file="res://assets/Truck/SM_truckInterior.fbx"
-dest_files=["res://.godot/imported/SM_truckInterior.fbx-866860c7f825d3a89631f54a1c4727db.scn"]
+source_file="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_chara_glasses_01.fbx"
+dest_files=["res://.godot/imported/SM_chara_glasses_01.fbx-0171fa5bc5e8024c095df0ce5efccccf.scn"]
 
 [params]
 

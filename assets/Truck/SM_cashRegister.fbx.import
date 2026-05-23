@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://u120n0r5e2le"
-path="res://.godot/imported/SM_truckInterior.fbx-866860c7f825d3a89631f54a1c4727db.scn"
+uid="uid://bpimo555kt13n"
+path="res://.godot/imported/SM_cashRegister.fbx-d92399ec5e3982740692cdfbec6238e4.scn"
 
 [deps]
 
-source_file="res://assets/Truck/SM_truckInterior.fbx"
-dest_files=["res://.godot/imported/SM_truckInterior.fbx-866860c7f825d3a89631f54a1c4727db.scn"]
+source_file="res://assets/Truck/SM_cashRegister.fbx"
+dest_files=["res://.godot/imported/SM_cashRegister.fbx-d92399ec5e3982740692cdfbec6238e4.scn"]
 
 [params]
 
