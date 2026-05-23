@@ -7,6 +7,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_4gq7n"]
 
 [node name="Item" type="StaticBody3D" unique_id=1959687459]
+collision_layer = 2
 script = ExtResource("1_4gq7n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1368515270]
