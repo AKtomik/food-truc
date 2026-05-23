@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsb3cso45vcxh"]
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_og1gp"]
-[ext_resource type="Resource" uid="uid://dukhwavsylxfp" path="res://resources/food/food_fries.tres" id="2_qawee"]
+[ext_resource type="Resource" uid="uid://dsb3cso45vcxh" path="res://scenes/food/food_fries.tscn" id="2_qawee"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3wu5"]
 albedo_color = Color(1, 0.62352943, 0, 1)
