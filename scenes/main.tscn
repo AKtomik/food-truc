@@ -10,7 +10,9 @@
 [ext_resource type="Script" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
+[ext_resource type="Resource" uid="uid://b88ln7bwyr5w" path="res://resources/food/food_test.tres" id="10_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bbhefvsymiucc" path="res://scenes/hand.tscn" id="13_trceg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,6 +59,12 @@ transform = Transform3D(1, 0, 0, 0, 0.99999917, -1.0430813e-07, 0, 1.0430813e-07
 [node name="ProgressBar" parent="Player/Camera3D/CanvasLayer" unique_id=1340713327 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
 
+[node name="Hand" parent="." unique_id=1326521668 node_paths=PackedStringArray("camera") instance=ExtResource("13_trceg")]
+camera = NodePath("../Player/Camera3D")
+slots_physics = 4
+tools_physics = 8
+cat_physics = 16
+
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5810587, -0.38994026, 2.0261464)
 
@@ -78,62 +86,72 @@ transform = Transform3D(0.18750128, 0, -0.98226434, 0, 1, 0, 0.98226434, 0, 0.18
 [node name="Shop" type="Node3D" parent="Environement" unique_id=798148202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4080765, 1.0100982, -2.86927)
 
-[node name="Cubishop" parent="Environement/Shop" unique_id=1121063657 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop" parent="Environement/Shop" unique_id=1121063657 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12593225, 5.9604645e-08, 0.11944914)
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop2" parent="Environement/Shop" unique_id=585777015 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop2" parent="Environement/Shop" unique_id=585777015 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12512913, 5.9604645e-08, 0.33294392)
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop3" parent="Environement/Shop" unique_id=1539350515 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop3" parent="Environement/Shop" unique_id=1539350515 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12945688, 5.9604645e-08, 0.56203604)
+item_resource = ExtResource("10_eb6dy")
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop4" parent="Environement/Shop" unique_id=904696862 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop4" parent="Environement/Shop" unique_id=904696862 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3649451, 0, 0.12693906)
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop5" parent="Environement/Shop" unique_id=1468366464 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop5" parent="Environement/Shop" unique_id=1468366464 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364142, 0, 0.34043384)
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop6" parent="Environement/Shop" unique_id=1779521064 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop6" parent="Environement/Shop" unique_id=1779521064 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36846974, 0, 0.56952596)
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop7" parent="Environement/Shop" unique_id=973300898 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop7" parent="Environement/Shop" unique_id=973300898 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6027928, 5.9604645e-08, 0.13412905)
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop8" parent="Environement/Shop" unique_id=1783359341 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop8" parent="Environement/Shop" unique_id=1783359341 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6019897, 5.9604645e-08, 0.34762383)
+money_manager = NodePath("../../CashMachine")
 
-[node name="Cubishop9" parent="Environement/Shop" unique_id=90359895 instance=ExtResource("8_eb6dy")]
+[node name="Cubishop9" parent="Environement/Shop" unique_id=90359895 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6063174, 5.9604645e-08, 0.57671595)
+money_manager = NodePath("../../CashMachine")
 
 [node name="WorkingPlate" type="Node3D" parent="Environement" unique_id=829531732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31673527, 1.0676479, -2.814404)
 
 [node name="ItemSlotX1Y1" parent="Environement/WorkingPlate" unique_id=1571686447 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14079762, 0, 0.11772442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16160107, 0, 0.107592106)
 
 [node name="ItemSlotX3Y1" parent="Environement/WorkingPlate" unique_id=1741943771 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8177388, -5.9604645e-08, 0.097827315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8601662, -5.9604645e-08, 0.0946337)
 
 [node name="ItemSlotX2Y1" parent="Environement/WorkingPlate" unique_id=424930764 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45174444, 0, 0.10563636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5048932, 0, 0.09873581)
 
 [node name="ItemSlotX1Y2" parent="Environement/WorkingPlate" unique_id=1255917413 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14872694, 0, 0.39243698)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16953039, 0, 0.38230467)
 
 [node name="ItemSlotX3Y2" parent="Environement/WorkingPlate" unique_id=1755725670 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8256681, -5.9604645e-08, 0.37253988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8680955, -5.9604645e-08, 0.36934626)
 
 [node name="ItemSlotX2Y2" parent="Environement/WorkingPlate" unique_id=487961926 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45967376, 0, 0.38034892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5128225, 0, 0.37344837)
 
 [node name="ItemSlotX1Y3" parent="Environement/WorkingPlate" unique_id=1822143207 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14859676, 0, 0.61823165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16940022, 0, 0.60809934)
 
 [node name="ItemSlotX3Y3" parent="Environement/WorkingPlate" unique_id=2144060727 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8255377, -5.9604645e-08, 0.59833455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.867965, -5.9604645e-08, 0.59514093)
 
 [node name="ItemSlotX2Y3" parent="Environement/WorkingPlate" unique_id=1787256186 instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45954335, 0, 0.6061436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512692, 0, 0.59924304)
 
 [node name="FacePicker" type="Node" parent="." unique_id=144830767]
 script = ExtResource("7_o6xl0")
