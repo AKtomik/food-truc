@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="5_3jfeh"]
 [ext_resource type="Script" uid="uid://dmhrpceusgps8" path="res://scripts/hand.gd" id="5_mwajv"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="7_f3voe"]
+[ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/cash_machine.tscn" id="8_sp2it"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -90,6 +91,10 @@ debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
 
 [node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("7_f3voe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2055233, 1.1805078, -1.6393985)
+
+[node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("8_sp2it")]
+unique_name_in_owner = true
+transform = Transform3D(-0.10185505, 0, 0.99479926, 0, 1, 0, -0.99479926, 0, -0.10185505, -0.70482254, 1.5907985, -1.4995328)
 
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
 script = ExtResource("5_mwajv")

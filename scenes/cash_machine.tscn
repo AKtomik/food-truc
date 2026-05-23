@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cjq01mw7c4hcv"]
+
+[ext_resource type="Script" uid="uid://j7xg1b01r6d5" path="res://scripts/cash_machine.gd" id="1_y64xk"]
+[ext_resource type="PackedScene" uid="uid://bpimo555kt13n" path="res://assets/Truck/SM_cashRegister.fbx" id="2_68e7f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g23f4"]
+
+[node name="CashMachine" type="Area3D" unique_id=1177224426]
+script = ExtResource("1_y64xk")
+
+[node name="SM_cashRegister" parent="." unique_id=495305489 instance=ExtResource("2_68e7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33577794, -1, -0.64285123)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=991592036]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.22336555, 0)
+shape = SubResource("BoxShape3D_g23f4")
