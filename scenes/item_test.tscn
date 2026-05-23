@@ -20,6 +20,8 @@ background_mode = 2
 sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3jfeh"]
+
 [node name="Main" type="Node3D" unique_id=1955109357]
 script = ExtResource("1_3hlib")
 
@@ -34,7 +36,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3458111, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=2100522607 node_paths=PackedStringArray("point_a", "point_b")]
-transform = Transform3D(1, 0, 0, 0, 0.9837757, 0.17940322, 0, -0.17940322, 0.9837757, 1.1225383, 1.2042263, -0.36871797)
+transform = Transform3D(1, 0, 0, 0, 0.9837757, 0.17940322, 0, -0.17940322, 0.9837757, 1.1225383, 1.2042263, -0.33242857)
 script = ExtResource("2_mwajv")
 point_a = NodePath("A")
 point_b = NodePath("B")
@@ -71,10 +73,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1583119, 0.7877548, -1.2586
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.4234178, 0, -1.1424689)
 rotation_edit_mode = 2
 
+[node name="CatPlane" type="Area3D" parent="Environement" unique_id=82239070]
+transform = Transform3D(1, 0, 0, 0, 0.35628137, -0.93437874, 0, 0.93437874, 0.35628137, 0.032922268, 0, -0.6572824)
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environement/CatPlane" unique_id=1336157817]
+shape = SubResource("WorldBoundaryShape3D_3jfeh")
+debug_color = Color(0.05406484, 0.64988893, 1.92523e-07, 0.74509805)
+
 [node name="Hand" type="Node3D" parent="." unique_id=520725327 node_paths=PackedStringArray("camera")]
 script = ExtResource("5_mwajv")
 camera = NodePath("../Player/Camera3D")
-items_physics = 2
 slots_physics = 4
 tools_physics = 8
-planer_physics = 16
+cat_physics = 16

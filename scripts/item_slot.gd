@@ -1,0 +1,21 @@
+class_name ItemSlot
+extends Area3D
+
+@export var child_item: Item = null
+
+func fill() -> bool:
+	return child_item != null
+
+func put_item(item: Item):
+	item.reparent(self)
+	item.global_position = self.global_position
+	child_item = item
+	return true
+	
+func take_item() -> Item:
+	var item = child_item
+	# moved to hand.gd
+	#item.reparent(hand)
+	#item.global_position = hand.global_position
+	child_item = null
+	return item

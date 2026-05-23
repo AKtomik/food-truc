@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bpxue3c5l7d66"]
+
+[ext_resource type="Script" uid="uid://dg5p7ragkl4t2" path="res://scripts/item_slot.gd" id="1_567tv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4gq7n"]
+
+[node name="ItemSlot" type="Area3D" unique_id=1571686447]
+collision_layer = 4
+script = ExtResource("1_567tv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1898216442]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("SphereShape3D_4gq7n")
