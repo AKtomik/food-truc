@@ -1,7 +1,18 @@
 [gd_resource type="Resource" script_class="FaceBank" format=3 uid="uid://c8piaaxl5p2y0"]
 
-[ext_resource type="Script" path="res://scripts/FaceBank.gd" id="1_nslbl"]
+[ext_resource type="Texture2D" uid="uid://by37cdeumsbhg" path="res://assets/TXT/Chara_face/face_01_COL.png" id="1_2w5s6"]
+[ext_resource type="Script" uid="uid://dnvybhnlmpepi" path="res://scripts/FaceBank.gd" id="1_nslbl"]
+[ext_resource type="Texture2D" uid="uid://clrvy66cxtixi" path="res://assets/TXT/Chara_face/face_02_COL.png" id="2_ox1n1"]
+[ext_resource type="Texture2D" uid="uid://dljqkdpn447yb" path="res://assets/TXT/Chara_face/face_03_COL.png" id="3_le1iw"]
+[ext_resource type="Texture2D" uid="uid://cwlddq43gbu5n" path="res://assets/TXT/Chara_face/face_04_COL.png" id="4_e5dia"]
+[ext_resource type="Texture2D" uid="uid://3mpx66meumn2" path="res://assets/TXT/Chara_face/face_05_COL.png" id="5_ey3hh"]
+[ext_resource type="Texture2D" uid="uid://cu5a1hsrnvda5" path="res://assets/TXT/Chara_face/face_06_COL.png" id="6_3r46o"]
+[ext_resource type="Texture2D" uid="uid://cqiy8v24p26di" path="res://assets/TXT/Chara_face/face_07_COL.png" id="7_y6dv4"]
+[ext_resource type="Texture2D" uid="uid://b2n5p7x2o0u1p" path="res://assets/TXT/Chara_face/face_08_COL.png" id="8_7d88f"]
+[ext_resource type="Texture2D" uid="uid://cojuofxwyleh" path="res://assets/TXT/Chara_face/face_09_COL.png" id="9_c1cdd"]
+[ext_resource type="Texture2D" uid="uid://b5cc1toh7h0v6" path="res://assets/TXT/Chara_face/face_10_COL.png" id="10_w0af1"]
 
 [resource]
 script = ExtResource("1_nslbl")
+faces = Array[Texture2D]([ExtResource("10_w0af1"), ExtResource("9_c1cdd"), ExtResource("8_7d88f"), ExtResource("7_y6dv4"), ExtResource("6_3r46o"), ExtResource("5_ey3hh"), ExtResource("4_e5dia"), ExtResource("3_le1iw"), ExtResource("2_ox1n1"), ExtResource("1_2w5s6")])
 metadata/_custom_type_script = "uid://dnvybhnlmpepi"
