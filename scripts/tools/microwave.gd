@@ -1,15 +1,23 @@
 class_name Microwave
 extends ItemTool
 
-@export var recipe_in: ItemResource
-@export var recipe_out: ItemResource
-@export var cooking_time: int
+@export var recipes: Array[MicrowaveRecipeResource]
 
 var items_inside: Array[Item] = []
 var running: bool = false
 
+# recipes
+func find_recipe(items: Array[Item]) -> MicrowaveRecipeResource:
+	for recipe in recipes:
+		if (recipe.is_valid_ingredients(items)):
+			return recipe
+	return null
+
+# ItemTool
 func can_put(item: Item) -> bool:
-	return !running && recipe_in.is_scene(item)
+	var potential_items = items_inside.duplicate()
+	potential_items.push_back(item)
+	return !running && find_recipe(potential_items) != null
 
 func can_take(_item: Item) -> bool:
 	return !running && !items_inside.is_empty()
@@ -19,11 +27,23 @@ func put(item: Item) -> bool:
 	item.place_center()
 	items_inside.append(item)
 	if true:
-		start_cooking()
+		process_cooking()
 	return true
 
-func start_cooking():
+func take() -> Item:
+	return items_inside.pop_front()
+
+# Cook
+func process_cooking():
+	var recipe = find_recipe(items_inside)
+	if (!recipe): push_error("process_cooking() but no recipe for items_inside:", items_inside)
+	start_cooking(recipe)
+	await get_tree().create_timer(recipe.cooking_time).timeout
+	finish_cooking(recipe)
+
+func start_cooking(recipe: MicrowaveRecipeResource):
 	# start
+	print("start microwave...", recipe)
 	running = true
 
 	# clear
@@ -31,21 +51,12 @@ func start_cooking():
 		item.queue_free()
 	items_inside = []
 
-	# wait
-	print("start microwave...")
-	await get_tree().create_timer(cooking_time).timeout
-	finish_cooking()
-
-func finish_cooking():
+func finish_cooking(recipe: MicrowaveRecipeResource):
 	# finish
-	print("finish microwave")
-
-	# fill
-	var item = recipe_out.model_scene.instantiate()
-	add_child(item)
-	items_inside.append(item)
+	print("finish microwave", recipe)
 	running = false
 
-
-func take() -> Item:
-	return items_inside.pop_front()
+	# fill
+	var item = recipe.result.model_scene.instantiate()
+	add_child(item)
+	items_inside.append(item)

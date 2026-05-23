@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="1_qlro6"]
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="2_72jwp"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="3_0546x"]
-[ext_resource type="PackedScene" uid="uid://dnxt0plfh2qya" path="res://scenes/food/food_test.tscn" id="4_r3dxs"]
+[ext_resource type="PackedScene" uid="uid://dsb3cso45vcxh" path="res://scenes/food/food_fries.tscn" id="4_r3dxs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="5_8bina"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_8a2q0"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="6_60gml"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_8a2q0"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_72jwp"]
 [ext_resource type="Script" uid="uid://dmhrpceusgps8" path="res://scripts/items/hand.gd" id="8_nt8ir"]
-[ext_resource type="Resource" uid="uid://bvx7iwrv8v3ci" path="res://resources/food/food_potato.tres" id="9_0546x"]
-[ext_resource type="Resource" uid="uid://dukhwavsylxfp" path="res://resources/food/food_fries.tres" id="10_8bina"]
-[ext_resource type="Resource" uid="uid://bwmgv5kjpgsxh" path="res://resources/food/food_test.tres" id="11_60gml"]
+[ext_resource type="Resource" uid="uid://bk6clexl2rv2h" path="res://scenes/food/food_potato.tscn" id="9_0546x"]
+[ext_resource type="Resource" uid="uid://dsb3cso45vcxh" path="res://scenes/food/food_fries.tscn" id="10_8bina"]
+[ext_resource type="Resource" uid="uid://dnxt0plfh2qya" path="res://scenes/food/food_test.tscn" id="11_60gml"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -87,9 +87,6 @@ transform = Transform3D(1, 0, 0, 0, 0.35628137, -0.93437874, 0, 0.93437874, 0.35
 
 [node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("6_60gml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2055233, 1.1805078, -1.6393985)
-recipe_in = ExtResource("9_0546x")
-recipe_out = ExtResource("10_8bina")
-cooking_time = 1
 
 [node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("7_8a2q0")]
 unique_name_in_owner = true
