@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://qglx87c82jac"]
+
+[ext_resource type="Script" uid="uid://cclqvndmig4ow" path="res://scripts/tools/microwave.gd" id="1_qw61a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jfeh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3voe"]
+
+[node name="Microwave" type="Area3D" unique_id=746176305]
+collision_layer = 8
+script = ExtResource("1_qw61a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1971897776]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("BoxShape3D_3jfeh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=184169819]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("BoxMesh_f3voe")
