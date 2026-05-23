@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://ttjx0hh2827d"]
+
+[ext_resource type="PackedScene" uid="uid://5oc1nbos63vo" path="res://scenes/food/food_good_fries.tscn" id="1_jsome"]
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_lwbrc"]
+
+[resource]
+script = ExtResource("2_lwbrc")
+model_scene = ExtResource("1_jsome")
+metadata/_custom_type_script = "uid://blvwf8kjqyhqi"
