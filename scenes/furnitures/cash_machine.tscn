@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j7xg1b01r6d5" path="res://scripts/furnitures/cash_machine.gd" id="1_y64xk"]
 [ext_resource type="PackedScene" uid="uid://bpimo555kt13n" path="res://assets/Truck/SM_cashRegister.fbx" id="2_68e7f"]
+[ext_resource type="FontFile" uid="uid://cthemqkwhu5e0" path="res://assets/Orange Kid.otf" id="3_tvijx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g23f4"]
 
@@ -17,6 +18,10 @@ transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.22336555, 0)
 shape = SubResource("BoxShape3D_g23f4")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=242097093]
-transform = Transform3D(5.7830164e-07, 0, -40.238003, 0, 7.207, 0, 4.4099994, 0, 5.2765768e-06, -0.235, 0.05, -0.006)
+transform = Transform3D(7.54979e-08, 0, -8.292, 0, 1.471, 0, 1, 0, 6.2602857e-07, 0.165, 0.305, 0)
 pixel_size = 0.0001
-outline_size = 2
+modulate = Color(0, 0, 0, 1)
+text = "123589879"
+font = ExtResource("3_tvijx")
+font_size = 500
+outline_size = 1
