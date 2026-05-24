@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c8xh1fpyy0bec" path="res://assets/Icons/icon_salad.png" id="1_1jo6x"]
 [ext_resource type="Script" uid="uid://crypaau720c2y" path="res://scripts/orders/order.gd" id="1_nramy"]
+[ext_resource type="FontFile" uid="uid://cthemqkwhu5e0" path="res://assets/Orange Kid.otf" id="2_somo4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nramy"]
 bg_color = Color(0.24, 0.24, 0.24, 1)
@@ -13,46 +14,71 @@ bg_color = Color(0, 0.69, 0.13800003, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_nramy")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_somo4")
 
-[node name="Order" type="PanelContainer" unique_id=648195465 node_paths=PackedStringArray("ui_image", "ui_label", "progress_bar")]
+[node name="Order" type="PanelContainer" unique_id=326726441 node_paths=PackedStringArray("ui_image", "ui_label", "progress_bar")]
 self_modulate = Color(1, 1, 0, 0)
+offset_right = 188.0
+offset_bottom = 188.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("1_nramy")
-ui_image = NodePath("Control/TextureRect")
-ui_label = NodePath("VBoxContainer/Label")
-progress_bar = NodePath("Control/ProgressBar")
+ui_image = NodePath("Size/TextureRect")
+ui_label = NodePath("Size/Label")
+progress_bar = NodePath("Size/ProgressBar")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1912186025]
-custom_minimum_size = Vector2(400, 400)
+[node name="Size" type="Control" parent="." unique_id=711678691]
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
-alignment = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=339443267]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "commande #4254"
-horizontal_alignment = 1
-vertical_alignment = 2
+[node name="ColorRect" type="ColorRect" parent="Size" unique_id=1470318160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7764706, 0.67058825, 0, 1)
 
-[node name="Control" type="Control" parent="." unique_id=1218692418]
-layout_mode = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1463117282]
+[node name="ProgressBar" type="ProgressBar" parent="Size" unique_id=1463117282]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 31.0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = -3.0
+offset_bottom = 24.0
+grow_horizontal = 2
 theme = SubResource("Theme_2k6rg")
 max_value = 20.0
 value = 15.0
 show_percentage = false
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1541299065]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_right = 400.0
-offset_bottom = 400.0
+[node name="Label" type="Label" parent="Size" unique_id=339443267]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("2_somo4")
+theme_override_font_sizes/font_size = 26
+text = "commande #4254"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Size" unique_id=1541299065]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_1jo6x")
-expand_mode = 4
+expand_mode = 1
 stretch_mode = 4
