@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d1lw8kowfn02m"]
+[gd_scene format=3 uid="uid://nasc8c57xbsv"]
 
 [ext_resource type="ArrayMesh" uid="uid://062x1uqitsgi" path="res://assets/Food/SM_food_component_paper_geo.obj" id="1_4hapk"]
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_ch83o"]

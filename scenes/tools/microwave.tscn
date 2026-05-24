@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://cclqvndmig4ow" path="res://scripts/tools/microwave.gd" id="1_qw61a"]
 [ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/recipe/microwave_recipe_resource.gd" id="2_cenvl"]
 [ext_resource type="Resource" uid="uid://cpvo48q5xi1hi" path="res://resources/recipe/recipe_good_fries.tres" id="3_8d8b8"]
+[ext_resource type="Resource" uid="uid://361xss11hhlf" path="res://resources/recipe/recipe_good_salad.tres" id="4_gqk4h"]
+[ext_resource type="Resource" uid="uid://dt671cjxwf4wx" path="res://resources/recipe/recipe_bad_salad.tres" id="5_5gpn6"]
+[ext_resource type="Resource" uid="uid://dc5b87rwmxsbs" path="res://resources/recipe/recipe_good_burger.tres" id="6_e1s4b"]
+[ext_resource type="Resource" uid="uid://by3mmxmq3xpik" path="res://resources/recipe/recipe_bad_burger.tres" id="7_geha5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3jfeh"]
 
@@ -11,7 +15,7 @@
 [node name="Microwave" type="Area3D" unique_id=746176305]
 collision_layer = 8
 script = ExtResource("1_qw61a")
-recipes = Array[ExtResource("2_cenvl")]([ExtResource("3_8d8b8")])
+recipes = Array[ExtResource("2_cenvl")]([ExtResource("3_8d8b8"), ExtResource("4_gqk4h"), ExtResource("5_5gpn6"), ExtResource("6_e1s4b"), ExtResource("7_geha5")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1971897776]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)

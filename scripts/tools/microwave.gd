@@ -26,17 +26,17 @@ func put(item: Item) -> bool:
 	item.reparent(self)
 	item.place_center()
 	items_inside.append(item)
-	if true:
-		process_cooking()
+	var recipe = find_recipe(items_inside)
+	if (!recipe): push_error("put() but no recipe for items_inside:", items_inside)
+	if recipe.is_full_ingredients(items_inside):
+		process_cooking(recipe)
 	return true
 
 func take() -> Item:
 	return items_inside.pop_front()
 
 # Cook
-func process_cooking():
-	var recipe = find_recipe(items_inside)
-	if (!recipe): push_error("process_cooking() but no recipe for items_inside:", items_inside)
+func process_cooking(recipe: MicrowaveRecipeResource):
 	start_cooking(recipe)
 	await get_tree().create_timer(recipe.cooking_time).timeout
 	finish_cooking(recipe)
@@ -59,4 +59,4 @@ func finish_cooking(recipe: MicrowaveRecipeResource):
 	# fill
 	var item = recipe.result.model_scene.instantiate()
 	add_child(item)
-	items_inside.append(item)
+	items_inside.push_back(item)
