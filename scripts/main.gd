@@ -14,7 +14,8 @@ var jacket_chance : int = 80
 
 func _ready() -> void:
 	randomize()
-	print(generate_random_character(self, false, null))
+	face_picker.setup()
+	print(generate_first_critique(self, null))
 
 func _process(delta: float) -> void:
 	pass
@@ -40,3 +41,7 @@ func generate_random_character(parent: Node3D, critique : bool, order : OrderRes
 	if (random.randi_range(1, 100) <= jacket_chance) :
 		def.jacket_mesh = mesh_library.jacket_meshes.pick_random()
 	return CharResourcesSpawner.spawn(def, parent, critique, face_picker, order) # TODO gérer false ou true 
+
+func generate_first_critique(parent : Node3D, order : OrderResource) -> Node3D:
+	return (CharResourcesSpawner.spawn(load("res://resources/Critique.tres"), parent, true, face_picker, order))
+	

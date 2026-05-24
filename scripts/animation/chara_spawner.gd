@@ -38,6 +38,7 @@ static func _apply_color(character: Node3D, critique : bool, face_picker : FaceP
 		var mat = StandardMaterial3D.new()
 		if  node.name == "SM_chara_base" :
 			if (critique) :
+				print(face_picker.culinary_critique_color)
 				mat.albedo_color = face_picker.culinary_critique_color
 			else :
 				mat.albedo_color = random_skin_color()

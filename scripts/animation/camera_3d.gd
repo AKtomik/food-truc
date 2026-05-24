@@ -26,9 +26,9 @@ func _process(_delta: float) -> void:
 		_move()
 	
 	if (Input.is_action_just_pressed("ui_down")) :
-		progress_bar.remove_star(1)
+		progress_bar.remove_star(0.5)
 	if (Input.is_action_just_pressed("ui_up")) :
-		progress_bar.remove_star(-1)
+		progress_bar.remove_star(-0.5)
 	
 	if _timer > 0.0:
 		_timer -= _delta
