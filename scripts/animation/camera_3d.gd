@@ -19,11 +19,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("sidestep_left") and _timer <= 0.0 and _hasmoved :  # Barre espace par défaut
 		sidestep_button.notify_started_moving()
-		_move(true)
+		_move()
 		
 	if Input.is_action_just_pressed("sidestep_right") and _timer <= 0.0 and !_hasmoved :  # Barre espace par défaut
 		sidestep_button.notify_started_moving()
-		_move(false)
+		_move()
 	
 	if (Input.is_action_pressed("ui_down")) :
 		progress_bar.remove_star(1)
@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 		if _timer <= 0.0:
 			sidestep_button.notify_move_done()
 
-func _move(left : bool) -> void:
+func _move() -> void:
 	var direction: Vector3
 	var distance: float = point_a.global_position.distance_to(point_b.global_position)
 
