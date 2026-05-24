@@ -339,6 +339,7 @@ script = ExtResource("7_o6xl0")
 
 [node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager", "character_queue", "face_picker", "money_manager", "ticket_container", "audio_player")]
 script = ExtResource("33_5q0nq")
+flow_enabled = false
 star_manager = NodePath("../CanvasLayer/StarManager")
 character_queue = NodePath("../CharacterQueue")
 face_picker = NodePath("../FacePicker")

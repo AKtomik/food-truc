@@ -2,6 +2,7 @@ class_name OrdersManager
 extends Node
 
 @export var flow_enabled: bool = true
+@export var imediate_order: bool = true
 
 @export_category("pointers")
 @export var star_manager: StarManager
@@ -19,6 +20,7 @@ extends Node
 @export var ORDER_NEVER_EMPTY: bool = true
 @export var ORDER_GENERATE_DELAY_MIN: float = 10 # inclusive
 @export var ORDER_GENERATE_DELAY_MAX: float = 20 # inclusive
+@export var ORDER_FIRST_DELAY: float = 0
 
 @export_category("speed")
 @export var STARTING_SPEED: float = 0
@@ -59,7 +61,7 @@ var moved_order_last: Order = null
 var total_client_count: int = 0
 var total_inspection_count: int = 0
 
-var next_client_time: float
+var next_client_time: float = -1
 var next_inspection_turn_count: int
 
 func last_order() -> Order:
@@ -136,7 +138,9 @@ func count_service(success: bool = false):#inspection: bool = false
 func _ready() -> void:
 	aviable_resources = inital_resources
 	next_inspection_turn_count = INSPECTION_FIRST_DELAY
-	generate_order()
+	next_client_time = ORDER_FIRST_DELAY
+	if (imediate_order):
+		generate_order()
 
 func _process(delta: float) -> void:
 	if (!flow_enabled || delta == 0): return
