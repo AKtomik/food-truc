@@ -8,5 +8,4 @@
 script = ExtResource("3_c4nvx")
 ingredient = ExtResource("1_pyn85")
 result = ExtResource("2_37gps")
-cooking_time = 5.0
 metadata/_custom_type_script = "uid://cq2s68rq3jusb"
