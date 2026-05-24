@@ -10,6 +10,5 @@ script = ExtResource("4_w6dfr")
 good_food = ExtResource("2_k5rlh")
 bad_food = ExtResource("1_w6dfr")
 price = 3
-expiration_time = 15.0
 kaway_image = ExtResource("3_qukci")
 metadata/_custom_type_script = "uid://dw0lbhucaf4i4"
