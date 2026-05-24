@@ -53,8 +53,9 @@ func _process(delta: float) -> void:
 func new_order(new_order_resource: OrderResource) -> void:
 	print("add a new order!", new_order_resource)
 	var new_order_instance = packed_order.instantiate() as Order
-	var new_character = character_queue.generate_random_character(new_order_resource)
-	new_order_instance.setup(new_order_resource, new_character)
+	var inspection = false
+	var new_character = character_queue.generate_random_character(new_order_resource, inspection)
+	new_order_instance.setup(new_order_resource, new_character, inspection)
 
 	order_container.add_child(new_order_instance)
 	order_container.move_child(new_order_instance, 0)

@@ -2,7 +2,7 @@ class_name CharacterBody
 extends Node3D
 
 @onready var anime : AnimationPlayer = %Arrive
-var order : OrderResource
+var order_resource : OrderResource
 var face_picker : FacePicker
 
 func _ready() -> void:

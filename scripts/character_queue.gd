@@ -11,8 +11,7 @@ var mouth_chance : int = 25
 var neck_chance : int = 25
 var jacket_chance : int = 80
 
-func generate_random_character(order : OrderResource) -> CharacterBody:
-	var critique = order.is_inspector
+func generate_random_character(order_resource : OrderResource, critique : bool) -> CharacterBody:
 	var def = CharacterResource.new()
 	var random : RandomNumberGenerator = RandomNumberGenerator.new() 
 	
@@ -28,4 +27,4 @@ func generate_random_character(order : OrderResource) -> CharacterBody:
 		def.neck_mesh = mesh_library.neck_meshes.pick_random()
 	if (random.randi_range(1, 100) <= jacket_chance) :
 		def.jacket_mesh = mesh_library.jacket_meshes.pick_random()
-	return CharResourcesSpawner.spawn(def, self, critique, face_picker, order) # TODO gérer false ou true 
+	return CharResourcesSpawner.spawn(def, self, critique, face_picker, order_resource) # TODO gérer false ou true 
