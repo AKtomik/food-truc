@@ -6,9 +6,13 @@
 [ext_resource type="ArrayMesh" uid="uid://dy7gqyw63yyhe" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_03.obj" id="3_guise"]
 [ext_resource type="ArrayMesh" uid="uid://txvayxh22acr" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_04.obj" id="4_gxgf0"]
 [ext_resource type="ArrayMesh" uid="uid://c06d3ko5ekb01" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_01.obj" id="5_eucjw"]
+[ext_resource type="ArrayMesh" uid="uid://c2n3fjgurjqpd" path="res://assets/Chara/Chara_props/Chara_Props_beard/SM_beard_01.obj" id="5_jaeb8"]
+[ext_resource type="ArrayMesh" uid="uid://b1dvirdursu00" path="res://assets/Chara/Chara_props/Chara_Props_beard/SM_beard_02.obj" id="6_eoawq"]
 [ext_resource type="ArrayMesh" uid="uid://78nv2a6phumu" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_02.obj" id="6_jaeb8"]
+[ext_resource type="ArrayMesh" uid="uid://cg0lsofm5oe2w" path="res://assets/Chara/Chara_props/Chara_Props_beard/SM_beard_03.obj" id="7_a8n4o"]
 [ext_resource type="ArrayMesh" uid="uid://b6jqgj4he3s2f" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_03.obj" id="7_eoawq"]
 [ext_resource type="ArrayMesh" uid="uid://b6wuorca7qxw6" path="res://assets/Chara/Chara_props/Chara_Props_Hair/SM_hair_04.obj" id="8_a8n4o"]
+[ext_resource type="ArrayMesh" uid="uid://cvthipxp5yxro" path="res://assets/Chara/Chara_props/Chara_Props_beard/SM_beard_04.obj" id="8_uum40"]
 [ext_resource type="ArrayMesh" uid="uid://1kytcdd64s61" path="res://assets/Chara/Chara_props/Chara_props_hat/SM_hat_02.obj" id="9_uum40"]
 [ext_resource type="ArrayMesh" uid="uid://o8s03px8npv3" path="res://assets/Chara/Chara_props/Chara_props_hat/SM_hat_01.obj" id="10_ld2fo"]
 [ext_resource type="ArrayMesh" uid="uid://ce76fato7xrr2" path="res://assets/Chara/Chara_props/Chara_props_hat/SM_hat_03.obj" id="11_mwl4q"]
@@ -34,4 +38,5 @@ eyes_meshes = Array[Mesh]([ExtResource("1_hetfu"), ExtResource("2_qetwl"), ExtRe
 mouth_meshes = Array[Mesh]([ExtResource("17_ofkee"), ExtResource("18_nj114"), ExtResource("19_7vy06"), ExtResource("20_evkj4")])
 neck_meshes = Array[Mesh]([ExtResource("21_o2twr"), ExtResource("22_i3qcs"), ExtResource("23_m4wyq"), ExtResource("24_xipke")])
 jacket_meshes = Array[Mesh]([ExtResource("13_alhcn"), ExtResource("14_vls4s"), ExtResource("15_2ywgr"), ExtResource("16_olpxs")])
+face_hair_meshes = Array[Mesh]([ExtResource("5_jaeb8"), ExtResource("6_eoawq"), ExtResource("7_a8n4o"), ExtResource("8_uum40")])
 metadata/_custom_type_script = "uid://dxu2s1ib6vs7i"

@@ -107,6 +107,9 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 mesh = ExtResource("3_mlviu")
 surface_material_override/0 = SubResource("StandardMaterial3D_mlviu")
 
+[node name="FaceHair" type="MeshInstance3D" parent="SM_chara_base" unique_id=1798990348]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=430713894]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_asswx")

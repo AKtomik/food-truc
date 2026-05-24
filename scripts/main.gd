@@ -5,13 +5,13 @@ extends Node3D
 @export var hand : Hand
 @export var typewriter_label : TypeWriter
 
-@onready var phone_stream : AudioStreamPlayer = %PhoneAudioStream
+@onready var audio_player : AudioStreamPlayer = %PhoneAudioStream
 
 func _ready() -> void:
 	_stop_time()
-	phone_stream.stream = load("res://assets/sounds/ringtone.mp3")
-	phone_stream.stream.loop = true
-	phone_stream.play()
+	audio_player.stream = load("res://assets/sounds/ringtone.mp3")
+	audio_player.stream.loop = true
+	audio_player.play()
 
 func _process(_delta: float) -> void:
 	pass
@@ -23,7 +23,10 @@ func _start_time():
 	Engine.time_scale = 1
 
 func start_game():
-	phone_stream.stop()	
+	audio_player.stop()	
+	audio_player.stream =  load("res://assets/sounds/Main_theme.mp3")
+	audio_player.stream.loop = true
+	audio_player.play()
 	cam.set_enable_move(true)# can be delayed in anim
 	hand.set_enable_click(true)# can be delayed in anim
 	_start_time()
