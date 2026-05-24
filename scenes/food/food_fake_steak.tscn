@@ -1,11 +1,17 @@
-[gd_scene format=3 uid="uid://bqyjbgsbbggr2"]
+[gd_scene format=3 uid="uid://dice7k0x3d1um"]
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_7n6r3"]
 [ext_resource type="ArrayMesh" uid="uid://bwddobdvj3lc" path="res://assets/Food/SM_food_component_rottenSteak_geo.obj" id="1_x127h"]
+[ext_resource type="Texture2D" uid="uid://bajhpavc1pnxy" path="res://assets/TXT/Props_TXT/rotten_steak_ACEScg.1001.png" id="2_lfkw0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kexu"]
+shading_mode = 2
+albedo_texture = ExtResource("2_lfkw0")
 
 [node name="FoodFakeSteak" type="Node3D" unique_id=230256206]
 script = ExtResource("1_7n6r3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0019038953, 0)
+material_override = SubResource("StandardMaterial3D_5kexu")
 mesh = ExtResource("1_x127h")

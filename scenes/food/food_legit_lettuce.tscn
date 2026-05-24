@@ -1,11 +1,16 @@
-[gd_scene format=3 uid="uid://bo2471d42i6cf"]
+[gd_scene format=3 uid="uid://b3e2yli47g64b"]
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_4gjf7"]
 [ext_resource type="ArrayMesh" uid="uid://dj04hdf44mn7v" path="res://assets/Food/SM_food_component_lettuce_geo.obj" id="1_dbb7c"]
+[ext_resource type="Texture2D" uid="uid://c48d0u4o8bp8e" path="res://assets/TXT/Props_TXT/lettuce_shd_ACEScg.1001.png" id="2_q2mhb"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_f1imn"]
+albedo_texture = ExtResource("2_q2mhb")
 
 [node name="FoodLegitLettuce" type="Node3D" unique_id=230256206]
 script = ExtResource("1_4gjf7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.016993932, 0)
+material_override = SubResource("ORMMaterial3D_f1imn")
 mesh = ExtResource("1_dbb7c")
