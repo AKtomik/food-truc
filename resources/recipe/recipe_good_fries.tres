@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MicrowaveRecipeResource" format=3 uid="uid://cpvo48q5xi1hi"]
 
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="1_ydkt0"]
-[ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/tools/microwave_recipe_resource.gd" id="2_0y6yl"]
+[ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/recipe/microwave_recipe_resource.gd" id="2_0y6yl"]
 [ext_resource type="Resource" uid="uid://6xmacf7s1qb1" path="res://resources/food/food_potato.tres" id="2_dx6jj"]
 [ext_resource type="Resource" uid="uid://ttjx0hh2827d" path="res://resources/food/food_good_fries.tres" id="3_cjdeq"]
 

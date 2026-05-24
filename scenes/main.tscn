@@ -6,15 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
-[ext_resource type="Script" uid="uid://dvra7e36tlvij" path="res://scripts/sidestep_button.gd" id="5_a8y0u"]
+[ext_resource type="Script" path="res://scripts/sidestep_button.gd" id="5_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dp8nycwaqb5mm" path="res://icon.svg" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
 [ext_resource type="Resource" uid="uid://b88ln7bwyr5w" path="res://resources/food/food_test.tres" id="10_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://ceqcu3hsg3nlr" path="res://scenes/tools/trash.tscn" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
-[ext_resource type="PackedScene" path="res://scenes/hand.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://bbhefvsymiucc" path="res://scenes/hand.tscn" id="13_trceg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,7 +30,6 @@ sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 
 [node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("face_picker")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1766963, 0, 0)
 script = ExtResource("1_o5qli")
 mesh_library = ExtResource("2_tefeu")
 face_picker = NodePath("FacePicker")
@@ -91,13 +91,16 @@ transform = Transform3D(1, -7.1054274e-15, -3.5527137e-15, 0, 1, 6.3607044e-16, 
 [node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("7_ya4ey")]
 transform = Transform3D(0.16174164, 0, 0.98683316, 0, 1, 0, -0.98683316, 0, 0.16174164, 1.0545495, 1.0022496, -2.355078)
 
+[node name="Trash" parent="Environement" unique_id=1121063657 instance=ExtResource("11_jbj1t")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3668456, 1.2092414, -2.354913)
+
 [node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("11_ya4ey")]
 transform = Transform3D(0.18750128, 0, -0.98226434, 0, 1, 0, 0.98226434, 0, 0.18750128, -0.847363, 1.7072831, -2.5739684)
 
 [node name="Shop" type="Node3D" parent="Environement" unique_id=798148202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4080765, 1.0100982, -2.86927)
 
-[node name="Cubishop" parent="Environement/Shop" unique_id=1121063657 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
+[node name="Cubishop" parent="Environement/Shop" unique_id=142892796 node_paths=PackedStringArray("money_manager") instance=ExtResource("8_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12593225, 5.9604645e-08, 0.11944914)
 money_manager = NodePath("../../CashMachine")
 
