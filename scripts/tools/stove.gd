@@ -1,6 +1,11 @@
 class_name Stove
 extends ItemTool
 
+
+@export var audio_player: AudioStreamPlayer
+
+var audio_steak : AudioStream = preload("res://assets/sounds/cooking_steak.mp3")
+
 @export var recipes: Array[SimpleRecipeResource]
 
 var item_inside: Item = null
@@ -8,6 +13,7 @@ var closed: bool = false
 
 # Loop
 func ready():
+	#audio_player.stream.loop = true
 	open()
 
 # Recipes
@@ -30,6 +36,10 @@ func put(item: Item) -> bool:
 	item_inside = (item)
 	var recipe = find_recipe(item)
 	if (!recipe): push_error("put() but no recipe for item:", item)
+	audio_player.stream = audio_steak
+	audio_player.stream.loop = true
+	#print(audio_player.stream)
+	audio_player.play()
 	process_cooking(recipe)
 	return true
 
@@ -64,6 +74,7 @@ func finish_cooking(recipe: SimpleRecipeResource):
 
 	# finish
 	print("finish stove", recipe)
+	audio_player.stop()
 	open()
 
 	# fill

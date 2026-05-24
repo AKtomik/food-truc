@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://cn5rx4m0t1myw"]
 
-[ext_resource type="Script" uid="uid://ctkwkggx8x05f" path="res://scripts/tools/paint_pot.gd" id="1_nchr7"]
+[ext_resource type="Script" uid="uid://5nnocv8gsixp" path="res://scripts/tools/paint_double_pot.gd" id="1_xgd54"]
 [ext_resource type="PackedScene" uid="uid://du0477sfy8qdk" path="res://assets/Truck/SM_bucket.fbx" id="2_6ugma"]
+[ext_resource type="Resource" uid="uid://7o31k3qaf0y7" path="res://resources/food/food_paper.tres" id="2_yhmi3"]
+[ext_resource type="Resource" uid="uid://bxxmq73nhj3fy" path="res://resources/food/food_fake_tomato.tres" id="3_y88hn"]
+[ext_resource type="Resource" uid="uid://cqv0b1ikumy2u" path="res://resources/food/food_rotten_meat.tres" id="4_86g58"]
+[ext_resource type="Resource" uid="uid://bukiis7m8bcm2" path="res://resources/food/food_good_steak.tres" id="5_7vaml"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_w7p3h"]
 radius = 0.17
 
 [node name="PaintPot" type="Area3D" unique_id=1121063657]
 collision_layer = 8
-script = ExtResource("1_nchr7")
+script = ExtResource("1_xgd54")
+inkable_item1 = ExtResource("2_yhmi3")
+inked_item1 = ExtResource("3_y88hn")
+inkable_item2 = ExtResource("4_86g58")
+inked_item2 = ExtResource("5_7vaml")
 
 [node name="SM_bucket" parent="." unique_id=2123288689 instance=ExtResource("2_6ugma")]
 

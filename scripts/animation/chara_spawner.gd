@@ -22,6 +22,7 @@ static func spawn(def: CharacterResource, parent: Node3D, critique : bool,
 	character.get_node("Mouth").mesh = def.mouth_mesh
 	character.get_node("Neck").mesh = def.neck_mesh
 	character.get_node("Jacket").mesh = def.jacket_mesh
+	character.get_node("FaceHair").mesh = def.face_hair_mesh
 	_apply_color(character, critique, face_picker)
 	
 	var chara_mesh : MeshInstance3D = character.get_node("Face")
@@ -38,13 +39,12 @@ static func _apply_color(character: Node3D, critique : bool, face_picker : FaceP
 		var mat = StandardMaterial3D.new()
 		if  node.name == "SM_chara_base" :
 			if (critique) :
-				print(face_picker.culinary_critique_color)
 				mat.albedo_color = face_picker.culinary_critique_color
 			else :
 				mat.albedo_color = random_skin_color()
 		elif node.name == "Hat" or node.name == "Jacket" or node.name == "Neck" :
 			mat.albedo_color = random_clothing_color()
-		elif node.name == "Hair" or node.name == "Eyes"  :
+		elif node.name == "Hair" or node.name == "Eyes" or node.name == "FaceHair" :
 			mat.albedo_color = random_hair_color()
 		node.material_override = mat
 

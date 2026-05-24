@@ -7,3 +7,4 @@ extends Resource
 @export var mouth_meshes: Array[Mesh] = []
 @export var neck_meshes: Array[Mesh] = []
 @export var jacket_meshes: Array[Mesh] = []
+@export var face_hair_meshes: Array[Mesh] = []
