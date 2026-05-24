@@ -120,7 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.751, 1.269, 0.009)
 transform = Transform3D(0.978509, 0, 0.20620419, 0, 1, 0, -0.20620419, 0, 0.978509, 0.022, 1.001, 0.985)
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
-transform = Transform3D(-3.1664968e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -3.1664968e-08, 1.5543122e-15, 0.68930644, 2.1511936, -1.3068514)
+transform = Transform3D(-2.9802322e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -2.9802322e-08, 1.5543122e-15, 0.6734575, 2.1511936, -0.5571132)
 
 [node name="CatPlane" parent="Environement" unique_id=634522356 instance=ExtResource("6_choun")]
 

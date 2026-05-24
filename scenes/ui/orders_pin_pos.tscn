@@ -42,9 +42,11 @@ alignment = 2
 last_wrap_alignment = 3
 
 [node name="Order_test1" parent="OrdersPinLayer/OrderContainer" unique_id=648195465 instance=ExtResource("3_uejo4")]
+visible = false
 layout_mode = 2
 
 [node name="Order_test2" parent="OrdersPinLayer/OrderContainer" unique_id=105052151 instance=ExtResource("3_uejo4")]
+visible = false
 layout_mode = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1898222799]
