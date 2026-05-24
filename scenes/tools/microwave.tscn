@@ -8,10 +8,17 @@
 [ext_resource type="Resource" uid="uid://dc5b87rwmxsbs" path="res://resources/recipe/microwave_good_burger.tres" id="6_e1s4b"]
 [ext_resource type="Resource" uid="uid://by3mmxmq3xpik" path="res://resources/recipe/microwave_bad_burger.tres" id="7_geha5"]
 [ext_resource type="ArrayMesh" uid="uid://dykrph21glgo7" path="res://assets/Truck/SM_microwave_open.obj" id="8_e1s4b"]
+[ext_resource type="Texture2D" uid="uid://bi6iqs6oi4da0" path="res://assets/TXT/enviro/microWave_shdCEScg.1001.png" id="8_geha5"]
 [ext_resource type="ArrayMesh" uid="uid://di30ivtm7bydf" path="res://assets/Truck/SM_microwave_close.obj" id="9_geha5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3jfeh"]
 size = Vector3(1.2, 0.7, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yb5jm"]
+albedo_texture = ExtResource("8_geha5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_geha5"]
+albedo_texture = ExtResource("8_geha5")
 
 [node name="Microwave" type="Area3D" unique_id=746176305]
 collision_layer = 8
@@ -28,9 +35,11 @@ transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 0, -0.1, 0)
 
 [node name="MeshOpen" type="MeshInstance3D" parent="MicroPos" unique_id=184169819]
 unique_name_in_owner = true
+material_override = SubResource("StandardMaterial3D_yb5jm")
 mesh = ExtResource("8_e1s4b")
 
 [node name="MeshClose" type="MeshInstance3D" parent="MicroPos" unique_id=1615906558]
 unique_name_in_owner = true
 visible = false
+material_override = SubResource("StandardMaterial3D_geha5")
 mesh = ExtResource("9_geha5")

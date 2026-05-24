@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterResource" format=3 uid="uid://8tgm475pgr5r"]
+
+[ext_resource type="ArrayMesh" uid="uid://v13xkikfbl4l" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_02.obj" id="1_fmr4q"]
+[ext_resource type="ArrayMesh" uid="uid://dwo7vlqynpcjx" path="res://assets/Chara/Chara_props/Chara_Props_coat/SM_coat_02.obj" id="2_wtsn1"]
+[ext_resource type="ArrayMesh" uid="uid://eo7iopftlns4" path="res://assets/Chara/Chara_props/Chara_Props_tie/SM_tie_01.obj" id="3_c556m"]
+[ext_resource type="ArrayMesh" uid="uid://ypgmrxdtsb3q" path="res://assets/Chara/Chara_props/Chara_Props_cigs/SM_cigs_03.obj" id="3_wtsn1"]
+[ext_resource type="Script" uid="uid://vwko3lv4xmjv" path="res://scripts/animation/character_resources.gd" id="4_mu0ph"]
+
+[resource]
+script = ExtResource("4_mu0ph")
+eyes_mesh = ExtResource("1_fmr4q")
+mouth_mesh = ExtResource("3_wtsn1")
+neck_mesh = ExtResource("3_c556m")
+jacket_mesh = ExtResource("2_wtsn1")
+metadata/_custom_type_script = "uid://vwko3lv4xmjv"
