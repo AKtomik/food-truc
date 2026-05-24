@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://e3thwdgkbn20"]
+
+[ext_resource type="Texture2D" uid="uid://dp8nycwaqb5mm" path="res://icon.svg" id="1_ikxvn"]
+[ext_resource type="Script" uid="uid://dvra7e36tlvij" path="res://scripts/ui/sidestep_button.gd" id="2_1wj6g"]
+
+[node name="SidestepButton" type="Button" unique_id=1965430449 node_paths=PackedStringArray("camera")]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_ikxvn")
+script = ExtResource("2_1wj6g")
+camera = NodePath("")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterMeshLibrary" format=3 uid="uid://bhogmisqp6bpd"]
 
-[ext_resource type="Script" path="res://scripts/CharMeshLibrary.gd" id="1_caet0"]
+[ext_resource type="Script" uid="uid://dxu2s1ib6vs7i" path="res://scripts/animation/CharMeshLibrary.gd" id="1_caet0"]
 [ext_resource type="ArrayMesh" uid="uid://cjm8wi7c2u1aa" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_01.obj" id="1_hetfu"]
 [ext_resource type="ArrayMesh" uid="uid://v13xkikfbl4l" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_02.obj" id="2_qetwl"]
 [ext_resource type="ArrayMesh" uid="uid://dy7gqyw63yyhe" path="res://assets/Chara/Chara_props/Chara_Props_glasses/SM_glasses_03.obj" id="3_guise"]

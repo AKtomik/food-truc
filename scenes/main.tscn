@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://ja056cep4hms"]
 
 [ext_resource type="Script" uid="uid://bgl0mslrqxo1g" path="res://scripts/main.gd" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/camera_3d.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/animation/camera_3d.gd" id="2_0wfyh"]
 [ext_resource type="Resource" uid="uid://bhogmisqp6bpd" path="res://resources/CharMeshLib.tres" id="2_tefeu"]
-[ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/star_manager.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://e3thwdgkbn20" path="res://scenes/ui/sidestep_button.tscn" id="4_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
-[ext_resource type="Script" path="res://scripts/sidestep_button.gd" id="5_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://dp8nycwaqb5mm" path="res://icon.svg" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
@@ -32,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://cqv0b1ikumy2u" path="res://resources/food/food_rotten_meat.tres" id="20_yq6so"]
 [ext_resource type="Resource" uid="uid://b8omovfgn2xx3" path="res://resources/food/food_cardboard.tres" id="21_fv21b"]
 [ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
+[ext_resource type="Script" uid="uid://n6y7so5w8cgy" path="res://scripts/orders_manager.gd" id="33_5q0nq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -60,16 +60,11 @@ directional_shadow_max_distance = 1.8
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=195654680]
 
-[node name="ProgressBar" parent="CanvasLayer" unique_id=1340713327 instance=ExtResource("3_jyhfs")]
+[node name="StarManager" parent="CanvasLayer" unique_id=1340713327 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
 
-[node name="SidestepButton" type="Button" parent="CanvasLayer" unique_id=507405867 node_paths=PackedStringArray("camera")]
+[node name="SidestepButton" parent="CanvasLayer" unique_id=1965430449 instance=ExtResource("4_qkpxi")]
 unique_name_in_owner = true
-offset_right = 8.0
-offset_bottom = 8.0
-icon = ExtResource("5_jkv2x")
-script = ExtResource("5_a8y0u")
-camera = NodePath("../../Player/Camera3D")
 
 [node name="Player" type="Node3D" parent="." unique_id=960234431]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1753833, -0.044129163, 2.5505323)
@@ -252,6 +247,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512692, 0, 0.59924304)
 script = ExtResource("7_o6xl0")
 
 [node name="OrdersManager" type="Node" parent="." unique_id=1416883034]
+script = ExtResource("33_5q0nq")
 
 [editable path="Environement/CatPlane"]
 [editable path="Environement/PaintPots/PaintPotYellow"]
