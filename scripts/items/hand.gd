@@ -11,14 +11,19 @@ extends Node3D
 @export_flags_3d_physics var cat_physics
 
 var in_hand: Item = null
+var _can_click: bool = true
 
 func _ready() -> void:
 	pass
+
+func set_enable_click(state: bool) -> void:
+	_can_click = state
 
 func _process(_delta: float) -> void:
 	self.global_position = ray_cat() + offset
 
 func _physics_process(_delta: float) -> void:
+	if (!_can_click): return
 	if Input.is_action_just_pressed("take"):
 		if (full()):
 			print("try throw")
