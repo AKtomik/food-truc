@@ -29,16 +29,13 @@
 [ext_resource type="Resource" uid="uid://ca3u6rx8qmcto" path="res://resources/food/food_legit_tomato.tres" id="15_og1vs"]
 [ext_resource type="PackedScene" uid="uid://vewsa1gb8nw3" path="res://scenes/tools/stove.tscn" id="15_vchkt"]
 [ext_resource type="Resource" uid="uid://cgpdc6tmpesum" path="res://resources/food/food_legit_lettuce.tres" id="16_2wyq8"]
-[ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
 [ext_resource type="Script" uid="uid://cq2s68rq3jusb" path="res://scripts/recipe/simple_recipe_resource.gd" id="16_vc5cj"]
 [ext_resource type="PackedScene" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
 [ext_resource type="Resource" uid="uid://b5ngjmnw7h108" path="res://resources/recipe/stove_bad_steak.tres" id="17_nvyfr"]
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
 [ext_resource type="Resource" uid="uid://byevm8bappfvy" path="res://resources/food/food_bread.tres" id="18_2f3dj"]
-[ext_resource type="Resource" uid="uid://cuhegihfyyyqv" path="res://resources/food/food_fake_lettuce.tres" id="18_tel4y"]
 [ext_resource type="Resource" uid="uid://crci42gspqxrs" path="res://resources/recipe/stove_good_steak.tres" id="18_ty1g6"]
-[ext_resource type="Resource" uid="uid://bxxmq73nhj3fy" path="res://resources/food/food_fake_tomato.tres" id="19_qkpxi"]
 [ext_resource type="Resource" uid="uid://cqv0b1ikumy2u" path="res://resources/food/food_rotten_meat.tres" id="20_yq6so"]
 [ext_resource type="Resource" uid="uid://b8omovfgn2xx3" path="res://resources/food/food_cardboard.tres" id="21_fv21b"]
 [ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
@@ -207,8 +204,6 @@ transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.988
 
 [node name="PaintPotYellow" parent="Environement/PaintPots" unique_id=911226871 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.4173019, 0, -0.063871026)
-inkable_item = ExtResource("13_jbj1t")
-inked_item = ExtResource("16_fv21b")
 hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotYellow" index="0" unique_id=2123288689]
@@ -219,8 +214,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.6268585, 0, -0.023789823)
-inkable_item = ExtResource("14_y6deb")
-inked_item = ExtResource("18_tel4y")
 hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotGreen" index="0" unique_id=2123288689]
@@ -232,8 +225,6 @@ transform = Transform3D(-0.87964857, 0, 0.47562426, 0, 1, 0, -0.47562426, 0, -0.
 
 [node name="PaintPotRed" parent="Environement/PaintPots" unique_id=302690736 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.6568094, 0, 0.75405675, 0, 1, 0, -0.75405675, 0, -0.6568094, -0.9445238, 0, -0.12630808)
-inkable_item = ExtResource("14_y6deb")
-inked_item = ExtResource("19_qkpxi")
 hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotRed" index="0" unique_id=2123288689]
