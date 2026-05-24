@@ -31,5 +31,4 @@ mesh = ExtResource("8_e1s4b")
 
 [node name="MeshClose" type="MeshInstance3D" parent="MicroPos" unique_id=1615906558]
 unique_name_in_owner = true
-visible = false
 mesh = ExtResource("9_geha5")
