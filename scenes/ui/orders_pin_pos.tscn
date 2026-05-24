@@ -16,9 +16,10 @@ subviewport = NodePath("OrdersPinLayer")
 viewportquad = NodePath(".")
 
 [node name="OrdersPinLayer" type="SubViewport" parent="." unique_id=1215323502]
+transparent_bg = true
 size = Vector2i(400, 800)
 
-[node name="Background" type="Panel" parent="OrdersPinLayer" unique_id=375325023]
+[node name="Background" type="Panel" parent="OrdersPinLayer" unique_id=2028490968]
 visible = false
 self_modulate = Color(0, 1, 0, 1)
 anchors_preset = 15
@@ -29,17 +30,17 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VerticalOrderContainer" type="VBoxContainer" parent="OrdersPinLayer" unique_id=2024702470]
-anchors_preset = 10
-anchor_right = 1.0
+[node name="VerticalOrderContainer" type="FlowContainer" parent="OrdersPinLayer" unique_id=1277870639]
+offset_right = 400.0
 offset_bottom = 1027.0
-grow_horizontal = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
 
 [node name="Order_test1" parent="OrdersPinLayer/VerticalOrderContainer" unique_id=648195465 instance=ExtResource("3_uejo4")]
 visible = false
 layout_mode = 2
 
-[node name="Order_test2" parent="OrdersPinLayer/VerticalOrderContainer" unique_id=24668422 instance=ExtResource("3_uejo4")]
+[node name="Order_test2" parent="OrdersPinLayer/VerticalOrderContainer" unique_id=105052151 instance=ExtResource("3_uejo4")]
 visible = false
 layout_mode = 2
 

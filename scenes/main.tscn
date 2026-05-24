@@ -281,6 +281,7 @@ money_manager = NodePath("../Environement/CashMachine")
 order_resources = Array[ExtResource("38_chjal")]([ExtResource("39_cjqg0"), ExtResource("40_vchkt"), ExtResource("41_txyw0"), ExtResource("42_vc5cj")])
 order_container = NodePath("../Environement/Truck/OrdersPinPos/OrdersPinLayer/VerticalOrderContainer")
 packed_order = ExtResource("43_nvyfr")
+order_wait_time = 5.0
 
 [editable path="Environement/Truck/OrdersPinPos"]
 [editable path="Environement/CatPlane"]
