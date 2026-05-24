@@ -11,7 +11,8 @@ var mouth_chance : int = 25
 var neck_chance : int = 25
 var jacket_chance : int = 80
 
-func generate_random_character(critique : bool, order : OrderResource) -> CharacterBody:
+func generate_random_character(order : OrderResource) -> CharacterBody:
+	var critique = order.is_inspector
 	var def = CharacterResource.new()
 	var random : RandomNumberGenerator = RandomNumberGenerator.new() 
 	

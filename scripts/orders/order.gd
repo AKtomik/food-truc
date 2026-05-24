@@ -2,7 +2,7 @@ class_name Order
 extends Control
 
 var resource: OrderResource
-var character_body: Node3D
+var character_body: CharacterBody
 var is_inspector: bool
 var time_max: float
 var time_remain: float
@@ -13,7 +13,7 @@ var number: int
 @export var progress_bar: ProgressBar
 
 # init
-func setup(order_resource: OrderResource, character: Node3D, inspection: bool = false, time_factor: int = 1):
+func setup(order_resource: OrderResource, character: CharacterBody, inspection: bool = false, time_factor: int = 1):
 	resource = order_resource
 	character_body = character
 	time_max = order_resource.expiration_time * time_factor

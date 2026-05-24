@@ -17,6 +17,7 @@ extends Node
 
 # store
 var order_list: Array[Order] = []
+var moved_order_last: Order = null
 var next_order: float = -1
 
 func last_order() -> Order:
@@ -35,9 +36,11 @@ func _process(delta: float) -> void:
 		order.time_remain -= delta
 		if (order.time_remain <= 0):
 			expired_order.append(order)
-	for order in expired_order:
-		fail_order(order)
-		remove_order(order)
+	if (!expired_order.is_empty()):
+		for order in expired_order:
+			fail_order(order)
+			remove_order(order)
+		check_move_next()
 	
 	# creation
 	next_order -= delta
@@ -50,17 +53,26 @@ func _process(delta: float) -> void:
 func new_order(new_order_resource: OrderResource) -> void:
 	print("add a new order!", new_order_resource)
 	var new_order_instance = packed_order.instantiate() as Order
-	var new_character = character_queue
-	new_order_instance.setup(new_order_resource, )
+	var new_character = character_queue.generate_random_character(new_order_resource)
+	new_order_instance.setup(new_order_resource, new_character)
 
 	order_container.add_child(new_order_instance)
 	order_container.move_child(new_order_instance, 0)
 	order_list.append(new_order_instance)
+	check_move_next()
+
+func check_move_next():# do that each time you edit order_list
+	if (order_list.is_empty()): return
+	var now_order_last = last_order()
+	if (moved_order_last == now_order_last): return
+	moved_order_last = now_order_last
+	moved_order_last.character_body.play_arrive()
 
 # finish
 func given_food(item: Item) -> void:
 	print("given food to first order:", item)
 	var order = last_order()
+	order.character_body.play_go()
 	var happy = order.given_happy(item)
 	if (happy):
 		successful_order(order)
@@ -80,3 +92,4 @@ func fail_order(order: Order) -> void:
 func remove_order(order: Order) -> void:
 	order_list.remove_at(order_list.find(order))
 	order.queue_free()
+	check_move_next()
