@@ -2,7 +2,7 @@ class_name TypeWriter
 extends Label
 
 
-@export var type_speed: float = 0.05
+#@export var type_speed: float = 0.05
 @export var erase_speed: float = 0.03
 @export var hold_duration: float = 2.0
 
@@ -11,15 +11,18 @@ extends Label
 var _full_text: String = ""
 var _tween: Tween
 
-func display(message: String, sound: AudioStream = null) -> void:
+func display(message: String, sound: AudioStream = null, delay : float = 0.0, type_speed : float = 0.05) -> void:
 	_full_text = message
 	text = ""
 	visible = true
 
-	if sound:
+	if sound :
 		audio_player.stream = sound
 		audio_player.play()
 
+	if (delay > 0) :
+		await get_tree().create_timer(delay).timeout
+	
 	if _tween:
 		_tween.kill()
 

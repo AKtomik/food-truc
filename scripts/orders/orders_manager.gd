@@ -174,6 +174,19 @@ func generate_order() -> void:
 func call_infinite_order(new_order_resource: OrderResource, inspection: bool = false) -> void:
 	call_order(new_order_resource, inspection, 1.79769e308)
 
+func call_first_critique(new_order_resource: OrderResource) -> void :
+	var new_order_instance = packed_order.instantiate() as Order
+	var new_character = character_queue.generate_first_critique(new_order_resource)
+	new_order_instance.setup(new_order_resource, new_character, true, 1.79769e308)
+	ticket_container.add_child(new_order_instance)
+	ticket_container.move_child(new_order_instance, 0)
+	order_list.append(new_order_instance)
+	check_move_next()
+
+	count_client(true)
+	new_command.emit(new_order_instance)
+	
+
 # build your own order on order
 func call_order(new_order_resource: OrderResource, inspection: bool = false, time_scale: float = 1) -> void:
 	print("add a new order!", new_order_resource)

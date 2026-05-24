@@ -34,7 +34,7 @@ static func spawn(def: CharacterResource, parent: Node3D, critique : bool,
 		
 static func _apply_color(character: Node3D, critique : bool, face_picker : FacePicker) -> void:
 	for node in character.find_children("*", "MeshInstance3D"):
-		if not node.visible:
+		if not node.visible or node.name == "Mouth":
 			continue
 		var mat = StandardMaterial3D.new()
 		if  node.name == "SM_chara_base" :

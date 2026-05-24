@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://5j6q0imgcarv" path="res://assets/Icons/ui_fleche.png" id="5_vc5cj"]
 [ext_resource type="PackedScene" uid="uid://cicvmw4tovmig" path="res://scenes/ending/start_bubble.tscn" id="6_0loja"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
-[ext_resource type="PackedScene" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
+[ext_resource type="PackedScene" uid="uid://bd5gknuconhqj" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
@@ -18,10 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://bpbr8rdycvo7w" path="res://scenes/ui/orders_pin_pos.tscn" id="11_txyw0"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://b64h6rswt8tac" path="res://assets/TXT/enviro/window_shd_BaseColor_ACEScg.1001.png" id="12_bu4jf"]
-[ext_resource type="Resource" uid="uid://6xmacf7s1qb1" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
+[ext_resource type="Resource" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
 [ext_resource type="ArrayMesh" uid="uid://c7si7t8qqx50w" path="res://assets/Truck/SM_window_frame.obj" id="13_bjg73"]
-[ext_resource type="Resource" uid="uid://ct7huwg03r1w6" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://bbhefvsymiucc" path="res://scenes/hand.tscn" id="13_trceg"]
+[ext_resource type="Resource" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
+[ext_resource type="PackedScene" path="res://scenes/hand.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bmjtct2dg5lyg" path="res://scenes/tools/windo.tscn" id="14_cjqg0"]
 [ext_resource type="ArrayMesh" uid="uid://bduosfycfjcil" path="res://assets/Truck/SM_window_glass.obj" id="14_o7ddy"]
 [ext_resource type="Resource" uid="uid://7o31k3qaf0y7" path="res://resources/food/food_paper.tres" id="14_y6deb"]
@@ -30,8 +30,9 @@
 [ext_resource type="Resource" uid="uid://ca3u6rx8qmcto" path="res://resources/food/food_legit_tomato.tres" id="15_og1vs"]
 [ext_resource type="PackedScene" uid="uid://vewsa1gb8nw3" path="res://scenes/tools/stove.tscn" id="15_vchkt"]
 [ext_resource type="Resource" uid="uid://cgpdc6tmpesum" path="res://resources/food/food_legit_lettuce.tres" id="16_2wyq8"]
+[ext_resource type="Resource" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
 [ext_resource type="Script" uid="uid://cq2s68rq3jusb" path="res://scripts/recipe/simple_recipe_resource.gd" id="16_vc5cj"]
-[ext_resource type="PackedScene" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
+[ext_resource type="PackedScene" uid="uid://d0ky0rtbirs1e" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
 [ext_resource type="Resource" uid="uid://b5ngjmnw7h108" path="res://resources/recipe/stove_bad_steak.tres" id="17_nvyfr"]
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
@@ -40,9 +41,7 @@
 [ext_resource type="Resource" uid="uid://cqv0b1ikumy2u" path="res://resources/food/food_rotten_meat.tres" id="20_yq6so"]
 [ext_resource type="Resource" uid="uid://b8omovfgn2xx3" path="res://resources/food/food_cardboard.tres" id="21_fv21b"]
 [ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
-[ext_resource type="Script" uid="uid://ctkwkggx8x05f" path="res://scripts/tools/paint_pot.gd" id="28_dnhof"]
-[ext_resource type="Resource" uid="uid://fb7rdycjop6l" path="res://resources/food/food_bad_salad.tres" id="30_1v6qk"]
-[ext_resource type="PackedScene" path="res://scenes/sm_bucket.tscn" id="31_bu4jf"]
+[ext_resource type="PackedScene" uid="uid://cga8uud827wnu" path="res://scenes/sm_bucket.tscn" id="31_bu4jf"]
 [ext_resource type="Script" uid="uid://n6y7so5w8cgy" path="res://scripts/orders/orders_manager.gd" id="33_5q0nq"]
 [ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/orders/order_resource.gd" id="38_chjal"]
 [ext_resource type="Resource" uid="uid://cqx7xrcvg7snf" path="res://resources/order/order_fries.tres" id="39_cjqg0"]
@@ -78,12 +77,14 @@ blend_mode = 1
 albedo_color = Color(0.18717614, 0.18717614, 0.18717614, 1)
 albedo_texture = ExtResource("12_bu4jf")
 
-[node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("cam", "hand", "typewriter_label", "face_picker")]
+[node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("cam", "hand", "typewriter_label", "face_picker", "order_manager")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29035425, 0.53440315, -3.2375517)
 script = ExtResource("1_o5qli")
 cam = NodePath("Player/Camera3D")
 hand = NodePath("Hand")
 typewriter_label = NodePath("CanvasLayer/TypeWriter")
 face_picker = NodePath("FacePicker")
+order_manager = NodePath("OrdersManager")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=821951666]
 environment = SubResource("Environment_jyhfs")
@@ -167,6 +168,7 @@ transform = Transform3D(0.978509, 0, 0.20620419, 0, 1, 0, -0.20620419, 0, 0.9785
 
 [node name="PhoneAudioStream" type="AudioStreamPlayer" parent="Environement/Truck/SM_phone" unique_id=206276547]
 unique_name_in_owner = true
+volume_db = -8.211
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
 transform = Transform3D(-1.8626451e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -1.8626451e-08, 1.5543122e-15, 0.69975966, 2.151, -10.142086)
@@ -204,6 +206,7 @@ audio_player = NodePath("StoveAudioPlayer")
 recipes = Array[ExtResource("16_vc5cj")]([ExtResource("17_nvyfr"), ExtResource("18_ty1g6")])
 
 [node name="StoveAudioPlayer" type="AudioStreamPlayer" parent="Environement/StoveCollider" unique_id=975520194]
+volume_db = -5.474
 
 [node name="TrashCollider" parent="Environement" unique_id=1878140870 instance=ExtResource("11_jbj1t")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3668456, 1.2092414, -2.354913)
@@ -213,6 +216,7 @@ transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.988
 
 [node name="MicroWaveAudio" type="AudioStreamPlayer" parent="Environement/Microwave" unique_id=675902337]
 unique_name_in_owner = true
+volume_db = -5.474
 
 [node name="PaintPots" type="Node3D" parent="Environement" unique_id=779519747]
 transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.9884887, -0.63164496, 1.5905064, -2.5249515)
@@ -371,6 +375,10 @@ critique_good_order_sound = ExtResource("55_tm6hj")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1400874940]
 transform = Transform3D(-6.5567085e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.5567085e-09, -3, 0.5, 2.2000003)
 texture = ExtResource("52_bu4jf")
+
+[node name="MusicAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1051148965]
+unique_name_in_owner = true
+volume_db = -17.334
 
 [editable path="Environement/Truck/OrdersPinPos"]
 [editable path="Environement/CatPlane"]
