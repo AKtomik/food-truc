@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MicrowaveRecipeResource" format=3 uid="uid://by3mmxmq3xpik"]
 
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="1_kqdqe"]
-[ext_resource type="Resource" uid="uid://b6ahr7vn4w063" path="res://resources/food/food_fake_steak.tres" id="2_jv2pu"]
+[ext_resource type="Resource" uid="uid://b6ahr7vn4w063" path="res://resources/food/food_bad_steak.tres" id="2_jv2pu"]
 [ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/recipe/microwave_recipe_resource.gd" id="3_pex5w"]
 [ext_resource type="Resource" uid="uid://bxxmq73nhj3fy" path="res://resources/food/food_fake_tomato.tres" id="3_rnjjo"]
 [ext_resource type="Resource" uid="uid://cuhegihfyyyqv" path="res://resources/food/food_fake_lettuce.tres" id="4_153m0"]
