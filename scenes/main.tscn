@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://e3thwdgkbn20" path="res://scenes/ui/sidestep_button.tscn" id="4_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
-[ext_resource type="PackedScene" uid="uid://bd5gknuconhqj" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
+[ext_resource type="PackedScene" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
@@ -16,18 +16,18 @@
 [ext_resource type="PackedScene" uid="uid://ceqcu3hsg3nlr" path="res://scenes/tools/trash.tscn" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bpbr8rdycvo7w" path="res://scenes/ui/orders_pin_pos.tscn" id="11_txyw0"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
-[ext_resource type="Resource" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
-[ext_resource type="Resource" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
-[ext_resource type="PackedScene" path="res://scenes/hand.tscn" id="13_trceg"]
+[ext_resource type="Resource" uid="uid://6xmacf7s1qb1" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
+[ext_resource type="Resource" uid="uid://ct7huwg03r1w6" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://bbhefvsymiucc" path="res://scenes/hand.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bmjtct2dg5lyg" path="res://scenes/tools/windo.tscn" id="14_cjqg0"]
 [ext_resource type="Resource" uid="uid://7o31k3qaf0y7" path="res://resources/food/food_paper.tres" id="14_y6deb"]
 [ext_resource type="PackedScene" uid="uid://cn5rx4m0t1myw" path="res://scenes/tools/paint_pot.tscn" id="14_yq6so"]
 [ext_resource type="Resource" uid="uid://ca3u6rx8qmcto" path="res://resources/food/food_legit_tomato.tres" id="15_og1vs"]
 [ext_resource type="PackedScene" uid="uid://vewsa1gb8nw3" path="res://scenes/tools/stove.tscn" id="15_vchkt"]
 [ext_resource type="Resource" uid="uid://cgpdc6tmpesum" path="res://resources/food/food_legit_lettuce.tres" id="16_2wyq8"]
-[ext_resource type="Resource" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
+[ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
 [ext_resource type="Script" uid="uid://cq2s68rq3jusb" path="res://scripts/recipe/simple_recipe_resource.gd" id="16_vc5cj"]
-[ext_resource type="PackedScene" uid="uid://d0ky0rtbirs1e" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
+[ext_resource type="PackedScene" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
 [ext_resource type="Resource" uid="uid://b5ngjmnw7h108" path="res://resources/recipe/stove_bad_steak.tres" id="17_nvyfr"]
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
@@ -46,6 +46,7 @@
 [ext_resource type="Resource" uid="uid://do4rfi07at1ga" path="res://resources/order/order_steak.tres" id="41_txyw0"]
 [ext_resource type="Resource" uid="uid://gq07ydj0qkea" path="res://resources/order/order_burger.tres" id="42_vc5cj"]
 [ext_resource type="PackedScene" uid="uid://buo6eq0yav7un" path="res://scenes/order.tscn" id="43_nvyfr"]
+[ext_resource type="Script" uid="uid://bieaqyeteieb0" path="res://scripts/character_queue.gd" id="47_vc5cj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -270,6 +271,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.867965, -5.9604645e-08, 0.5
 
 [node name="ItemSlotX2Y3" parent="Environement/WorkingPlate" unique_id=1787256186 instance=ExtResource("4_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512692, 0, 0.59924304)
+
+[node name="CharacterQueue" type="Node3D" parent="." unique_id=413541609 node_paths=PackedStringArray("face_picker")]
+script = ExtResource("47_vc5cj")
+mesh_library = ExtResource("2_tefeu")
+face_picker = NodePath("../FacePicker")
 
 [node name="FacePicker" type="Node" parent="." unique_id=144830767]
 script = ExtResource("7_o6xl0")

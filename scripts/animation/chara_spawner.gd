@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 static func spawn(def: CharacterResource, parent: Node3D, critique : bool,
-	face_picker : FacePicker, order : OrderResource) -> Node3D:
+	face_picker : FacePicker, order : OrderResource) -> CharacterBody:
 
 	var characterScene = CHARACTER_SCENE.instantiate()
 	characterScene.face_picker = face_picker
@@ -31,7 +31,7 @@ static func spawn(def: CharacterResource, parent: Node3D, critique : bool,
 		face_picker.apply_random_texture(chara_mesh)
 	return characterScene
 		
-static func _apply_color(character: Node3D, critique : bool, face_picker : FacePicker) -> void:
+static func _apply_color(character: CharacterBody, critique : bool, face_picker : FacePicker) -> void:
 	for node in character.find_children("*", "MeshInstance3D"):
 		if not node.visible:
 			continue

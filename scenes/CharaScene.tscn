@@ -55,7 +55,7 @@ _data = {
 script = ExtResource("1_w1mk4")
 
 [node name="SM_chara_base" parent="." unique_id=1631582998 instance=ExtResource("1_2tvha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.198)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.1, 0.198)
 
 [node name="Hat" type="MeshInstance3D" parent="SM_chara_base" unique_id=735716209]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)

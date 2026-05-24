@@ -2,6 +2,7 @@ class_name OrdersManager
 extends Node
 
 @export var star_manager: StarManager
+@export var character_queue: CharacterQueue
 @export var face_picker : FacePicker
 @export var money_manager: CashMachine
 @export var order_resources: Array[OrderResource]
@@ -49,7 +50,8 @@ func _process(delta: float) -> void:
 func new_order(new_order_resource: OrderResource) -> void:
 	print("add a new order!", new_order_resource)
 	var new_order_instance = packed_order.instantiate() as Order
-	new_order_instance.setup(new_order_resource)
+	var new_character = character_queue
+	new_order_instance.setup(new_order_resource, )
 
 	order_container.add_child(new_order_instance)
 	order_container.move_child(new_order_instance, 0)
