@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dj8dm66ve1ref"]
+
+[ext_resource type="PackedScene" uid="uid://c1dfqx6qxgxyg" path="res://assets/Truck/SM_window.fbx" id="1_4cjbb"]
+[ext_resource type="Texture2D" uid="uid://bq1e7mm5glkwe" path="res://assets/TXT/enviro/window_shd_BaseColor_ACEScg.1001.png" id="2_4cjbb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhccb"]
+transparency = 1
+albedo_texture = ExtResource("2_4cjbb")
+
+[node name="SM_window" unique_id=1816656219 instance=ExtResource("1_4cjbb")]
+
+[node name="SM_window" parent="." index="0" unique_id=341790604]
+material_override = SubResource("StandardMaterial3D_rhccb")

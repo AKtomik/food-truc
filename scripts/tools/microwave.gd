@@ -5,9 +5,13 @@ extends ItemTool
 
 @onready var open_node: Node3D = $%MeshOpen
 @onready var close_node: Node3D = $%MeshClose
+@onready var audio_player: AudioStreamPlayer = $MicroWaveAudio
 
 var items_inside: Array[Item] = []
 var closed: bool = false
+
+var audio_ding: AudioStream = preload("res://assets/sounds/mircowave_ding.mp3")
+var audio_run: AudioStream = preload("res://assets/sounds/microwave_running.mp3")
 
 # Loop
 func ready():
@@ -62,6 +66,8 @@ func process_cooking(recipe: MicrowaveRecipeResource):
 func start_cooking(recipe: MicrowaveRecipeResource):
 	# start
 	print("start microwave...", recipe)
+	audio_player.stream = audio_run
+	audio_player.play()
 	close()
 
 	# clear
@@ -72,6 +78,9 @@ func start_cooking(recipe: MicrowaveRecipeResource):
 func finish_cooking(recipe: MicrowaveRecipeResource):
 	# finish
 	print("finish microwave", recipe)
+	audio_player.stop()
+	audio_player.stream = audio_ding
+	audio_player.play()
 	open()
 
 	# fill

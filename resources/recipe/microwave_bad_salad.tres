@@ -10,5 +10,5 @@
 script = ExtResource("5_drim8")
 ingredients = Array[ExtResource("1_cuqpw")]([ExtResource("2_cuqpw"), ExtResource("3_tbgx8")])
 result = ExtResource("4_uv0ye")
-cooking_time = 0.5
+cooking_time = 1.0
 metadata/_custom_type_script = "uid://b1504ojp5bxxi"

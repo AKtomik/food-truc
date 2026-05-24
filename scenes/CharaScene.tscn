@@ -34,6 +34,31 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(1, 1, 0, 0, 0, 1, 1.4333, 1, 0, 0.70710677, 0, 0.70710677)
 
+[sub_resource type="Animation" id="Animation_mlviu"]
+resource_name = "Behind"
+length = 1.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_chara_base")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1, 0.1, 0.052, 1, 1, -1, 0.1, 3.197)
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.1333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_w1mk4"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -47,12 +72,14 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.1, 0.198)
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_asswx"]
 _data = {
 &"Arrive": SubResource("Animation_2tvha"),
+&"Behind": SubResource("Animation_mlviu"),
 &"Go": ExtResource("3_asswx"),
 &"RESET": SubResource("Animation_w1mk4")
 }
 
-[node name="CharaScene" type="Node3D" unique_id=1557363681]
+[node name="CharaScene" type="Node3D" unique_id=1557363681 node_paths=PackedStringArray("anime")]
 script = ExtResource("1_w1mk4")
+anime = NodePath("Animator")
 
 [node name="SM_chara_base" parent="." unique_id=1631582998 instance=ExtResource("1_2tvha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.198)
@@ -80,6 +107,6 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 mesh = ExtResource("3_mlviu")
 surface_material_override/0 = SubResource("StandardMaterial3D_mlviu")
 
-[node name="Arrive" type="AnimationPlayer" parent="." unique_id=430713894]
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=430713894]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_asswx")

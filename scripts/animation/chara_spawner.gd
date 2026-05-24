@@ -7,13 +7,15 @@ const CHARACTER_SCENE = preload("res://scenes/CharaScene.tscn")
 func _ready() -> void:
 	pass # Replace with function body.
 
-static func spawn(def: CharacterResource, parent: Node3D, critique : bool, face_picker : FacePicker) -> Node3D:
-	return
+static func spawn(def: CharacterResource, parent: Node3D, critique : bool,
+	face_picker : FacePicker, order_resource : OrderResource) -> CharacterBody:
+
 	var characterScene = CHARACTER_SCENE.instantiate()
 	characterScene.face_picker = face_picker
+	characterScene.order_resource = order_resource
 	parent.add_child(characterScene)
 
-	var character = characterScene.get_node("SM_chara_base") 
+	var character = characterScene.get_node("SM_chara_base")
 	character.get_node("Hat").mesh = def.hat_mesh
 	character.get_node("Hair").mesh = def.hair_mesh
 	character.get_node("Eyes").mesh = def.eyes_mesh
@@ -36,6 +38,7 @@ static func _apply_color(character: Node3D, critique : bool, face_picker : FaceP
 		var mat = StandardMaterial3D.new()
 		if  node.name == "SM_chara_base" :
 			if (critique) :
+				print(face_picker.culinary_critique_color)
 				mat.albedo_color = face_picker.culinary_critique_color
 			else :
 				mat.albedo_color = random_skin_color()

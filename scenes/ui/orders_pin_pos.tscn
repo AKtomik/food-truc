@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bpbr8rdycvo7w"]
+
+[ext_resource type="Material" uid="uid://cjtatlhcjkmvx" path="res://scenes/ui/albedo_viewport_3d.tres" id="1_3wfyp"]
+[ext_resource type="Script" uid="uid://kjtb0n1vjio2" path="res://scripts/3d_viewport.gd" id="2_o7ndj"]
+[ext_resource type="PackedScene" uid="uid://buo6eq0yav7un" path="res://scenes/order.tscn" id="3_uejo4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pibwh"]
+size = Vector2(3, 0.5)
+
+[node name="OrdersPinPos" type="MeshInstance3D" unique_id=1237496899 node_paths=PackedStringArray("subviewport", "viewportquad")]
+transform = Transform3D(-4.284084e-08, -1.0000001, 0, -4.371139e-08, 1.9106857e-15, -1.0000001, 1, -4.284084e-08, -4.3711395e-08, 0, 0, 0)
+material_override = ExtResource("1_3wfyp")
+mesh = SubResource("PlaneMesh_pibwh")
+script = ExtResource("2_o7ndj")
+subviewport = NodePath("OrdersPinLayer")
+viewportquad = NodePath(".")
+
+[node name="OrdersPinLayer" type="SubViewport" parent="." unique_id=1215323502]
+transparent_bg = true
+size = Vector2i(1200, 200)
+
+[node name="Background" type="Panel" parent="OrdersPinLayer" unique_id=2028490968]
+visible = false
+self_modulate = Color(0, 1, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OrderContainer" type="FlowContainer" parent="OrdersPinLayer" unique_id=1277870639]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+alignment = 2
+last_wrap_alignment = 3
+
+[node name="Order_test1" parent="OrdersPinLayer/OrderContainer" unique_id=648195465 instance=ExtResource("3_uejo4")]
+visible = false
+layout_mode = 2
+
+[node name="Order_test2" parent="OrdersPinLayer/OrderContainer" unique_id=105052151 instance=ExtResource("3_uejo4")]
+visible = false
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1898222799]

@@ -9,9 +9,9 @@ albedo_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
 albedo_texture = ExtResource("2_xk5wr")
 
 [node name="FoodBadBurger" type="Node3D" unique_id=230256206]
+script = ExtResource("2_0gk5a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
-transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0047882274, 0)
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -0.0047882274, 0)
 mesh = ExtResource("1_xs3xm")
 surface_material_override/0 = SubResource("StandardMaterial3D_h7b80")
-script = ExtResource("2_0gk5a")
