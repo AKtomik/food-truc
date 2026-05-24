@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/progress_bar.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://dvra7e36tlvij" path="res://scripts/sidestep_button.gd" id="5_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://dp8nycwaqb5mm" path="res://icon.svg" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
@@ -59,6 +61,14 @@ transform = Transform3D(1, 0, 0, 0, 0.99999917, -1.0430813e-07, 0, 1.0430813e-07
 
 [node name="ProgressBar" parent="Player/Camera3D/CanvasLayer" unique_id=1340713327 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
+
+[node name="SidestepButton" type="Button" parent="Player/Camera3D/CanvasLayer" unique_id=507405867 node_paths=PackedStringArray("camera")]
+unique_name_in_owner = true
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("5_jkv2x")
+script = ExtResource("5_a8y0u")
+camera = NodePath("../..")
 
 [node name="Hand" parent="." unique_id=1326521668 node_paths=PackedStringArray("camera") instance=ExtResource("13_trceg")]
 camera = NodePath("../Player/Camera3D")

@@ -24,4 +24,4 @@ modulate = Color(0, 0, 0, 1)
 text = "123589879"
 font = ExtResource("3_tvijx")
 font_size = 500
-outline_size = 24
+outline_size = 15
