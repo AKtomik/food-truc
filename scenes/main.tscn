@@ -209,11 +209,12 @@ volume_db = -5.474
 [node name="PaintPots" type="Node3D" parent="Environement" unique_id=779519747]
 transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.9884887, -0.63164496, 1.5905064, -2.5249515)
 
-[node name="PaintPotYellow" parent="Environement/PaintPots" unique_id=911226871 instance=ExtResource("14_yq6so")]
+[node name="PaintPotYellow" parent="Environement/PaintPots" unique_id=911226871 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.4173019, 0, -0.063871026)
 script = ExtResource("26_dnhof")
 inkable_item = ExtResource("13_jbj1t")
 inked_item = ExtResource("16_fv21b")
+hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotYellow" index="0" unique_id=2123288689]
 visible = false
@@ -221,11 +222,12 @@ visible = false
 [node name="SM_bucket_yellow" parent="Environement/PaintPots/PaintPotYellow" unique_id=104149380 instance=ExtResource("17_qkpxi")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 instance=ExtResource("14_yq6so")]
+[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.6268585, 0, -0.023789823)
 script = ExtResource("26_dnhof")
 inkable_item = ExtResource("14_y6deb")
 inked_item = ExtResource("31_1v6qk")
+hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotGreen" index="0" unique_id=2123288689]
 transform = Transform3D(-0.8799056, 0, 0.47514802, 0, 1, 0, -0.47514802, 0, -0.8799056, 0.016174793, 0, 0.09186268)
