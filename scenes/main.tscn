@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://yss7k7kddaev" path="res://assets/Truck/SM_truckWall.fbx" id="8_og1vs"]
 [ext_resource type="PackedScene" uid="uid://c1dfqx6qxgxyg" path="res://assets/Truck/SM_window.fbx" id="9_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://dhnrv45n3t4uh" path="res://assets/Truck/SM_phone.fbx" id="10_dgi5k"]
+[ext_resource type="Material" uid="uid://cjtatlhcjkmvx" path="res://scenes/ui/albedo_viewport_3d.tres" id="11_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://ceqcu3hsg3nlr" path="res://scenes/tools/trash.tscn" id="11_jbj1t"]
+[ext_resource type="Script" uid="uid://kjtb0n1vjio2" path="res://scripts/3d_viewport.gd" id="11_kmb1v"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
 [ext_resource type="Resource" uid="uid://6xmacf7s1qb1" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
 [ext_resource type="Resource" uid="uid://ct7huwg03r1w6" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
@@ -34,6 +36,12 @@
 [ext_resource type="Resource" uid="uid://b8omovfgn2xx3" path="res://resources/food/food_cardboard.tres" id="21_fv21b"]
 [ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
 [ext_resource type="Script" uid="uid://n6y7so5w8cgy" path="res://scripts/orders/orders_manager.gd" id="33_5q0nq"]
+[ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/orders/order_resource.gd" id="38_chjal"]
+[ext_resource type="Resource" uid="uid://cqx7xrcvg7snf" path="res://resources/order/order_fries.tres" id="39_cjqg0"]
+[ext_resource type="Resource" uid="uid://bax80o8bcdrms" path="res://resources/order/order_salad.tres" id="40_vchkt"]
+[ext_resource type="Resource" uid="uid://do4rfi07at1ga" path="res://resources/order/order_steak.tres" id="41_txyw0"]
+[ext_resource type="Resource" uid="uid://gq07ydj0qkea" path="res://resources/order/order_burger.tres" id="42_vc5cj"]
+[ext_resource type="PackedScene" uid="uid://buo6eq0yav7un" path="res://scenes/order.tscn" id="43_nvyfr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,6 +54,9 @@ sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
 background_mode = 2
 sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pibwh"]
+size = Vector2(0.6, 1.2)
 
 [node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("face_picker")]
 script = ExtResource("1_o5qli")
@@ -109,6 +120,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7509796, 1.2688302, 0.00937
 
 [node name="SM_phone" parent="Environement/Truck" unique_id=897732055 instance=ExtResource("10_dgi5k")]
 transform = Transform3D(0.97835034, 0, 0.20695555, 0, 1, 0, -0.20695555, 0, 0.97835034, 0.021856427, 1.0010743, 0.9845802)
+
+[node name="OrdersPinPos" type="MeshInstance3D" parent="Environement/Truck" unique_id=1710429903 node_paths=PackedStringArray("subviewport", "viewportquad")]
+transform = Transform3D(-4.284084e-08, -1.0000001, 0, -4.371139e-08, 1.9106857e-15, -1.0000001, 1, -4.284084e-08, -4.3711395e-08, 0.7157677, 1.4057362, 0.27315855)
+material_override = ExtResource("11_fuf3a")
+mesh = SubResource("PlaneMesh_pibwh")
+script = ExtResource("11_kmb1v")
+subviewport = NodePath("OrdersPinLayer")
+viewportquad = NodePath(".")
+
+[node name="OrdersPinLayer" type="SubViewport" parent="Environement/Truck/OrdersPinPos" unique_id=650720700]
+size = Vector2i(400, 800)
+
+[node name="Background" type="Panel" parent="Environement/Truck/OrdersPinPos/OrdersPinLayer" unique_id=704063191]
+visible = false
+self_modulate = Color(0, 1, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VerticalOrderContainer" type="VBoxContainer" parent="Environement/Truck/OrdersPinPos/OrdersPinLayer" unique_id=96063857]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1027.0
+grow_horizontal = 2
+
+[node name="Order_test1" parent="Environement/Truck/OrdersPinPos/OrdersPinLayer/VerticalOrderContainer" unique_id=648195465 instance=ExtResource("43_nvyfr")]
+visible = false
+layout_mode = 2
+
+[node name="Order_test2" parent="Environement/Truck/OrdersPinPos/OrdersPinLayer/VerticalOrderContainer" unique_id=1791359008 instance=ExtResource("43_nvyfr")]
+visible = false
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Environement/Truck/OrdersPinPos" unique_id=1751733437]
 
 [node name="CatPlane" parent="Environement" unique_id=634522356 instance=ExtResource("6_choun")]
 
@@ -254,9 +303,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512692, 0, 0.59924304)
 [node name="FacePicker" type="Node" parent="." unique_id=144830767]
 script = ExtResource("7_o6xl0")
 
-[node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager")]
+[node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager", "order_container")]
 script = ExtResource("33_5q0nq")
 star_manager = NodePath("../CanvasLayer/StarManager")
+order_resources = Array[ExtResource("38_chjal")]([ExtResource("39_cjqg0"), ExtResource("40_vchkt"), ExtResource("41_txyw0"), ExtResource("42_vc5cj")])
+order_container = NodePath("../Environement/Truck/OrdersPinPos/OrdersPinLayer/VerticalOrderContainer")
+packed_order = ExtResource("43_nvyfr")
 
 [editable path="Environement/CatPlane"]
 [editable path="Environement/PaintPots/PaintPotYellow"]
