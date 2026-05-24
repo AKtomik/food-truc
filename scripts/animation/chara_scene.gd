@@ -1,7 +1,7 @@
 class_name CharacterBody
 extends Node3D
 
-@onready var anime : AnimationPlayer = %Arrive
+@export var anime : AnimationPlayer
 var order_resource : OrderResource
 var face_picker : FacePicker
 
