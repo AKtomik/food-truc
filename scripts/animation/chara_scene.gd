@@ -4,6 +4,7 @@ extends Node3D
 @export var anime : AnimationPlayer
 var order_resource : OrderResource
 var face_picker : FacePicker
+var arrived : bool = false
 
 func _ready() -> void:
 	pass
@@ -11,10 +12,14 @@ func _ready() -> void:
 
 func play_arrive():
 	anime.play("Arrive")
+	arrived = true
 
-func play_go():
-	anime.play("Go")
-	# TODO: self destruct in the animation
+func play_quit():
+	if (arrived):
+		anime.play("Go")
+	else:
+		anime.play("Behind")
+	# body is killed in the end of the action either way
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
