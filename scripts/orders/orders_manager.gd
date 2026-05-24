@@ -2,6 +2,7 @@ class_name OrdersManager
 extends Node
 
 @export var star_manager: StarManager
+@export var face_picker : FacePicker
 @export var money_manager: CashMachine
 @export var order_resources: Array[OrderResource]
 @export var order_container: Control

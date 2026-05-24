@@ -17,17 +17,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("sidestep_left") and _timer <= 0.0 and _hasmoved :  # Barre espace par défaut
+	if Input.is_action_just_pressed("sidestep_left") and _timer <= 0.0 and _hasmoved :
 		sidestep_button.notify_started_moving()
 		_move()
 		
-	if Input.is_action_just_pressed("sidestep_right") and _timer <= 0.0 and !_hasmoved :  # Barre espace par défaut
+	if Input.is_action_just_pressed("sidestep_right") and _timer <= 0.0 and !_hasmoved :
 		sidestep_button.notify_started_moving()
 		_move()
 	
-	if (Input.is_action_pressed("ui_down")) :
+	if (Input.is_action_just_pressed("ui_down")) :
 		progress_bar.remove_star(1)
-	if (Input.is_action_pressed("ui_up")) :
+	if (Input.is_action_just_pressed("ui_up")) :
 		progress_bar.remove_star(-1)
 	
 	if _timer > 0.0:

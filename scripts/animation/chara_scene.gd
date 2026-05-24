@@ -1,12 +1,11 @@
 extends Node3D
 
 @onready var anime : AnimationPlayer = %Arrive
+var order : OrderResource
 var face_picker : FacePicker
 
 func _ready() -> void:
 	anime.play("Arrive")
-	#await anime.animation_finished
-	#anime.play("Go")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

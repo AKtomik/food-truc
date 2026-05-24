@@ -7,10 +7,12 @@ const CHARACTER_SCENE = preload("res://scenes/CharaScene.tscn")
 func _ready() -> void:
 	pass # Replace with function body.
 
-static func spawn(def: CharacterResource, parent: Node3D, critique : bool, face_picker : FacePicker) -> Node3D:
-	return
+static func spawn(def: CharacterResource, parent: Node3D, critique : bool,
+	face_picker : FacePicker, order : OrderResource) -> Node3D:
+
 	var characterScene = CHARACTER_SCENE.instantiate()
 	characterScene.face_picker = face_picker
+	characterScene.order = order
 	parent.add_child(characterScene)
 
 	var character = characterScene.get_node("SM_chara_base") 

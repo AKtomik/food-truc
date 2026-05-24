@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://buo7aw73jxrkq"]
 
 [ext_resource type="PackedScene" uid="uid://dhnrv45n3t4uh" path="res://assets/Truck/SM_phone.fbx" id="1_3pmqe"]
-[ext_resource type="Material" uid="uid://cjtatlhcjkmvx" path="res://scenes/ui/albedo_viewport_3d.tres" id="2_gd5lk"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3pmqe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd5lk"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = SubResource("GradientTexture1D_3pmqe")
 
 [node name="SM_phone" unique_id=1667207949 instance=ExtResource("1_3pmqe")]
 
 [node name="SM_phone" parent="." index="0" unique_id=585264497]
-material_override = ExtResource("2_gd5lk")
+material_override = SubResource("StandardMaterial3D_gd5lk")

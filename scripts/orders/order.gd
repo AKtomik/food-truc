@@ -35,4 +35,3 @@ func given_happy(food: Item) -> bool:
 	if (!is_inspector && resource.bad_food.is_scene(food)):
 		return true
 	return false
-	

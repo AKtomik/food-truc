@@ -4,6 +4,7 @@ extends Node3D
 @export var chara_scene : Node3D
 @export var mesh_library: CharacterMeshLibrary
 @export var face_picker: FacePicker
+
 var hat_chance : int = 25
 var hair_chance : int = 80
 var eyes_chance : int = 25
@@ -13,7 +14,7 @@ var jacket_chance : int = 80
 
 func _ready() -> void:
 	randomize()
-	generate_random_character(self, false)
+	print(generate_random_character(self, false, null))
 
 func _process(delta: float) -> void:
 	pass
@@ -22,7 +23,7 @@ func _process(delta: float) -> void:
 func generate_food_queue() -> void :
 		pass
 
-func generate_random_character(parent: Node3D, critique : bool) -> Node3D:
+func generate_random_character(parent: Node3D, critique : bool, order : OrderResource) -> Node3D:
 	var def = CharacterResource.new()
 	var random : RandomNumberGenerator = RandomNumberGenerator.new() 
 	
@@ -38,4 +39,4 @@ func generate_random_character(parent: Node3D, critique : bool) -> Node3D:
 		def.neck_mesh = mesh_library.neck_meshes.pick_random()
 	if (random.randi_range(1, 100) <= jacket_chance) :
 		def.jacket_mesh = mesh_library.jacket_meshes.pick_random()
-	return CharResourcesSpawner.spawn(def, parent, critique, face_picker) # TODO gérer false ou true 
+	return CharResourcesSpawner.spawn(def, parent, critique, face_picker, order) # TODO gérer false ou true 

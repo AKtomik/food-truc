@@ -1,12 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cjtatlhcjkmvx"]
 
-[sub_resource type="Gradient" id="Gradient_8l35s"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0oiuj"]
-gradient = SubResource("Gradient_8l35s")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3pmqe"]
 
 [resource]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = SubResource("GradientTexture1D_0oiuj")
+albedo_texture = SubResource("GradientTexture1D_3pmqe")
