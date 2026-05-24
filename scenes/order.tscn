@@ -3,33 +3,29 @@
 [ext_resource type="Texture2D" uid="uid://c8xh1fpyy0bec" path="res://assets/Icons/icon_salad.png" id="1_1jo6x"]
 [ext_resource type="Script" uid="uid://crypaau720c2y" path="res://scripts/orders/order.gd" id="1_nramy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nramy"]
+bg_color = Color(0.24, 0.24, 0.24, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_somo4"]
+bg_color = Color(0, 0.69, 0.13800003, 1)
+
+[sub_resource type="Theme" id="Theme_2k6rg"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_nramy")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_somo4")
+
 [node name="Order" type="PanelContainer" unique_id=648195465 node_paths=PackedStringArray("ui_image", "ui_label", "progress_bar")]
 self_modulate = Color(1, 1, 0, 0)
 size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("1_nramy")
-ui_image = NodePath("VBoxContainer/TextureRect")
+ui_image = NodePath("Control/TextureRect")
 ui_label = NodePath("VBoxContainer/Label")
-progress_bar = NodePath("VBoxContainer/ProgressBar")
+progress_bar = NodePath("Control/ProgressBar")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1912186025]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 alignment = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=1463117282]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-max_value = 20.0
-value = 15.0
-show_percentage = false
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1541299065]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-texture = ExtResource("1_1jo6x")
-expand_mode = 4
-stretch_mode = 4
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=339443267]
 layout_mode = 2
@@ -37,3 +33,26 @@ theme_override_font_sizes/font_size = 40
 text = "commande #4254"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="Control" type="Control" parent="." unique_id=1218692418]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1463117282]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+theme = SubResource("Theme_2k6rg")
+max_value = 20.0
+value = 15.0
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1541299065]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 400.0
+texture = ExtResource("1_1jo6x")
+expand_mode = 4
+stretch_mode = 4
