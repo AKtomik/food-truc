@@ -36,3 +36,9 @@ func start_game():
 
 func finish_tuto():
 	orders_manager.set_flow_enable(true)
+
+func to_good_ending():
+	get_tree().change_scene_to_file("res://scenes/ending/good_ending.tscn")
+
+func to_bad_ending():
+	get_tree().change_scene_to_file("res://scenes/ending/bad_ending.tscn")
