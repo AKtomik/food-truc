@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="OrderResource" format=3 uid="uid://cqx7xrcvg7snf"]
 
 [ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="1_w6dfr"]
-[ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/orders/order_resource.gd" id="1_yk5op"]
 [ext_resource type="Resource" uid="uid://ttjx0hh2827d" path="res://resources/food/food_good_fries.tres" id="2_k5rlh"]
 [ext_resource type="Texture2D" uid="uid://bcm1ogb6x2eyf" path="res://assets/Icons/icon_fries.png" id="3_qukci"]
+[ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/orders/order_resource.gd" id="4_w6dfr"]
 
 [resource]
-script = ExtResource("1_yk5op")
+script = ExtResource("4_w6dfr")
 good_food = ExtResource("2_k5rlh")
 bad_food = ExtResource("1_w6dfr")
+price = 3
+expiration_time = 15.0
 kaway_image = ExtResource("3_qukci")
 metadata/_custom_type_script = "uid://dw0lbhucaf4i4"
