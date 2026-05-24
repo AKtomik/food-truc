@@ -21,9 +21,9 @@ offset_bottom = 188.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("1_nramy")
-ui_image = NodePath("Size/TextureRect")
-ui_label = NodePath("Size/Label")
-progress_bar = NodePath("Size/ProgressBar")
+ui_image = NodePath("Size/Rota/TextureRect")
+ui_label = NodePath("Size/Rota/Label")
+progress_bar = NodePath("Size/Rota/ProgressBar")
 
 [node name="Size" type="Control" parent="." unique_id=711678691]
 custom_minimum_size = Vector2(180, 180)
@@ -31,7 +31,15 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="Size" unique_id=1470318160]
+[node name="Rota" type="Control" parent="Size" unique_id=301082295]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Size/Rota" unique_id=1470318160]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.7764706, 0.67058825, 0, 1)
 
-[node name="ProgressBar" type="ProgressBar" parent="Size" unique_id=1463117282]
+[node name="ProgressBar" type="ProgressBar" parent="Size/Rota" unique_id=1463117282]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = 10
@@ -55,13 +63,13 @@ max_value = 20.0
 value = 15.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="Size" unique_id=339443267]
+[node name="Label" type="Label" parent="Size/Rota" unique_id=339443267]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -55.0
+offset_top = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0.8039216, 1)
@@ -71,7 +79,7 @@ text = "commande #4254"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="Size" unique_id=1541299065]
+[node name="TextureRect" type="TextureRect" parent="Size/Rota" unique_id=1541299065]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = 15
@@ -82,3 +90,8 @@ grow_vertical = 2
 texture = ExtResource("1_1jo6x")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="Size" unique_id=1399894350]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

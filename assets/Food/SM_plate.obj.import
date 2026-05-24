@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fdhf1o3hoby1"
+path="res://.godot/imported/SM_plate.obj-787e920595770fd7e4caaee501875103.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_plate.obj-787e920595770fd7e4caaee501875103.mesh"]
+
+source_file="res://assets/Food/SM_plate.obj"
+dest_files=["res://.godot/imported/SM_plate.obj-787e920595770fd7e4caaee501875103.mesh", "res://.godot/imported/SM_plate.obj-787e920595770fd7e4caaee501875103.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
