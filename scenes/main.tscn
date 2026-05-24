@@ -4,30 +4,30 @@
 [ext_resource type="Script" uid="uid://bqqrghgncs33e" path="res://scripts/animation/camera_3d.gd" id="2_0wfyh"]
 [ext_resource type="Resource" uid="uid://bhogmisqp6bpd" path="res://resources/CharMeshLib.tres" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bighng32kmge2" path="res://scenes/star_manager.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://u120n0r5e2le" path="res://assets/Truck/SM_truckInterior.fbx" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://e3thwdgkbn20" path="res://scenes/ui/sidestep_button.tscn" id="4_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
+[ext_resource type="PackedScene" uid="uid://bd5gknuconhqj" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://yss7k7kddaev" path="res://assets/Truck/SM_truckWall.fbx" id="8_og1vs"]
-[ext_resource type="PackedScene" uid="uid://c1dfqx6qxgxyg" path="res://assets/Truck/SM_window.fbx" id="9_5q0nq"]
-[ext_resource type="PackedScene" uid="uid://dhnrv45n3t4uh" path="res://assets/Truck/SM_phone.fbx" id="10_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://dgi84wv53p2yv" path="res://scenes/sm_window.tscn" id="9_cjqg0"]
+[ext_resource type="PackedScene" uid="uid://buo7aw73jxrkq" path="res://scenes/sm_phone.tscn" id="10_vchkt"]
 [ext_resource type="PackedScene" uid="uid://ceqcu3hsg3nlr" path="res://scenes/tools/trash.tscn" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bpbr8rdycvo7w" path="res://scenes/ui/orders_pin_pos.tscn" id="11_txyw0"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
-[ext_resource type="Resource" uid="uid://6xmacf7s1qb1" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
-[ext_resource type="Resource" uid="uid://ct7huwg03r1w6" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://bbhefvsymiucc" path="res://scenes/hand.tscn" id="13_trceg"]
+[ext_resource type="Resource" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
+[ext_resource type="Resource" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
+[ext_resource type="PackedScene" path="res://scenes/hand.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bmjtct2dg5lyg" path="res://scenes/tools/windo.tscn" id="14_cjqg0"]
 [ext_resource type="Resource" uid="uid://7o31k3qaf0y7" path="res://resources/food/food_paper.tres" id="14_y6deb"]
 [ext_resource type="PackedScene" uid="uid://cn5rx4m0t1myw" path="res://scenes/tools/paint_pot.tscn" id="14_yq6so"]
 [ext_resource type="Resource" uid="uid://ca3u6rx8qmcto" path="res://resources/food/food_legit_tomato.tres" id="15_og1vs"]
 [ext_resource type="PackedScene" uid="uid://vewsa1gb8nw3" path="res://scenes/tools/stove.tscn" id="15_vchkt"]
 [ext_resource type="Resource" uid="uid://cgpdc6tmpesum" path="res://resources/food/food_legit_lettuce.tres" id="16_2wyq8"]
-[ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
+[ext_resource type="Resource" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
 [ext_resource type="Script" uid="uid://cq2s68rq3jusb" path="res://scripts/recipe/simple_recipe_resource.gd" id="16_vc5cj"]
+[ext_resource type="PackedScene" uid="uid://d0ky0rtbirs1e" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
 [ext_resource type="Resource" uid="uid://b5ngjmnw7h108" path="res://resources/recipe/stove_bad_steak.tres" id="17_nvyfr"]
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
@@ -109,18 +109,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.58
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.31714344, 0, -2.1752987)
 rotation_edit_mode = 2
 
-[node name="SM_truckWall" parent="Environement/Truck" unique_id=2072901091 instance=ExtResource("8_og1vs")]
+[node name="SM_truckWall" parent="Environement/Truck" unique_id=684562684 instance=ExtResource("7_cjqg0")]
 
-[node name="SM_truckInterior" parent="Environement/Truck" unique_id=1664988120 instance=ExtResource("4_jyhfs")]
+[node name="SM_truckInterior" parent="Environement/Truck" unique_id=667884104 instance=ExtResource("16_vchkt")]
 
-[node name="SM_truckInterior2" parent="Environement/Truck" unique_id=1148218336 instance=ExtResource("4_jyhfs")]
-rotation_edit_mode = 2
+[node name="SM_window" parent="Environement/Truck" unique_id=1816656219 instance=ExtResource("9_cjqg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.751, 1.269, 0.009)
 
-[node name="SM_window" parent="Environement/Truck" unique_id=904053692 instance=ExtResource("9_5q0nq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7509796, 1.2688302, 0.00937283)
-
-[node name="SM_phone" parent="Environement/Truck" unique_id=897732055 instance=ExtResource("10_dgi5k")]
-transform = Transform3D(0.97835034, 0, 0.20695555, 0, 1, 0, -0.20695555, 0, 0.97835034, 0.021856427, 1.0010743, 0.9845802)
+[node name="SM_phone" parent="Environement/Truck" unique_id=1667207949 instance=ExtResource("10_vchkt")]
+transform = Transform3D(0.978509, 0, 0.20620419, 0, 1, 0, -0.20620419, 0, 0.978509, 0.022, 1.001, 0.985)
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
 transform = Transform3D(-4.371139e-08, -1.0000001, 4.3711392e-08, 0, -4.3711392e-08, -1.0000001, 1, -4.3711392e-08, 1.9106857e-15, 0.7157677, 1.4057362, 0.27315855)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bd5gknuconhqj"]
+
+[ext_resource type="PackedScene" uid="uid://yss7k7kddaev" path="res://assets/Truck/SM_truckWall.fbx" id="1_6lje7"]
+[ext_resource type="Texture2D" uid="uid://m3arg2nvftqw" path="res://assets/TXT/enviro/T_truckWall_BaseColor_Utility - sRGB - Texture.png" id="2_fu42x"]
+[ext_resource type="Texture2D" uid="uid://daqm7psy4iqx4" path="res://assets/TXT/enviro/T_truckWall_Metallic_Utility - Raw.png" id="3_pg4e8"]
+[ext_resource type="Texture2D" uid="uid://3l6rj0qkpym1" path="res://assets/TXT/enviro/T_truckWall_Roughness_Utility - Raw.png" id="4_cqcl0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuifw"]
+albedo_texture = ExtResource("2_fu42x")
+metallic = 1.0
+metallic_texture = ExtResource("3_pg4e8")
+roughness_texture = ExtResource("4_cqcl0")
+
+[node name="SM_truckWall" unique_id=684562684 instance=ExtResource("1_6lje7")]
+
+[node name="SM_truckWall" parent="." index="0" unique_id=1628125446]
+material_override = SubResource("StandardMaterial3D_tuifw")

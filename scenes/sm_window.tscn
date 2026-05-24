@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dgi84wv53p2yv"]
+
+[ext_resource type="PackedScene" uid="uid://c1dfqx6qxgxyg" path="res://assets/Truck/SM_window.fbx" id="1_4cjbb"]
+[ext_resource type="Material" uid="uid://cjtatlhcjkmvx" path="res://scenes/ui/albedo_viewport_3d.tres" id="2_xm14v"]
+
+[node name="SM_window" unique_id=1816656219 instance=ExtResource("1_4cjbb")]
+
+[node name="SM_window" parent="." index="0" unique_id=341790604]
+material_override = ExtResource("2_xm14v")
