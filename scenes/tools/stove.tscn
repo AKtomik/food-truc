@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://vewsa1gb8nw3"]
+
+[ext_resource type="Script" uid="uid://1p7vv7eplabe" path="res://scripts/tools/stove.gd" id="1_ot7yc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w7p3h"]
+radius = 0.2
+
+[node name="Stove" type="Area3D" unique_id=1121063657]
+collision_layer = 8
+script = ExtResource("1_ot7yc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2010661941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("SphereShape3D_w7p3h")
+debug_color = Color(0.92743593, 9.048581e-06, 0.60258126, 1)

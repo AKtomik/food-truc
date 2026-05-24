@@ -64,8 +64,6 @@ func given_food(item: Item) -> void:
 		fail_order(order)
 	remove_order(order)
 
-	money_manager.pay(order.resource.price)
-
 func successful_order(order: Order) -> void:
 	print("successful order:", order)
 	money_manager.pay(order.resource.price)

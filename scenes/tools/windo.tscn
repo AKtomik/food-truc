@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bmjtct2dg5lyg"]
+
+[ext_resource type="Script" uid="uid://bsj2s7v0mkrfp" path="res://scripts/tools/windo.gd" id="1_5j6c3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5j6c3"]
+size = Vector3(0.1, 1, 1)
+
+[node name="Windo" type="Area3D" unique_id=1121063657]
+collision_layer = 8
+script = ExtResource("1_5j6c3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2010661941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_5j6c3")
+debug_color = Color(0.98, 0, 0, 0.84313726)
