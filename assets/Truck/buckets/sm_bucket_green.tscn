@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://63abmr2p0r47"]
+
+[ext_resource type="PackedScene" uid="uid://du0477sfy8qdk" path="res://assets/Truck/SM_bucket.fbx" id="1_5ksvj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r648v"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="SM_bucket_green" unique_id=2123288689 instance=ExtResource("1_5ksvj")]
+
+[node name="SM_bucket" parent="." index="0" unique_id=1819686023]
+material_override = SubResource("StandardMaterial3D_r648v")
