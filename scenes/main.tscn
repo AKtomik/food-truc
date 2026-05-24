@@ -68,7 +68,7 @@ camera = NodePath("../../Player/Camera3D")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1753833, -0.044129163, 2.5505323)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=2100522607 node_paths=PackedStringArray("point_a", "point_b")]
-transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0.39142728, 1.7314062, 0.40396452)
+transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0.39142728, 1.7314062, 0.44790244)
 fov = 60.0
 script = ExtResource("2_0wfyh")
 point_a = NodePath("A")
@@ -101,7 +101,7 @@ rotation_edit_mode = 2
 [node name="CatPlane" parent="Environement" unique_id=634522356 instance=ExtResource("6_choun")]
 
 [node name="CollisionShape3D" parent="Environement/CatPlane" index="0" unique_id=992181962]
-transform = Transform3D(1, -7.1054274e-15, -3.5527137e-15, 0, 1, 6.3607044e-16, 0, 6.3607044e-16, 1, 4.7683716e-07, -1.5659678, -0.5971079)
+transform = Transform3D(1, -1.0658141e-14, -5.3290705e-15, 0, 1, 6.3607034e-16, 0, 6.360704e-16, 1, 7.1525574e-07, -1.2122924, -0.46225023)
 
 [node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("7_ya4ey")]
 transform = Transform3D(0.16174164, 0, 0.98683316, 0, 1, 0, -0.98683316, 0, 0.16174164, 1.0545495, 1.0022496, -2.355078)
