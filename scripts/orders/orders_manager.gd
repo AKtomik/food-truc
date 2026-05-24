@@ -7,11 +7,15 @@ extends Node
 @export var order_container: Control
 @export var packed_order: PackedScene
 
+@export var order_wait_time: float = 20
+@export var order_never_empty: bool = true
+
 @export var FAIL_NORMAL_UNSTAR: float = .25
 @export var FAIL_INSPECTOR_UNSTAR: float = 1
 
 # store
 var order_list: Array[Order] = []
+var next_order: float = -1
 
 func last_order() -> Order:
 	if (order_list.is_empty()): return null
@@ -20,6 +24,7 @@ func last_order() -> Order:
 # loop
 func _ready() -> void:
 	new_order(order_resources.pick_random())
+	next_order = order_wait_time * 2
 
 func _process(delta: float) -> void:
 	# expiration
@@ -33,6 +38,10 @@ func _process(delta: float) -> void:
 		remove_order(order)
 	
 	# creation
+	next_order -= delta
+	if (next_order < 0 || order_never_empty && order_list.is_empty()):
+		new_order(order_resources.pick_random())
+		next_order = order_wait_time
 	
 
 # create
