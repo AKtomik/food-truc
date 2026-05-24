@@ -10,7 +10,7 @@ var eyes_chance : int = 25
 var mouth_chance : int = 25
 var neck_chance : int = 25
 var jacket_chance : int = 80
-var face_hair_chance : int = 100
+var face_hair_chance : int = 40
 
 func generate_random_character(order_resource : OrderResource, critique : bool) -> CharacterBody:
 	var def = CharacterResource.new()
