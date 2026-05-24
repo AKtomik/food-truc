@@ -108,6 +108,14 @@ unique_name_in_owner = true
 
 [node name="StarManager" parent="CanvasLayer" unique_id=1340713327 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
+anchor_left = 0.596
+anchor_right = 1.0
+anchor_bottom = 0.326
+offset_left = 217.40796
+offset_right = 0.0
+offset_bottom = -155.248
+grow_horizontal = 0
+grow_vertical = 1
 
 [node name="SidestepButton" parent="CanvasLayer" unique_id=1965430449 instance=ExtResource("4_qkpxi")]
 unique_name_in_owner = true
@@ -154,7 +162,7 @@ transform = Transform3D(0.978509, 0, 0.20620419, 0, 1, 0, -0.20620419, 0, 0.9785
 unique_name_in_owner = true
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
-transform = Transform3D(-2.4214387e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -2.4214387e-08, 1.5543122e-15, 0.6889078, 2.1511936, -9.345265)
+transform = Transform3D(-1.8626451e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -1.8626451e-08, 1.5543122e-15, 0.69975966, 2.151, -10.142086)
 
 [node name="SmWindowFrame" type="MeshInstance3D" parent="Environement/Truck" unique_id=1011107732]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.751, 1.269, 0.009)
