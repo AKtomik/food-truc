@@ -40,6 +40,13 @@ extends Node
 @export var critique_bad_order_sound : AudioStream
 @export var critique_good_order_sound : AudioStream
 
+# -- signal --
+
+signal finish_command(order: Order, success: bool)
+signal successful_command(order: Order)
+signal fail_command(order: Order)
+signal new_command(order: Order)
+
 # -- store --
 
 var aviable_resources: Array[OrderResource]
@@ -169,6 +176,7 @@ func call_order(new_order_resource: OrderResource, inspection: bool = false, tim
 	check_move_next()
 
 	count_client(inspection)
+	new_command.emit(new_order_instance)
 
 # -- finish --
 
@@ -179,6 +187,7 @@ func given_food(item: Item) -> void:
 	finish_order(order, happy)
 
 func finish_order(order: Order, success: bool) -> void:
+	finish_command.emit(order, success)
 	if (success):
 		_successful_order(order)
 	else:
@@ -198,6 +207,7 @@ func _successful_order(order: Order) -> void:
 	#else :
 		#audio_player.stream = good_order_sound
 	print("successful order:", order)
+	successful_command.emit(order)
 	money_manager.earn(order.resource.price)
 
 func _fail_order(order: Order) -> void:
@@ -206,5 +216,6 @@ func _fail_order(order: Order) -> void:
 	#else :
 		#audio_player.stream = bad_order_sound
 	print("fail order:", order)
+	fail_command.emit(order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
 	star_manager.remove_star(tige)
