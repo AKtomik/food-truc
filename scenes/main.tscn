@@ -246,8 +246,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512692, 0, 0.59924304)
 [node name="FacePicker" type="Node" parent="." unique_id=144830767]
 script = ExtResource("7_o6xl0")
 
-[node name="OrdersManager" type="Node" parent="." unique_id=1416883034]
+[node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager")]
 script = ExtResource("33_5q0nq")
+star_manager = NodePath("../CanvasLayer/StarManager")
 
 [editable path="Environement/CatPlane"]
 [editable path="Environement/PaintPots/PaintPotYellow"]
