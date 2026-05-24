@@ -51,8 +51,9 @@ _data = {
 &"RESET": SubResource("Animation_w1mk4")
 }
 
-[node name="CharaScene" type="Node3D" unique_id=1557363681]
+[node name="CharaScene" type="Node3D" unique_id=1557363681 node_paths=PackedStringArray("anime")]
 script = ExtResource("1_w1mk4")
+anime = NodePath("Animator")
 
 [node name="SM_chara_base" parent="." unique_id=1631582998 instance=ExtResource("1_2tvha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.198)
@@ -80,6 +81,6 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 mesh = ExtResource("3_mlviu")
 surface_material_override/0 = SubResource("StandardMaterial3D_mlviu")
 
-[node name="Arrive" type="AnimationPlayer" parent="." unique_id=430713894]
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=430713894]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_asswx")

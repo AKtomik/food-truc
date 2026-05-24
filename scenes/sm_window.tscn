@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://dgi84wv53p2yv"]
+[gd_scene format=3 uid="uid://dj8dm66ve1ref"]
 
 [ext_resource type="PackedScene" uid="uid://c1dfqx6qxgxyg" path="res://assets/Truck/SM_window.fbx" id="1_4cjbb"]
-[ext_resource type="Material" uid="uid://cjtatlhcjkmvx" path="res://scenes/ui/albedo_viewport_3d.tres" id="2_xm14v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhccb"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 
 [node name="SM_window" unique_id=1816656219 instance=ExtResource("1_4cjbb")]
 
-[node name="SM_window" parent="." index="0" unique_id=341790604]
-material_override = ExtResource("2_xm14v")
+[node name="SM_window" parent="." index="0" unique_id=1575003808]
+material_override = SubResource("StandardMaterial3D_rhccb")

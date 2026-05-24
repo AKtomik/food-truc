@@ -7,27 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://e3thwdgkbn20" path="res://scenes/ui/sidestep_button.tscn" id="4_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
-[ext_resource type="PackedScene" uid="uid://bd5gknuconhqj" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
+[ext_resource type="PackedScene" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://dgi84wv53p2yv" path="res://scenes/sm_window.tscn" id="9_cjqg0"]
+[ext_resource type="PackedScene" uid="uid://dj8dm66ve1ref" path="res://scenes/sm_window.tscn" id="9_cjqg0"]
 [ext_resource type="PackedScene" uid="uid://buo7aw73jxrkq" path="res://scenes/sm_phone.tscn" id="10_vchkt"]
 [ext_resource type="PackedScene" uid="uid://ceqcu3hsg3nlr" path="res://scenes/tools/trash.tscn" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bpbr8rdycvo7w" path="res://scenes/ui/orders_pin_pos.tscn" id="11_txyw0"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
-[ext_resource type="Resource" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
-[ext_resource type="Resource" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
-[ext_resource type="PackedScene" path="res://scenes/hand.tscn" id="13_trceg"]
+[ext_resource type="Resource" uid="uid://6xmacf7s1qb1" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
+[ext_resource type="Resource" uid="uid://ct7huwg03r1w6" path="res://resources/food/food_polystyren.tres" id="13_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://bbhefvsymiucc" path="res://scenes/hand.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://bmjtct2dg5lyg" path="res://scenes/tools/windo.tscn" id="14_cjqg0"]
 [ext_resource type="Resource" uid="uid://7o31k3qaf0y7" path="res://resources/food/food_paper.tres" id="14_y6deb"]
 [ext_resource type="PackedScene" uid="uid://cn5rx4m0t1myw" path="res://scenes/tools/paint_pot.tscn" id="14_yq6so"]
 [ext_resource type="Resource" uid="uid://ca3u6rx8qmcto" path="res://resources/food/food_legit_tomato.tres" id="15_og1vs"]
 [ext_resource type="PackedScene" uid="uid://vewsa1gb8nw3" path="res://scenes/tools/stove.tscn" id="15_vchkt"]
 [ext_resource type="Resource" uid="uid://cgpdc6tmpesum" path="res://resources/food/food_legit_lettuce.tres" id="16_2wyq8"]
-[ext_resource type="Resource" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
+[ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
 [ext_resource type="Script" uid="uid://cq2s68rq3jusb" path="res://scripts/recipe/simple_recipe_resource.gd" id="16_vc5cj"]
-[ext_resource type="PackedScene" uid="uid://d0ky0rtbirs1e" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
+[ext_resource type="PackedScene" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
 [ext_resource type="Resource" uid="uid://b5ngjmnw7h108" path="res://resources/recipe/stove_bad_steak.tres" id="17_nvyfr"]
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
@@ -46,6 +46,7 @@
 [ext_resource type="Resource" uid="uid://do4rfi07at1ga" path="res://resources/order/order_steak.tres" id="41_txyw0"]
 [ext_resource type="Resource" uid="uid://gq07ydj0qkea" path="res://resources/order/order_burger.tres" id="42_vc5cj"]
 [ext_resource type="PackedScene" uid="uid://buo6eq0yav7un" path="res://scenes/order.tscn" id="43_nvyfr"]
+[ext_resource type="Script" uid="uid://bieaqyeteieb0" path="res://scripts/character_queue.gd" id="47_vc5cj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -59,10 +60,8 @@ background_mode = 2
 sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 
-[node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("face_picker")]
+[node name="Main" type="Node3D" unique_id=1955109357]
 script = ExtResource("1_o5qli")
-mesh_library = ExtResource("2_tefeu")
-face_picker = NodePath("FacePicker")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=821951666]
 environment = SubResource("Environment_jyhfs")
@@ -84,7 +83,7 @@ unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1753833, -0.044129163, 2.5505323)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=2100522607 node_paths=PackedStringArray("point_a", "point_b")]
-transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0.39142728, 1.7314062, 0.44790244)
+transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0.39142728, 1.7776537, 0.44790244)
 fov = 60.0
 script = ExtResource("2_0wfyh")
 point_a = NodePath("A")
@@ -120,15 +119,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.751, 1.269, 0.009)
 transform = Transform3D(0.978509, 0, 0.20620419, 0, 1, 0, -0.20620419, 0, 0.978509, 0.022, 1.001, 0.985)
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
-transform = Transform3D(-4.371139e-08, -1.0000001, 4.3711392e-08, 0, -4.3711392e-08, -1.0000001, 1, -4.3711392e-08, 1.9106857e-15, 0.7157677, 1.4057362, 0.27315855)
-
-[node name="Windo" parent="Environement/Truck" unique_id=1121063657 node_paths=PackedStringArray("orders_manager") instance=ExtResource("14_cjqg0")]
-transform = Transform3D(-0.99977666, 0, 0.02113444, 0, 1, 0, -0.02113444, 0, -0.99977666, 0.7977968, 1.6252874, -0.2930298)
-orders_manager = NodePath("../../../OrdersManager")
-
-[node name="Stove" parent="Environement/Truck" unique_id=387607937 instance=ExtResource("15_vchkt")]
-transform = Transform3D(-0.99977666, 0, 0.02113444, 0, 1, 0, -0.02113444, 0, -0.99977666, 0.25495243, 1.1657498, -0.988219)
-recipes = Array[ExtResource("16_vc5cj")]([ExtResource("17_nvyfr"), ExtResource("18_ty1g6")])
+transform = Transform3D(-2.9802322e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -2.9802322e-08, 1.5543122e-15, 0.6734575, 2.1511936, -0.5571132)
 
 [node name="CatPlane" parent="Environement" unique_id=634522356 instance=ExtResource("6_choun")]
 
@@ -138,7 +129,15 @@ transform = Transform3D(1, -1.0658141e-14, -5.3290705e-15, 0, 1, 6.3607034e-16, 
 [node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("7_ya4ey")]
 transform = Transform3D(0.16174164, 0, 0.98683316, 0, 1, 0, -0.98683316, 0, 0.16174164, 0.9980892, 1.0022496, -2.355078)
 
-[node name="Trash" parent="Environement" unique_id=1878140870 instance=ExtResource("11_jbj1t")]
+[node name="WindoCollider" parent="Environement" unique_id=1121063657 node_paths=PackedStringArray("orders_manager") instance=ExtResource("14_cjqg0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0073182583, 1.6252874, -2.9667244)
+orders_manager = NodePath("../../OrdersManager")
+
+[node name="StoveCollider" parent="Environement" unique_id=387607937 instance=ExtResource("15_vchkt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.67624307, 1.1657498, -2.409309)
+recipes = Array[ExtResource("16_vc5cj")]([ExtResource("17_nvyfr"), ExtResource("18_ty1g6")])
+
+[node name="TrashCollider" parent="Environement" unique_id=1878140870 instance=ExtResource("11_jbj1t")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3668456, 1.2092414, -2.354913)
 
 [node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("11_ya4ey")]
@@ -271,15 +270,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.867965, -5.9604645e-08, 0.5
 [node name="ItemSlotX2Y3" parent="Environement/WorkingPlate" unique_id=1787256186 instance=ExtResource("4_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512692, 0, 0.59924304)
 
+[node name="CharacterQueue" type="Node3D" parent="." unique_id=413541609 node_paths=PackedStringArray("face_picker")]
+script = ExtResource("47_vc5cj")
+mesh_library = ExtResource("2_tefeu")
+face_picker = NodePath("../FacePicker")
+
 [node name="FacePicker" type="Node" parent="." unique_id=144830767]
 script = ExtResource("7_o6xl0")
 
-[node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager", "money_manager", "order_container")]
+[node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager", "character_queue", "face_picker", "money_manager", "order_container")]
 script = ExtResource("33_5q0nq")
 star_manager = NodePath("../CanvasLayer/StarManager")
+character_queue = NodePath("../CharacterQueue")
+face_picker = NodePath("../FacePicker")
 money_manager = NodePath("../Environement/CashMachine")
 order_resources = Array[ExtResource("38_chjal")]([ExtResource("39_cjqg0"), ExtResource("40_vchkt"), ExtResource("41_txyw0"), ExtResource("42_vc5cj")])
-order_container = NodePath("../Environement/Truck/OrdersPinPos/OrdersPinLayer/VerticalOrderContainer")
+order_container = NodePath("../Environement/Truck/OrdersPinPos/OrdersPinLayer/OrderContainer")
 packed_order = ExtResource("43_nvyfr")
 order_wait_time = 5.0
 
