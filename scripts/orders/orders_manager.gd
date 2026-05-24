@@ -7,19 +7,20 @@ extends Node
 @export var face_picker: FacePicker
 @export var money_manager: CashMachine
 @export var packed_order: PackedScene
+@export var ticket_container: Control
 
 @export_category("resources")
-@export var order_resources: Array[OrderResource]
-@export var order_container: Control
+@export var inital_resources: Array[OrderResource]
+@export var unlock_turn_resources: Dictionary[int, OrderResource]
 
 @export_category("orders")
 @export var order_generate_delay: float = 20
 @export var order_never_empty: bool = true
 
 @export_category("inspection")
-@export var INSPECTION_TURN_DELAY_MIN_INC: int
-@export var INSPECTION_TURN_DELAY_MAX_INC: int
-@export var INSPECTION_FIRST_DELAY: int
+@export var INSPECTION_TURN_DELAY_MIN_INC: int = 4
+@export var INSPECTION_TURN_DELAY_MAX_INC: int = 9
+@export var INSPECTION_FIRST_DELAY: int = 3
 
 @export_category("stars")
 @export var FAIL_NORMAL_UNSTAR: float = .25
@@ -27,14 +28,16 @@ extends Node
 
 # -- store --
 
+var aviable_resources: Array[OrderResource]
+
 var order_list: Array[Order] = []
 var moved_order_last: Order = null
 
-var total_client_count: float = 0
-var total_inspection_count: float = 0
+var total_client_count: int = 0
+var total_inspection_count: int = 0
 
 var next_client_time: float = -1
-var next_inspection_turn_count: float = INSPECTION_FIRST_DELAY
+var next_inspection_turn_count: int
 
 func last_order() -> Order:
 	if (order_list.is_empty()): return null
@@ -53,7 +56,12 @@ func check_move_next():
 # get an aoppropriated random resource
 # TODO: is affected by turns count
 func get_random_resource() -> OrderResource:
-	return order_resources.pick_random()
+	return aviable_resources.pick_random()
+
+func check_turn_unlock_resource(turn: int):
+	var resource = unlock_turn_resources.get(turn)
+	if (!resource): return
+	aviable_resources.append(resource)
 
 # check if should trigger inspection
 func is_inspection_turn() -> bool:
@@ -61,26 +69,25 @@ func is_inspection_turn() -> bool:
 	# dont forget to call count_client(true) just after!
 
 # called when client is going in, return if is an insp
-func count_client(inspection: bool = false) -> bool:
+func count_client(inspection: bool = false):
 	total_client_count += 1
+	check_turn_unlock_resource(total_client_count)
 
 	next_inspection_turn_count -= 1
 	if (inspection):
 		total_inspection_count += 1
 		next_inspection_turn_count = randi_range(INSPECTION_TURN_DELAY_MIN_INC, INSPECTION_TURN_DELAY_MAX_INC)
-		return true
-
-	return false
 
 # called when client is going out
 func count_service(success: bool = false):#inspection: bool = false
 	if (!success):
 		return
 	
-
 # -- loop --
+
 func _ready() -> void:
-	#next_inspection_turn_count = INSPECTION_FIRST_DELAY
+	aviable_resources = inital_resources
+	next_inspection_turn_count = INSPECTION_FIRST_DELAY
 	generate_order()
 	next_client_time = order_generate_delay * 2
 
@@ -99,7 +106,7 @@ func _process(delta: float) -> void:
 	# creation
 	next_client_time -= delta
 	if (next_client_time < 0 || order_never_empty && order_list.is_empty()):
-		call_order(order_resources.pick_random())
+		generate_order()
 		next_client_time = order_generate_delay
 	
 
@@ -107,6 +114,7 @@ func _process(delta: float) -> void:
 
 # legit order (do that if not in cinematic)
 func generate_order() -> void:
+	print("generate an order, aviable:", aviable_resources.size(), " next_inspection:", next_inspection_turn_count)
 	call_order(get_random_resource(), is_inspection_turn())
 
 # special function if you want an order to never expire
@@ -120,12 +128,12 @@ func call_order(new_order_resource: OrderResource, inspection: bool = false, tim
 	var new_character = character_queue.generate_random_character(new_order_resource, inspection)
 	new_order_instance.setup(new_order_resource, new_character, inspection, time_scale)
 
-	order_container.add_child(new_order_instance)
-	order_container.move_child(new_order_instance, 0)
+	ticket_container.add_child(new_order_instance)
+	ticket_container.move_child(new_order_instance, 0)
 	order_list.append(new_order_instance)
 	check_move_next()
 
-	count_client()
+	count_client(inspection)
 
 # -- finish --
 

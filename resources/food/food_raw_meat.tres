@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dxyxbije6am7c"]
 
-[ext_resource type="PackedScene" uid="uid://beuhs5jgbqm63" path="res://scenes/food/food_raw_meat.tscn" id="1_xveuw"]
+[ext_resource type="PackedScene" uid="uid://b7ux51jo4ucuy" path="res://scenes/food/food_raw_meat.tscn" id="1_xveuw"]
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_wret4"]
 
 [resource]
