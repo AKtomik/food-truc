@@ -1,6 +1,8 @@
 class_name OrdersManager
 extends Node
 
+@export var flow_enabled: bool = true
+
 @export_category("pointers")
 @export var star_manager: StarManager
 @export var character_queue: CharacterQueue
@@ -72,6 +74,9 @@ func check_move_next():
 	moved_order_last = now_order_last
 	moved_order_last.character_body.play_arrive()
 
+func set_flow_enable(state: bool):
+	flow_enabled = state
+
 # -- speed --
 
 var speed_score: float = 0
@@ -134,6 +139,8 @@ func _ready() -> void:
 	generate_order()
 
 func _process(delta: float) -> void:
+	if (!flow_enabled || delta == 0): return
+
 	# expiration
 	var expired_order = []
 	for order in order_list:

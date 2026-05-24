@@ -5,6 +5,7 @@ extends Node3D
 @export var hand : Hand
 @export var typewriter_label : TypeWriter
 @export var face_picker : FacePicker
+@export var orders_manager : OrdersManager
 
 @onready var audio_player : AudioStreamPlayer = %PhoneAudioStream
 
@@ -32,3 +33,6 @@ func start_game():
 	cam.set_enable_move(true)# can be delayed in anim
 	hand.set_enable_click(true)# can be delayed in anim
 	_start_time()
+
+func finish_tuto():
+	orders_manager.set_flow_enable(true)
