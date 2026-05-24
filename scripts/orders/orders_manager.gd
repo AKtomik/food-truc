@@ -14,12 +14,14 @@ extends Node
 @export var unlock_turn_resources: Dictionary[int, OrderResource]
 
 @export_category("orders")
-@export var order_generate_delay: float = 20
-@export var order_never_empty: bool = true
+@export var ORDER_NEVER_EMPTY: bool = true
+@export var ORDER_GENERATE_DELAY_MIN: float = 10 # inclusive
+@export var ORDER_GENERATE_DELAY_MAX: float = 20 # inclusive
+#@export var ORDER_SPEED_UP: float = 10
 
 @export_category("inspection")
-@export var INSPECTION_TURN_DELAY_MIN_INC: int = 4
-@export var INSPECTION_TURN_DELAY_MAX_INC: int = 9
+@export var INSPECTION_TURN_DELAY_MIN: int = 4 # inclusive
+@export var INSPECTION_TURN_DELAY_MAX: int = 9 # inclusive
 @export var INSPECTION_FIRST_DELAY: int = 3
 
 @export_category("stars")
@@ -36,7 +38,7 @@ var moved_order_last: Order = null
 var total_client_count: int = 0
 var total_inspection_count: int = 0
 
-var next_client_time: float = -1
+var next_client_time: float
 var next_inspection_turn_count: int
 
 func last_order() -> Order:
@@ -76,7 +78,7 @@ func count_client(inspection: bool = false):
 	next_inspection_turn_count -= 1
 	if (inspection):
 		total_inspection_count += 1
-		next_inspection_turn_count = randi_range(INSPECTION_TURN_DELAY_MIN_INC, INSPECTION_TURN_DELAY_MAX_INC)
+		next_inspection_turn_count = randi_range(INSPECTION_TURN_DELAY_MIN, INSPECTION_TURN_DELAY_MAX)
 
 # called when client is going out
 func count_service(success: bool = false):#inspection: bool = false
@@ -89,7 +91,6 @@ func _ready() -> void:
 	aviable_resources = inital_resources
 	next_inspection_turn_count = INSPECTION_FIRST_DELAY
 	generate_order()
-	next_client_time = order_generate_delay * 2
 
 func _process(delta: float) -> void:
 	# expiration
@@ -105,9 +106,8 @@ func _process(delta: float) -> void:
 	
 	# creation
 	next_client_time -= delta
-	if (next_client_time < 0 || order_never_empty && order_list.is_empty()):
+	if (next_client_time < 0 || ORDER_NEVER_EMPTY && order_list.is_empty()):
 		generate_order()
-		next_client_time = order_generate_delay
 	
 
 # -- create --
@@ -115,6 +115,7 @@ func _process(delta: float) -> void:
 # legit order (do that if not in cinematic)
 func generate_order() -> void:
 	print("generate an order, aviable:", aviable_resources.size(), " next_inspection:", next_inspection_turn_count)
+	next_client_time = randf_range(ORDER_GENERATE_DELAY_MIN, ORDER_GENERATE_DELAY_MAX)
 	call_order(get_random_resource(), is_inspection_turn())
 
 # special function if you want an order to never expire
