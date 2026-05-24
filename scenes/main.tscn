@@ -122,10 +122,11 @@ transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.988
 [node name="PaintPots" type="Node3D" parent="Environement" unique_id=779519747]
 transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.9884887, -0.63164496, 1.5905064, -2.5249515)
 
-[node name="PaintPotYellow" parent="Environement/PaintPots" unique_id=911226871 instance=ExtResource("14_yq6so")]
+[node name="PaintPotYellow" parent="Environement/PaintPots" unique_id=911226871 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.4173019, 0, -0.063871026)
 inkable_item = ExtResource("13_jbj1t")
 inked_item = ExtResource("16_fv21b")
+hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotYellow" index="0" unique_id=2123288689]
 visible = false
@@ -133,10 +134,11 @@ visible = false
 [node name="SM_bucket_yellow" parent="Environement/PaintPots/PaintPotYellow" unique_id=104149380 instance=ExtResource("17_qkpxi")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 instance=ExtResource("14_yq6so")]
+[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.6268585, 0, -0.023789823)
 inkable_item = ExtResource("14_y6deb")
 inked_item = ExtResource("18_tel4y")
+hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotGreen" index="0" unique_id=2123288689]
 transform = Transform3D(-0.8799056, 0, 0.47514802, 0, 1, 0, -0.47514802, 0, -0.8799056, 0.016174793, 0, 0.09186268)
@@ -145,10 +147,11 @@ visible = false
 [node name="SM_bucket_green" parent="Environement/PaintPots/PaintPotGreen" unique_id=2073845619 instance=ExtResource("20_5q0nq")]
 transform = Transform3D(-0.87990534, 0, 0.47514802, 0, 1, 0, -0.47514802, 0, -0.87990534, 0.016174793, 0, 0.09186268)
 
-[node name="PaintPotRed" parent="Environement/PaintPots" unique_id=302690736 instance=ExtResource("14_yq6so")]
+[node name="PaintPotRed" parent="Environement/PaintPots" unique_id=302690736 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.6568094, 0, 0.75405675, 0, 1, 0, -0.75405675, 0, -0.6568094, -0.9445238, 0, -0.12630808)
 inkable_item = ExtResource("14_y6deb")
 inked_item = ExtResource("19_qkpxi")
+hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotRed" index="0" unique_id=2123288689]
 visible = false
@@ -246,7 +249,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512692, 0, 0.59924304)
 [node name="FacePicker" type="Node" parent="." unique_id=144830767]
 script = ExtResource("7_o6xl0")
 
-[node name="Node" type="Node" parent="." unique_id=1416883034]
+[node name="OrdersManager" type="Node" parent="." unique_id=1416883034]
 
 [editable path="Environement/CatPlane"]
 [editable path="Environement/PaintPots/PaintPotYellow"]

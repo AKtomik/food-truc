@@ -128,3 +128,11 @@ func put_tool(tool: ItemTool):
 	var throw = tool.put(in_hand)
 	if (throw):
 		in_hand = null
+
+func switch_hand_to(item_resource: ItemResource):
+	if (in_hand):
+		in_hand.queue_free()
+		in_hand = null
+	var new_item = item_resource.model_scene.instantiate()
+	add_child(new_item)
+	in_hand = new_item
