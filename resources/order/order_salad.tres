@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="OrderResource" format=3 uid="uid://bax80o8bcdrms"]
+
+[ext_resource type="Resource" uid="uid://fb7rdycjop6l" path="res://resources/food/food_bad_salad.tres" id="1_ihmwb"]
+[ext_resource type="Resource" uid="uid://b57c57kvkrjis" path="res://resources/food/food_good_salad.tres" id="2_k4x86"]
+[ext_resource type="Texture2D" uid="uid://c8xh1fpyy0bec" path="res://assets/Icons/icon_salad.png" id="3_4bldd"]
+[ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/items/order_resource.gd" id="4_poyx2"]
+
+[resource]
+script = ExtResource("4_poyx2")
+good_food = ExtResource("2_k4x86")
+bad_food = ExtResource("1_ihmwb")
+kaway_image = ExtResource("3_4bldd")
+metadata/_custom_type_script = "uid://dw0lbhucaf4i4"

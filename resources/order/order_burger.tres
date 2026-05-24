@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="OrderResource" format=3 uid="uid://gq07ydj0qkea"]
+
+[ext_resource type="Resource" uid="uid://bhqyppv7m58b2" path="res://resources/food/food_good_bruger.tres" id="1_32ev8"]
+[ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/items/order_resource.gd" id="1_xeq40"]
+[ext_resource type="Texture2D" uid="uid://cfty0b3keoblx" path="res://assets/Icons/icon_burger.png" id="2_2mkg4"]
+
+[resource]
+script = ExtResource("1_xeq40")
+good_food = ExtResource("1_32ev8")
+bad_food = ExtResource("1_32ev8")
+kaway_image = ExtResource("2_2mkg4")
+metadata/_custom_type_script = "uid://dw0lbhucaf4i4"

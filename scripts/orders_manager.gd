@@ -1,5 +1,7 @@
-extends MeshInstance3D
+class_name OrdersManager
+extends Node
 
+@export var star_manager: StarManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

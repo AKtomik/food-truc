@@ -4,7 +4,7 @@ extends Camera3D
 @export var point_a: Node3D
 @export var point_b: Node3D
 
-@onready var progress_bar = %ProgressBar
+@onready var progress_bar = %StarManager
 @onready var sidestep_button = %SidestepButton
 var _velocity: Vector3 = Vector3.ZERO
 var _timer: float = 0.0

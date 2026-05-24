@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FaceBank" format=3 uid="uid://c8piaaxl5p2y0"]
 
 [ext_resource type="Texture2D" uid="uid://by37cdeumsbhg" path="res://assets/TXT/Chara_face/face_01_COL.png" id="1_2w5s6"]
-[ext_resource type="Script" path="res://scripts/FaceBank.gd" id="1_nslbl"]
+[ext_resource type="Script" uid="uid://dnvybhnlmpepi" path="res://scripts/animation/FaceBank.gd" id="1_nslbl"]
 [ext_resource type="Texture2D" uid="uid://clrvy66cxtixi" path="res://assets/TXT/Chara_face/face_02_COL.png" id="2_ox1n1"]
 [ext_resource type="Texture2D" uid="uid://dljqkdpn447yb" path="res://assets/TXT/Chara_face/face_03_COL.png" id="3_le1iw"]
 [ext_resource type="Texture2D" uid="uid://cwlddq43gbu5n" path="res://assets/TXT/Chara_face/face_04_COL.png" id="4_e5dia"]

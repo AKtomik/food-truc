@@ -1,3 +1,4 @@
+class_name GameManager
 extends Node3D
 
 @export var chara_scene : Node3D

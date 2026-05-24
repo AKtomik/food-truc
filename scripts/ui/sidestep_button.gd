@@ -1,7 +1,5 @@
 extends Button
 
-@export var camera: Camera3D
-
 var _is_right: bool = true  # commence à droite
 
 func _ready() -> void:
