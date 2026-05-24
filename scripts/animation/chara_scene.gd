@@ -13,7 +13,7 @@ func play_arrive():
 	anime.play("Arrive")
 
 func play_go():
-	anime.play("Arrive")
+	anime.play("Go")
 	# TODO: self destruct in the animation
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

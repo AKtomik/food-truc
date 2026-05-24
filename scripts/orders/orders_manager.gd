@@ -73,7 +73,6 @@ func check_move_next():# do that each time you edit order_list
 func given_food(item: Item) -> void:
 	print("given food to first order:", item)
 	var order = last_order()
-	order.character_body.play_go()
 	var happy = order.given_happy(item)
 	if (happy):
 		successful_order(order)
@@ -91,6 +90,8 @@ func fail_order(order: Order) -> void:
 	star_manager.remove_star(tige)
 
 func remove_order(order: Order) -> void:
+	order.character_body.play_go()
+	#order.character_body = null
 	order_list.remove_at(order_list.find(order))
 	order.queue_free()
 	check_move_next()
