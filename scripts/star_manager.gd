@@ -2,6 +2,7 @@ class_name StarManager
 extends Control
 
 @export var p_bar: TextureProgressBar
+@export var mana : GameManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,4 +17,6 @@ func _process(delta: float) -> void:
 
 func remove_star(remove: float) -> void:
 	p_bar.value -= remove
-	# TODO: lose condition
+	if (p_bar.value <= 0):
+		mana.to_bad_ending()
+		return
