@@ -1,6 +1,9 @@
 class_name OrdersManager
 extends Node
 
+@export var flow_enabled: bool = true
+@export var imediate_order: bool = true
+
 @export_category("pointers")
 @export var star_manager: StarManager
 @export var character_queue: CharacterQueue
@@ -17,6 +20,7 @@ extends Node
 @export var ORDER_NEVER_EMPTY: bool = true
 @export var ORDER_GENERATE_DELAY_MIN: float = 10 # inclusive
 @export var ORDER_GENERATE_DELAY_MAX: float = 20 # inclusive
+@export var ORDER_FIRST_DELAY: float = 0
 
 @export_category("speed")
 @export var STARTING_SPEED: float = 0
@@ -57,7 +61,7 @@ var moved_order_last: Order = null
 var total_client_count: int = 0
 var total_inspection_count: int = 0
 
-var next_client_time: float
+var next_client_time: float = -1
 var next_inspection_turn_count: int
 
 func last_order() -> Order:
@@ -71,6 +75,9 @@ func check_move_next():
 	if (moved_order_last == now_order_last): return
 	moved_order_last = now_order_last
 	moved_order_last.character_body.play_arrive()
+
+func set_flow_enable(state: bool):
+	flow_enabled = state
 
 # -- speed --
 
@@ -131,9 +138,13 @@ func count_service(success: bool = false):#inspection: bool = false
 func _ready() -> void:
 	aviable_resources = inital_resources
 	next_inspection_turn_count = INSPECTION_FIRST_DELAY
-	generate_order()
+	next_client_time = ORDER_FIRST_DELAY
+	if (imediate_order):
+		generate_order()
 
 func _process(delta: float) -> void:
+	if (!flow_enabled || delta == 0): return
+
 	# expiration
 	var expired_order = []
 	for order in order_list:
@@ -162,6 +173,19 @@ func generate_order() -> void:
 # special function if you want an order to never expire
 func call_infinite_order(new_order_resource: OrderResource, inspection: bool = false) -> void:
 	call_order(new_order_resource, inspection, 1.79769e308)
+
+func call_first_critique(new_order_resource: OrderResource) -> void :
+	var new_order_instance = packed_order.instantiate() as Order
+	var new_character = character_queue.generate_first_critique(new_order_resource)
+	new_order_instance.setup(new_order_resource, new_character, true, 1.79769e308)
+	ticket_container.add_child(new_order_instance)
+	ticket_container.move_child(new_order_instance, 0)
+	order_list.append(new_order_instance)
+	check_move_next()
+
+	count_client(true)
+	new_command.emit(new_order_instance)
+	
 
 # build your own order on order
 func call_order(new_order_resource: OrderResource, inspection: bool = false, time_scale: float = 1) -> void:

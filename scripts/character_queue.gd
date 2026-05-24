@@ -31,3 +31,8 @@ func generate_random_character(order_resource : OrderResource, critique : bool) 
 	if (random.randi_range(1, 100) <= face_hair_chance) :
 		def.face_hair_mesh = mesh_library.face_hair_meshes.pick_random()
 	return CharResourcesSpawner.spawn(def, self, critique, face_picker, order_resource) # TODO gérer false ou true 
+
+
+func generate_first_critique(order_resource : OrderResource) -> CharacterBody:
+	return (CharResourcesSpawner.spawn(load("res://resources/Critique.tres"), self, true, face_picker, order_resource))
+	
