@@ -5,6 +5,7 @@ extends Node3D
 
 func _ready() -> void:
 	_stop_time()
+	typewriter_label.display("Test..........", load("res://assets/2019-10-03-16-47-21.mp3"))
 
 func _process(_delta: float) -> void:
 	pass
