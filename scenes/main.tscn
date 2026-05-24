@@ -154,6 +154,7 @@ transform = Transform3D(0.978509, 0, 0.20620419, 0, 1, 0, -0.20620419, 0, 0.9785
 
 [node name="PhoneAudioStream" type="AudioStreamPlayer" parent="Environement/Truck/SM_phone" unique_id=206276547]
 unique_name_in_owner = true
+volume_db = -8.211
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
 transform = Transform3D(-2.9802322e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -2.9802322e-08, 1.5543122e-15, 0.6734575, 2.1511936, -0.5571132)
@@ -191,6 +192,7 @@ audio_player = NodePath("StoveAudioPlayer")
 recipes = Array[ExtResource("16_vc5cj")]([ExtResource("17_nvyfr"), ExtResource("18_ty1g6")])
 
 [node name="StoveAudioPlayer" type="AudioStreamPlayer" parent="Environement/StoveCollider" unique_id=975520194]
+volume_db = -5.474
 
 [node name="TrashCollider" parent="Environement" unique_id=1878140870 instance=ExtResource("11_jbj1t")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3668456, 1.2092414, -2.354913)
@@ -200,6 +202,7 @@ transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.988
 
 [node name="MicroWaveAudio" type="AudioStreamPlayer" parent="Environement/Microwave" unique_id=675902337]
 unique_name_in_owner = true
+volume_db = -5.474
 
 [node name="PaintPots" type="Node3D" parent="Environement" unique_id=779519747]
 transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.9884887, -0.63164496, 1.5905064, -2.5249515)
@@ -360,6 +363,10 @@ critique_good_order_sound = ExtResource("55_tm6hj")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1400874940]
 transform = Transform3D(-6.5567085e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.5567085e-09, -3, 0.5, 2.2000003)
 texture = ExtResource("52_bu4jf")
+
+[node name="MusicAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1051148965]
+unique_name_in_owner = true
+volume_db = -17.334
 
 [editable path="Environement/Truck/OrdersPinPos"]
 [editable path="Environement/CatPlane"]

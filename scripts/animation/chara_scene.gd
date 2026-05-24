@@ -6,6 +6,7 @@ var order_resource : OrderResource
 var face_picker : FacePicker
 var arrived : bool = false
 
+
 func _ready() -> void:
 	pass
 	#anime.play("Arrive")
