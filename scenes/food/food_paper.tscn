@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://nasc8c57xbsv"]
+[gd_scene format=3 uid="uid://d1lw8kowfn02m"]
 
 [ext_resource type="ArrayMesh" uid="uid://062x1uqitsgi" path="res://assets/Food/SM_food_component_paper_geo.obj" id="1_4hapk"]
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_ch83o"]
+[ext_resource type="Texture2D" uid="uid://tju0m266dpnt" path="res://assets/TXT/Props_TXT/paper_shd_ACEScg.1001.png" id="2_rtevj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3pj3"]
 albedo_color = Color(0.66, 0.66, 0.66, 1)
+albedo_texture = ExtResource("2_rtevj")
 
 [node name="FoodPaper" type="Node3D" unique_id=230256206]
 script = ExtResource("1_ch83o")

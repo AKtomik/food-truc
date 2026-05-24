@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://d3ubikrydywbi"]
+[gd_scene format=3 uid="uid://cdqwid7xusaii"]
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_wt4er"]
 [ext_resource type="ArrayMesh" uid="uid://ce72vt20eaw3l" path="res://assets/Food/SM_food_component_cardboard_geo.obj" id="1_wyk6p"]
+[ext_resource type="Texture2D" uid="uid://gaile6vfokfn" path="res://assets/TXT/Props_TXT/cardBoard_shd_ACEScg.1001.png" id="3_10y4b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pclo"]
+albedo_texture = ExtResource("3_10y4b")
 
 [node name="FoodCardboard" type="Node3D" unique_id=230256206]
 script = ExtResource("1_wt4er")
@@ -9,3 +13,4 @@ script = ExtResource("1_wt4er")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0.00048851594, 0)
 mesh = ExtResource("1_wyk6p")
+surface_material_override/0 = SubResource("StandardMaterial3D_8pclo")

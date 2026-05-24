@@ -1,11 +1,16 @@
-[gd_scene format=3 uid="uid://ds5c6ne2nmntb"]
+[gd_scene format=3 uid="uid://04rau7hs0hf4"]
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_8r5m3"]
 [ext_resource type="ArrayMesh" uid="uid://bmvrksg6n0f7s" path="res://assets/Food/SM_food_cooked_good_burger_geo.obj" id="1_la4hy"]
+[ext_resource type="Texture2D" uid="uid://cra8nu31l0wbe" path="res://assets/TXT/Props_TXT/good_burger_shd_ACEScg.1001.png" id="2_cg1g5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrame"]
+albedo_texture = ExtResource("2_cg1g5")
 
 [node name="FoodGoodBurger" type="Node3D" unique_id=230256206]
 script = ExtResource("1_8r5m3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0044853836, 0)
+material_override = SubResource("StandardMaterial3D_lrame")
 mesh = ExtResource("1_la4hy")

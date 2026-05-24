@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://dfnx5g7atais2"]
+[gd_scene format=3 uid="uid://bfl8xpi4fiwhp"]
 
 [ext_resource type="ArrayMesh" uid="uid://ci10u67f58tj" path="res://assets/Food/SM_food_component_bread_geo.obj" id="1_6rj8q"]
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_kdd77"]
+[ext_resource type="Texture2D" uid="uid://s1bt88geh65o" path="res://assets/TXT/Props_TXT/bread_shd_ACEScg.1001.png" id="3_0uxxm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68jed"]
+albedo_texture = ExtResource("3_0uxxm")
 
 [node name="FoodBread" type="Node3D" unique_id=230256206]
 script = ExtResource("1_kdd77")
@@ -9,3 +13,4 @@ script = ExtResource("1_kdd77")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.006928295, 0)
 mesh = ExtResource("1_6rj8q")
+surface_material_override/0 = SubResource("StandardMaterial3D_68jed")

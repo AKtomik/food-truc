@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://bae236plsypfg"]
+[gd_scene format=3 uid="uid://bub206f86wsch"]
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_6nx7h"]
 [ext_resource type="ArrayMesh" uid="uid://062x1uqitsgi" path="res://assets/Food/SM_food_component_paper_geo.obj" id="1_vr8d5"]
+[ext_resource type="Texture2D" uid="uid://tju0m266dpnt" path="res://assets/TXT/Props_TXT/paper_shd_ACEScg.1001.png" id="2_4a4yj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3pj3"]
-albedo_color = Color(0.33999997, 1, 0.100000024, 1)
+albedo_color = Color(0.18839723, 0.6294918, 0, 1)
+albedo_texture = ExtResource("2_4a4yj")
 
 [node name="FoodFakeLettuce" type="Node3D" unique_id=230256206]
 script = ExtResource("1_6nx7h")
