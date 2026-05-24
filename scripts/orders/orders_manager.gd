@@ -51,6 +51,7 @@ func new_order(new_order_resource: OrderResource) -> void:
 	new_order_instance.setup(new_order_resource)
 
 	order_container.add_child(new_order_instance)
+	order_container.move_child(new_order_instance, 0)
 	order_list.append(new_order_instance)
 
 # finish
