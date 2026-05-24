@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ceqcu3hsg3nlr"]
+
+[ext_resource type="Script" uid="uid://c82lno26qoubp" path="res://scripts/tools/trash.gd" id="1_jffvn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w7p3h"]
+radius = 0.4
+
+[node name="Trash" type="Area3D" unique_id=1121063657]
+collision_layer = 8
+script = ExtResource("1_jffvn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2010661941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("SphereShape3D_w7p3h")
+debug_color = Color(0.98, 0, 0, 0.84313726)

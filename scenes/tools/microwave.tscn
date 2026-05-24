@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qglx87c82jac"]
 
 [ext_resource type="Script" uid="uid://cclqvndmig4ow" path="res://scripts/tools/microwave.gd" id="1_qw61a"]
-[ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/tools/microwave_recipe_resource.gd" id="2_cenvl"]
+[ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/recipe/microwave_recipe_resource.gd" id="2_cenvl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3jfeh"]
 
