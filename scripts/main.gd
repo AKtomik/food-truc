@@ -4,10 +4,13 @@ extends Node3D
 @export var cam : SlideCamera
 @export var hand : Hand
 @export var typewriter_label : TypeWriter
+@export var face_picker : FacePicker
+@export var orders_manager : OrdersManager
 
 @onready var audio_player : AudioStreamPlayer = %PhoneAudioStream
 
 func _ready() -> void:
+	face_picker.setup()
 	_stop_time()
 	audio_player.stream = load("res://assets/sounds/ringtone.mp3")
 	audio_player.stream.loop = true
@@ -30,3 +33,12 @@ func start_game():
 	cam.set_enable_move(true)# can be delayed in anim
 	hand.set_enable_click(true)# can be delayed in anim
 	_start_time()
+
+func finish_tuto():
+	orders_manager.set_flow_enable(true)
+
+func to_good_ending():
+	get_tree().change_scene_to_file("res://scenes/ending/good_ending.tscn")
+
+func to_bad_ending():
+	get_tree().change_scene_to_file("res://scenes/ending/bad_ending.tscn")

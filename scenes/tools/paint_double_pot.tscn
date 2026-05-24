@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ibb4r8yaffvl"]
+
+[ext_resource type="Script" uid="uid://ctkwkggx8x05f" path="res://scripts/tools/paint_pot.gd" id="1_o5xoq"]
+[ext_resource type="PackedScene" uid="uid://du0477sfy8qdk" path="res://assets/Truck/SM_bucket.fbx" id="2_1oo1y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w7p3h"]
+radius = 0.17
+
+[node name="PaintDoublePot" type="Area3D" unique_id=1121063657]
+collision_layer = 8
+script = ExtResource("1_o5xoq")
+
+[node name="SM_bucket" parent="." unique_id=2123288689 instance=ExtResource("2_1oo1y")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2010661941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17363158, 0)
+shape = SubResource("SphereShape3D_w7p3h")
+debug_color = Color(0.27976215, 0.57025105, 0.64850163, 0.84313726)
