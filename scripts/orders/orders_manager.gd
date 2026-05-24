@@ -25,6 +25,13 @@ extends Node
 @export var FAIL_NORMAL_UNSTAR: float = .25
 @export var FAIL_INSPECTOR_UNSTAR: float = 1
 
+@export_category("sounds")
+@export var audio_player : AudioStreamPlayer
+@export var good_order_sound : AudioStream
+@export var bad_order_sound : AudioStream
+@export var critique_bad_order_sound : AudioStream
+@export var critique_good_order_sound : AudioStream
+
 # -- store --
 
 var order_list: Array[Order] = []
@@ -150,10 +157,18 @@ func finish_order(order: Order, success: bool) -> void:
 	count_service(success)
 
 func _successful_order(order: Order) -> void:
+	#if (order.is_inspector) :
+		#audio_player.stream = critique_good_order_sound
+	#else :
+		#audio_player.stream = good_order_sound
 	print("successful order:", order)
 	money_manager.pay(order.resource.price)
 
 func _fail_order(order: Order) -> void:
+	#if (order.is_inspector) :
+		#audio_player.stream = critique_bad_order_sound
+	#else :
+		#audio_player.stream = bad_order_sound
 	print("fail order:", order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
 	star_manager.remove_star(tige)

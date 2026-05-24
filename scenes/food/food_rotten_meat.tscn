@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c5b8cj2d7cts7"]
 
-[ext_resource type="ArrayMesh" uid="uid://dbvsqx8imloo7" path="res://assets/Food/SM_food_component_steak_geo.obj" id="1_4ovn8"]
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_x8mt2"]
-[ext_resource type="Texture2D" uid="uid://cd3dre7ikp8ct" path="res://assets/TXT/Props_TXT/rotten_steak_cooked_ACEScg.1001.png" id="2_i13lg"]
+[ext_resource type="Texture2D" uid="uid://bajhpavc1pnxy" path="res://assets/TXT/Props_TXT/rotten_steak_ACEScg.1001.png" id="2_i13lg"]
+[ext_resource type="ArrayMesh" uid="uid://bwddobdvj3lc" path="res://assets/Food/SM_food_component_rottenSteak_geo.obj" id="3_nqq18"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqq18"]
 albedo_texture = ExtResource("2_i13lg")
@@ -13,4 +13,4 @@ script = ExtResource("1_x8mt2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -0.0019038953, 0)
 material_override = SubResource("StandardMaterial3D_nqq18")
-mesh = ExtResource("1_4ovn8")
+mesh = ExtResource("3_nqq18")
