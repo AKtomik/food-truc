@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dtno5156nhfag" path="res://assets/Chara/SM_chara_base.fbx" id="1_2tvha"]
 [ext_resource type="Script" uid="uid://cgfcpxfevbakv" path="res://scripts/chara_scene.gd" id="1_w1mk4"]
 [ext_resource type="Animation" uid="uid://oekcetaw17pe" path="res://animations/Go.res" id="3_asswx"]
+[ext_resource type="ArrayMesh" uid="uid://8kt2h5e6shkn" path="res://assets/Chara/SM_face.obj" id="3_mlviu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlviu"]
 
 [sub_resource type="Animation" id="Animation_2tvha"]
 resource_name = "Arrive"
@@ -71,6 +74,11 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 
 [node name="Jacket" type="MeshInstance3D" parent="SM_chara_base" unique_id=1987416590]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="Face" type="MeshInstance3D" parent="SM_chara_base" unique_id=1741787543]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+mesh = ExtResource("3_mlviu")
+surface_material_override/0 = SubResource("StandardMaterial3D_mlviu")
 
 [node name="Arrive" type="AnimationPlayer" parent="." unique_id=430713894]
 unique_name_in_owner = true

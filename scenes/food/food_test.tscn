@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dpk5q50lx4b0x"]
 
+[ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_jlmkw"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_geipu"]
 radius = 0.1
 height = 0.2
 
 [node name="FoodItem" type="Node3D" unique_id=230256206]
+script = ExtResource("1_jlmkw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.082202345, 0)

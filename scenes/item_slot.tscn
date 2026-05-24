@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dg5p7ragkl4t2" path="res://scripts/item_slot.gd" id="1_567tv"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_4gq7n"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_567tv"]
+size = Vector3(1, 0.05, 0.8)
 
 [node name="ItemSlot" type="Area3D" unique_id=1571686447]
 collision_layer = 4
@@ -10,4 +11,5 @@ script = ExtResource("1_567tv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1898216442]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-shape = SubResource("SphereShape3D_4gq7n")
+shape = SubResource("BoxShape3D_567tv")
+debug_color = Color(0, 0.5950001, 0.7, 1)

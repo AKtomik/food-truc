@@ -5,8 +5,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g23f4"]
 
-[node name="CashMachine" type="Area3D" unique_id=1177224426]
+[node name="CashMachine" type="Area3D" unique_id=1177224426 node_paths=PackedStringArray("label")]
 script = ExtResource("1_y64xk")
+label = NodePath("Label3D")
 
 [node name="SM_cashRegister" parent="." unique_id=495305489 instance=ExtResource("2_68e7f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23406932, 0.003350675, -0.028825372)
@@ -14,3 +15,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23406932, 0.003350675, -0.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=991592036]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.22336555, 0)
 shape = SubResource("BoxShape3D_g23f4")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=242097093]
+transform = Transform3D(5.7830164e-07, 0, -40.238003, 0, 7.207, 0, 4.4099994, 0, 5.2765768e-06, -0.235, 0.05, -0.006)
+pixel_size = 0.0001
+outline_size = 2

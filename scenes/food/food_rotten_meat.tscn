@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ds8v7qt24mtla"]
 
 [ext_resource type="ArrayMesh" uid="uid://dbvsqx8imloo7" path="res://assets/Food/SM_food_component_steak_geo.obj" id="1_4ovn8"]
+[ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_x8mt2"]
 
 [node name="FoodRottenMeat" type="Node3D" unique_id=230256206]
+script = ExtResource("1_x8mt2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0019038953, 0)

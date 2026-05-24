@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://ct7huwg03r1w6"]
+
+[ext_resource type="PackedScene" uid="uid://cj47y4d71l2ut" path="res://scenes/food/food_polystyren.tscn" id="1_m24rk"]
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_4hc0v"]
+
+[resource]
+script = ExtResource("2_4hc0v")
+model_scene = ExtResource("1_m24rk")
+metadata/_custom_type_script = "uid://blvwf8kjqyhqi"
