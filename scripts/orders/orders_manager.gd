@@ -198,7 +198,7 @@ func _successful_order(order: Order) -> void:
 	#else :
 		#audio_player.stream = good_order_sound
 	print("successful order:", order)
-	money_manager.pay(order.resource.price)
+	money_manager.earn(order.resource.price)
 
 func _fail_order(order: Order) -> void:
 	#if (order.is_inspector) :
