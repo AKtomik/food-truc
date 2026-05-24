@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b64h6rswt8tac"
-path.s3tc="res://.godot/imported/window_shd_BaseColor_ACEScg.1001.png-ec6bee6db4c9ad5f197b8cde47f4ed51.s3tc.ctex"
+uid="uid://bbi4eb5ejq1hi"
+path.s3tc="res://.godot/imported/SM_bucket_YELLOW_shd_ACEScg.1001.png-caa343a2177329f7ac79565394978d40.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/TXT/enviro/window_shd_BaseColor_ACEScg.1001.png"
-dest_files=["res://.godot/imported/window_shd_BaseColor_ACEScg.1001.png-ec6bee6db4c9ad5f197b8cde47f4ed51.s3tc.ctex"]
+source_file="res://assets/TXT/enviro/SM_bucket_YELLOW_shd_ACEScg.1001.png"
+dest_files=["res://.godot/imported/SM_bucket_YELLOW_shd_ACEScg.1001.png-caa343a2177329f7ac79565394978d40.s3tc.ctex"]
 
 [params]
 

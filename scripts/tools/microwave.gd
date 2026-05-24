@@ -10,7 +10,7 @@ extends ItemTool
 var items_inside: Array[Item] = []
 var closed: bool = false
 
-var audio_ding: AudioStream = preload("res://assets/mircowave_ding.mp3")
+var audio_ding: AudioStream = preload("res://assets/sounds/mircowave_ding.mp3")
 
 # Loop
 func ready():

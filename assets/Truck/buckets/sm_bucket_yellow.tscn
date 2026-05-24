@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bl3j27y2w4ia5"]
 
 [ext_resource type="PackedScene" uid="uid://du0477sfy8qdk" path="res://assets/Truck/SM_bucket.fbx" id="1_immjg"]
+[ext_resource type="Texture2D" uid="uid://bbi4eb5ejq1hi" path="res://assets/TXT/enviro/SM_bucket_YELLOW_shd_ACEScg.1001.png" id="2_r648v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r648v"]
-albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("2_r648v")
+metallic = 1.0
+metallic_texture = ExtResource("2_r648v")
 
 [node name="SM_bucket_yellow" unique_id=2123288689 instance=ExtResource("1_immjg")]
 
-[node name="SM_bucket" parent="." index="0" unique_id=1819686023]
+[node name="SM_bucket" parent="." index="0" unique_id=1798806997]
 material_override = SubResource("StandardMaterial3D_r648v")
