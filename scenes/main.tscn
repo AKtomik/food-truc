@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://yss7k7kddaev" path="res://assets/Truck/SM_truckWall.fbx" id="8_og1vs"]
 [ext_resource type="PackedScene" uid="uid://ceqcu3hsg3nlr" path="res://scenes/tools/trash.tscn" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
 [ext_resource type="Resource" uid="uid://6xmacf7s1qb1" path="res://resources/food/food_potato.tres" id="12_jkv2x"]
@@ -88,8 +89,13 @@ cat_physics = 16
 [node name="Environement" type="Node3D" parent="." unique_id=159067661]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5810587, -0.38994026, 2.0261464)
 
-[node name="SM_truckInterior2" parent="Environement" unique_id=728357604 instance=ExtResource("4_jyhfs")]
+[node name="Truck" type="Node3D" parent="Environement" unique_id=619620727]
 transform = Transform3D(-0.021134397, 0, 0.99977666, 0, 1, 0, -0.99977666, 0, -0.021134397, 0.31714344, 0, -2.1752987)
+rotation_edit_mode = 2
+
+[node name="SM_truckWall" parent="Environement/Truck" unique_id=2072901091 instance=ExtResource("8_og1vs")]
+
+[node name="SM_truckInterior" parent="Environement/Truck" unique_id=955571902 instance=ExtResource("4_jyhfs")]
 rotation_edit_mode = 2
 
 [node name="CatPlane" parent="Environement" unique_id=634522356 instance=ExtResource("6_choun")]
@@ -104,7 +110,7 @@ transform = Transform3D(0.16174164, 0, 0.98683316, 0, 1, 0, -0.98683316, 0, 0.16
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3668456, 1.2092414, -2.354913)
 
 [node name="Microwave" parent="Environement" unique_id=746176305 instance=ExtResource("11_ya4ey")]
-transform = Transform3D(0.18750128, 0, -0.98226434, 0, 1, 0, 0.98226434, 0, 0.18750128, -0.847363, 1.7072831, -2.5739684)
+transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.9884887, -0.64785504, 1.7072831, -2.4262638)
 
 [node name="Shop" type="Node3D" parent="Environement" unique_id=798148202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4080765, 1.0100982, -2.86927)
