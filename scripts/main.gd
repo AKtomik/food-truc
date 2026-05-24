@@ -3,6 +3,7 @@ extends Node3D
 
 @export var cam : SlideCamera
 @export var hand : Hand
+@export var typewriter_label : TypeWriter
 
 func _ready() -> void:
 	_stop_time()
