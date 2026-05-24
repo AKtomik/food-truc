@@ -185,9 +185,12 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.6
 collision_layer = 8
 game_manager = NodePath("../..")
 
-[node name="StoveCollider" parent="Environement" unique_id=387607937 instance=ExtResource("15_vchkt")]
+[node name="StoveCollider" parent="Environement" unique_id=387607937 node_paths=PackedStringArray("audio_player") instance=ExtResource("15_vchkt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.67624307, 1.1657498, -2.409309)
+audio_player = NodePath("StoveAudioPlayer")
 recipes = Array[ExtResource("16_vc5cj")]([ExtResource("17_nvyfr"), ExtResource("18_ty1g6")])
+
+[node name="StoveAudioPlayer" type="AudioStreamPlayer" parent="Environement/StoveCollider" unique_id=975520194]
 
 [node name="TrashCollider" parent="Environement" unique_id=1878140870 instance=ExtResource("11_jbj1t")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3668456, 1.2092414, -2.354913)
