@@ -10,7 +10,9 @@ var number: int
 
 @export var ui_image: TextureRect
 @export var ui_label: Label
+@export var progress_bar: ProgressBar
 
+# init
 func setup(order_resource: OrderResource, inspection: bool = false, time_factor: int = 1):
 	resource = order_resource
 	time_max = order_resource.expiration_time * time_factor
@@ -21,6 +23,12 @@ func setup(order_resource: OrderResource, inspection: bool = false, time_factor:
 	ui_image.texture = order_resource.kaway_image
 	ui_label.text = "commande #"+str(number)
 
+# loop
+func _process(delta: float) -> void:
+	progress_bar.max_value = time_max
+	progress_bar.value = time_remain
+
+# ask
 func given_happy(food: Item) -> bool:
 	if (resource.good_food.is_scene(food)):
 		return true
