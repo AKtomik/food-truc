@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://b57c57kvkrjis"]
+
+[ext_resource type="PackedScene" uid="uid://bgnd4hmn23h6i" path="res://scenes/food/food_good_salad.tscn" id="1_x4184"]
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_7p56t"]
+
+[resource]
+script = ExtResource("2_7p56t")
+model_scene = ExtResource("1_x4184")
+metadata/_custom_type_script = "uid://blvwf8kjqyhqi"

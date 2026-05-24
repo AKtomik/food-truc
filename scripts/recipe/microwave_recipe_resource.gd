@@ -7,7 +7,7 @@ class_name MicrowaveRecipeResource
 
 func _contains_ingredient(item: Item) -> bool:
 	for ingredient in ingredients:
-		if !ingredient.is_scene(item):
+		if ingredient.is_scene(item):
 			return true
 	return false
 

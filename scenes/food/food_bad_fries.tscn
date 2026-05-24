@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://cdqpg7qbxhn01"]
+[gd_scene format=3 uid="uid://bxve8be7r1b5e"]
 
 [ext_resource type="ArrayMesh" uid="uid://c5ogkoq37gj8w" path="res://assets/Food/SM_food_cooked_bad_fries_geo.obj" id="1_2i45v"]
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_dkcmi"]
+[ext_resource type="Texture2D" uid="uid://cnuxni6nbnjkt" path="res://assets/TXT/Props_TXT/bad_fries_ACEScg.1001.png" id="3_oehok"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ijwu"]
+albedo_texture = ExtResource("3_oehok")
 
 [node name="FoodBadFries" type="Node3D" unique_id=230256206]
 script = ExtResource("1_dkcmi")
@@ -9,3 +13,4 @@ script = ExtResource("1_dkcmi")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.019440211, 0)
 mesh = ExtResource("1_2i45v")
+surface_material_override/0 = SubResource("StandardMaterial3D_6ijwu")

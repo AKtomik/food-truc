@@ -1,11 +1,16 @@
-[gd_scene format=3 uid="uid://bgnd4hmn23h6i"]
+[gd_scene format=3 uid="uid://b21fwude8iafb"]
 
 [ext_resource type="ArrayMesh" uid="uid://07q71gh2tvo3" path="res://assets/Food/SM_food_cooked_good_salad_geo.obj" id="1_rfule"]
+[ext_resource type="Texture2D" uid="uid://nuqsxlvuwfey" path="res://assets/TXT/Props_TXT/good_salad_shd_ACEScg.1001.png" id="2_328ca"]
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="2_v1is0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6g67"]
+albedo_texture = ExtResource("2_328ca")
 
 [node name="FoodGoodSalad" type="Node3D" unique_id=230256206]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1809497762]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.0044853836, 0)
 mesh = ExtResource("1_rfule")
+surface_material_override/0 = SubResource("StandardMaterial3D_f6g67")
 script = ExtResource("2_v1is0")

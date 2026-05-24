@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MicrowaveRecipeResource" format=3 uid="uid://dt671cjxwf4wx"]
+
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="1_cuqpw"]
+[ext_resource type="Resource" uid="uid://bxxmq73nhj3fy" path="res://resources/food/food_fake_tomato.tres" id="2_cuqpw"]
+[ext_resource type="Resource" uid="uid://cuhegihfyyyqv" path="res://resources/food/food_fake_lettuce.tres" id="3_tbgx8"]
+[ext_resource type="Resource" uid="uid://fb7rdycjop6l" path="res://resources/food/food_bad_salad.tres" id="4_uv0ye"]
+[ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/recipe/microwave_recipe_resource.gd" id="5_drim8"]
+
+[resource]
+script = ExtResource("5_drim8")
+ingredients = Array[ExtResource("1_cuqpw")]([ExtResource("2_cuqpw"), ExtResource("3_tbgx8")])
+result = ExtResource("4_uv0ye")
+cooking_time = 1.0
+metadata/_custom_type_script = "uid://b1504ojp5bxxi"

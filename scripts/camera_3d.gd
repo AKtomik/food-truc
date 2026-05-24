@@ -4,8 +4,8 @@ extends Camera3D
 @export var point_a: Node3D
 @export var point_b: Node3D
 
-@onready
-var progress_bar = %ProgressBar
+@onready var progress_bar = %ProgressBar
+@onready var sidestep_button = %SidestepButton
 var _velocity: Vector3 = Vector3.ZERO
 var _timer: float = 0.0
 var _hasmoved: bool = false
@@ -17,8 +17,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("sidestep") and _timer <= 0.0 :  # Barre espace par défaut
-		_move()
+	if Input.is_action_just_pressed("sidestep_left") and _timer <= 0.0 :  # Barre espace par défaut
+		sidestep_button.notify_started_moving()
+		_move(true)
+		
+	if Input.is_action_just_pressed("sidestep_right") and _timer <= 0.0 :  # Barre espace par défaut
+		sidestep_button.notify_started_moving()
+		_move(false)
 	
 	if (Input.is_action_pressed("ui_down")) :
 		progress_bar.remove_star(1)
@@ -28,11 +33,18 @@ func _process(_delta: float) -> void:
 	if _timer > 0.0:
 		_timer -= _delta
 		global_position += _velocity * _delta
+		if _timer <= 0.0:
+			sidestep_button.notify_move_done()
 
-func _move() -> void:
+func _move(left : bool) -> void:
 	var direction: Vector3
 	var distance: float = point_a.global_position.distance_to(point_b.global_position)
 	
+	if (_hasmoved and left == false) :
+		return
+	elif (!_hasmoved and left) :
+		return
+
 	if (_hasmoved):
 		direction = (point_a.global_position - point_b.global_position).normalized()
 	else :

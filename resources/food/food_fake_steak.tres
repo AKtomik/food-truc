@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://b6ahr7vn4w063"]
+
+[ext_resource type="PackedScene" uid="uid://bqyjbgsbbggr2" path="res://scenes/food/food_fake_steak.tscn" id="1_7utdl"]
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="1_uafls"]
+
+[resource]
+script = ExtResource("1_uafls")
+model_scene = ExtResource("1_7utdl")
+metadata/_custom_type_script = "uid://blvwf8kjqyhqi"

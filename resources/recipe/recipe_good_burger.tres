@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MicrowaveRecipeResource" format=3 uid="uid://dc5b87rwmxsbs"]
+
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="1_xvejf"]
+[ext_resource type="Resource" uid="uid://bukiis7m8bcm2" path="res://resources/food/food_legit_steak.tres" id="2_haxs7"]
+[ext_resource type="Resource" uid="uid://bhqyppv7m58b2" path="res://resources/food/food_good_bruger.tres" id="2_olpta"]
+[ext_resource type="Script" uid="uid://b1504ojp5bxxi" path="res://scripts/recipe/microwave_recipe_resource.gd" id="3_hi0hi"]
+[ext_resource type="Resource" uid="uid://b57c57kvkrjis" path="res://resources/food/food_good_salad.tres" id="3_jcn4e"]
+[ext_resource type="Resource" uid="uid://cgpdc6tmpesum" path="res://resources/food/food_legit_lettuce.tres" id="4_pvgpw"]
+[ext_resource type="Resource" uid="uid://byevm8bappfvy" path="res://resources/food/food_bread.tres" id="5_ur1n1"]
+
+[resource]
+script = ExtResource("3_hi0hi")
+ingredients = Array[ExtResource("1_xvejf")]([ExtResource("2_haxs7"), ExtResource("3_jcn4e"), ExtResource("4_pvgpw"), ExtResource("5_ur1n1")])
+result = ExtResource("2_olpta")
+cooking_time = 1.0
+metadata/_custom_type_script = "uid://b1504ojp5bxxi"
