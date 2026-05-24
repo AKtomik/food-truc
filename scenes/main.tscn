@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://bp3c7cumpoded" path="res://scripts/animation/slide_cam.gd" id="5_ty1g6"]
 [ext_resource type="Texture2D" uid="uid://5j6q0imgcarv" path="res://assets/Icons/ui_fleche.png" id="5_vc5cj"]
-[ext_resource type="PackedScene" uid="uid://cicvmw4tovmig" path="res://scenes/ending/start_bubble.tscn" id="6_0loja"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
 [ext_resource type="PackedScene" uid="uid://bd5gknuconhqj" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
@@ -37,7 +36,9 @@
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
 [ext_resource type="Resource" uid="uid://byevm8bappfvy" path="res://resources/food/food_bread.tres" id="18_2f3dj"]
+[ext_resource type="Resource" uid="uid://cuhegihfyyyqv" path="res://resources/food/food_fake_lettuce.tres" id="18_tel4y"]
 [ext_resource type="Resource" uid="uid://crci42gspqxrs" path="res://resources/recipe/stove_good_steak.tres" id="18_ty1g6"]
+[ext_resource type="Resource" uid="uid://bxxmq73nhj3fy" path="res://resources/food/food_fake_tomato.tres" id="19_qkpxi"]
 [ext_resource type="Resource" uid="uid://cqv0b1ikumy2u" path="res://resources/food/food_rotten_meat.tres" id="20_yq6so"]
 [ext_resource type="Resource" uid="uid://b8omovfgn2xx3" path="res://resources/food/food_cardboard.tres" id="21_fv21b"]
 [ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
@@ -112,23 +113,11 @@ unique_name_in_owner = true
 
 [node name="StarManager" parent="CanvasLayer" unique_id=1340713327 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
-anchor_left = 0.596
-anchor_right = 1.0
-anchor_bottom = 0.326
-offset_left = 217.40796
-offset_right = 0.0
-offset_bottom = -155.248
-grow_horizontal = 0
-grow_vertical = 1
 
 [node name="SidestepButton" parent="CanvasLayer" unique_id=1965430449 instance=ExtResource("4_qkpxi")]
 unique_name_in_owner = true
 scale = Vector2(0.25, 0.25)
 icon = ExtResource("5_vc5cj")
-
-[node name="GoodEnding" parent="CanvasLayer" unique_id=1385782559 instance=ExtResource("6_0loja")]
-
-[node name="StartLayer" type="CanvasLayer" parent="." unique_id=1974952040]
 
 [node name="Player" type="Node3D" parent="." unique_id=960234431]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1753833, -0.044129163, 2.5505323)
@@ -171,7 +160,7 @@ unique_name_in_owner = true
 volume_db = -8.211
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
-transform = Transform3D(-1.8626451e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -1.8626451e-08, 1.5543122e-15, 0.69975966, 2.151, -10.142086)
+transform = Transform3D(-2.4214387e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -2.4214387e-08, 1.5543122e-15, 0.6889078, 2.1511936, -9.345265)
 
 [node name="SmWindowFrame" type="MeshInstance3D" parent="Environement/Truck" unique_id=1011107732]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.751, 1.269, 0.009)
@@ -223,6 +212,8 @@ transform = Transform3D(0.9884887, 0, 0.15129532, 0, 1, 0, -0.15129532, 0, 0.988
 
 [node name="PaintPotYellow" parent="Environement/PaintPots" unique_id=911226871 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.4173019, 0, -0.063871026)
+inkable_item = ExtResource("13_jbj1t")
+inked_item = ExtResource("16_fv21b")
 hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotYellow" index="0" unique_id=2123288689]
@@ -231,11 +222,11 @@ visible = false
 [node name="SM_bucket_yellow" parent="Environement/PaintPots/PaintPotYellow" unique_id=104149380 instance=ExtResource("17_qkpxi")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 instance=ExtResource("14_yq6so")]
+[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.6268585, 0, -0.023789823)
-script = ExtResource("28_dnhof")
 inkable_item = ExtResource("14_y6deb")
-inked_item = ExtResource("30_1v6qk")
+inked_item = ExtResource("18_tel4y")
+hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotGreen" index="0" unique_id=2123288689]
 transform = Transform3D(-0.8799056, 0, 0.47514802, 0, 1, 0, -0.47514802, 0, -0.8799056, 0.016174793, 0, 0.09186268)
@@ -246,6 +237,8 @@ transform = Transform3D(-0.87964857, 0, 0.47562426, 0, 1, 0, -0.47562426, 0, -0.
 
 [node name="PaintPotRed" parent="Environement/PaintPots" unique_id=302690736 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.6568094, 0, 0.75405675, 0, 1, 0, -0.75405675, 0, -0.6568094, -0.9445238, 0, -0.12630808)
+inkable_item = ExtResource("14_y6deb")
+inked_item = ExtResource("19_qkpxi")
 hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotRed" index="0" unique_id=2123288689]
@@ -364,6 +357,19 @@ unlock_turn_resources = Dictionary[int, ExtResource("38_chjal")]({
 2: ExtResource("40_vchkt"),
 5: ExtResource("41_txyw0")
 })
+ORDER_NEVER_EMPTY = null
+ORDER_GENERATE_DELAY_MIN = null
+ORDER_GENERATE_DELAY_MAX = null
+ORDER_FIRST_DELAY = null
+STARTING_SPEED = null
+SPEED_STRENGTH = null
+SPEED_UP_SUCCESS = null
+SLOW_DOWN_FAILURE = null
+INSPECTION_TURN_DELAY_MIN = null
+INSPECTION_TURN_DELAY_MAX = null
+INSPECTION_FIRST_DELAY = null
+FAIL_NORMAL_UNSTAR = null
+FAIL_INSPECTOR_UNSTAR = null
 audio_player = NodePath("AudioStreamPlayer")
 good_order_sound = ExtResource("52_dnhof")
 bad_order_sound = ExtResource("53_1v6qk")
