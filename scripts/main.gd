@@ -4,10 +4,12 @@ extends Node3D
 @export var cam : SlideCamera
 @export var hand : Hand
 @export var typewriter_label : TypeWriter
+@export var face_picker : FacePicker
 
 @onready var audio_player : AudioStreamPlayer = %PhoneAudioStream
 
 func _ready() -> void:
+	face_picker.setup()
 	_stop_time()
 	audio_player.stream = load("res://assets/sounds/ringtone.mp3")
 	audio_player.stream.loop = true
