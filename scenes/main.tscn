@@ -20,8 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://bbhefvsymiucc" path="res://scenes/hand.tscn" id="13_trceg"]
 [ext_resource type="Resource" uid="uid://7o31k3qaf0y7" path="res://resources/food/food_paper.tres" id="14_y6deb"]
 [ext_resource type="PackedScene" uid="uid://cn5rx4m0t1myw" path="res://scenes/tools/paint_pot.tscn" id="14_yq6so"]
+[ext_resource type="PackedScene" uid="uid://cn5rx4m0t1myw" path="res://scenes/tools/paint_pot.tscn" id="14_yq6so"]
 [ext_resource type="Resource" uid="uid://ca3u6rx8qmcto" path="res://resources/food/food_legit_tomato.tres" id="15_og1vs"]
 [ext_resource type="Resource" uid="uid://cgpdc6tmpesum" path="res://resources/food/food_legit_lettuce.tres" id="16_2wyq8"]
+[ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
+[ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
@@ -29,8 +32,12 @@
 [ext_resource type="Resource" uid="uid://cuhegihfyyyqv" path="res://resources/food/food_fake_lettuce.tres" id="18_tel4y"]
 [ext_resource type="Resource" uid="uid://bxxmq73nhj3fy" path="res://resources/food/food_fake_tomato.tres" id="19_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://63abmr2p0r47" path="res://assets/Truck/buckets/sm_bucket_green.tscn" id="20_5q0nq"]
+[ext_resource type="Resource" uid="uid://cuhegihfyyyqv" path="res://resources/food/food_fake_lettuce.tres" id="18_tel4y"]
+[ext_resource type="Resource" uid="uid://bxxmq73nhj3fy" path="res://resources/food/food_fake_tomato.tres" id="19_qkpxi"]
+[ext_resource type="PackedScene" uid="uid://63abmr2p0r47" path="res://assets/Truck/buckets/sm_bucket_green.tscn" id="20_5q0nq"]
 [ext_resource type="Resource" uid="uid://cqv0b1ikumy2u" path="res://resources/food/food_rotten_meat.tres" id="20_yq6so"]
 [ext_resource type="Resource" uid="uid://b8omovfgn2xx3" path="res://resources/food/food_cardboard.tres" id="21_fv21b"]
+[ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
 [ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
@@ -102,6 +109,7 @@ rotation_edit_mode = 2
 
 [node name="SM_truckWall" parent="Environement/Truck" unique_id=2072901091 instance=ExtResource("8_og1vs")]
 
+[node name="SM_truckInterior" parent="Environement/Truck" unique_id=1664988120 instance=ExtResource("4_jyhfs")]
 [node name="SM_truckInterior" parent="Environement/Truck" unique_id=1664988120 instance=ExtResource("4_jyhfs")]
 rotation_edit_mode = 2
 
@@ -252,6 +260,9 @@ script = ExtResource("7_o6xl0")
 [node name="OrdersManager" type="Node" parent="." unique_id=1416883034]
 
 [editable path="Environement/CatPlane"]
+[editable path="Environement/PaintPots/PaintPotYellow"]
+[editable path="Environement/PaintPots/PaintPotGreen"]
+[editable path="Environement/PaintPots/PaintPotRed"]
 [editable path="Environement/PaintPots/PaintPotYellow"]
 [editable path="Environement/PaintPots/PaintPotGreen"]
 [editable path="Environement/PaintPots/PaintPotRed"]
