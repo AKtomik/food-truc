@@ -7,12 +7,14 @@ class_name MicrowaveRecipeResource
 
 func _contains_ingredient(item: Item) -> bool:
 	for ingredient in ingredients:
+		#print("ingredient:",ingredient)
 		if ingredient.is_scene(item):
 			return true
 	return false
 
 func is_valid_ingredients(items: Array[Item]) -> bool:
 	for item in items:
+		#print("item:",item)
 		if (!_contains_ingredient(item)): return false
 	return true
 	
