@@ -19,7 +19,7 @@ func setup(order_resource: OrderResource, inspection: bool = false, time_factor:
 	number = randi() % 10000
 
 	ui_image.texture = order_resource.kaway_image
-	ui_label.text = "#"+str(number)
+	ui_label.text = "commande #"+str(number)
 
 func given_happy(food: Item) -> bool:
 	if (resource.good_food.is_scene(food)):
