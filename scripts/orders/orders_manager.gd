@@ -17,7 +17,10 @@ extends Node
 @export var ORDER_NEVER_EMPTY: bool = true
 @export var ORDER_GENERATE_DELAY_MIN: float = 10 # inclusive
 @export var ORDER_GENERATE_DELAY_MAX: float = 20 # inclusive
-#@export var ORDER_SPEED_UP: float = 10
+
+@export_category("speed")
+@export var STARTING_SPEED: float = 0
+@export var SPEED_STRENGTH: float = 10
 
 @export_category("inspection")
 @export var INSPECTION_TURN_DELAY_MIN: int = 4 # inclusive
@@ -59,6 +62,25 @@ func check_move_next():
 	if (moved_order_last == now_order_last): return
 	moved_order_last = now_order_last
 	moved_order_last.character_body.play_arrive()
+
+# -- speed --
+
+var speed_score: float = 0
+
+func speed_up(score: float):
+	speed_score += score
+	if (speed_score < 0): speed_score = 0
+
+func slow_down(score: float):
+	speed_score -= score
+	if (speed_score < 0): speed_score = 0
+
+# more speed divide the delay
+func apply_speed_quotient(delay: float) -> float:
+	return delay / (1 + (speed_score / 1000 * SPEED_STRENGTH))
+
+func apply_speed_factor(delay: float) -> float:
+	return delay * (1 + (speed_score / 1000 * SPEED_STRENGTH))
 
 # -- difficulty --
 
@@ -166,20 +188,18 @@ func finish_order(order: Order, success: bool) -> void:
 	count_service(success)
 
 func _successful_order(order: Order) -> void:
-	if (order.is_inspector) :
-		audio_player.stream = critique_good_order_sound
-	else :
-		audio_player.stream = good_order_sound
-	audio_player.play()
+	#if (order.is_inspector) :
+		#audio_player.stream = critique_good_order_sound
+	#else :
+		#audio_player.stream = good_order_sound
 	print("successful order:", order)
 	money_manager.pay(order.resource.price)
 
 func _fail_order(order: Order) -> void:
-	if (order.is_inspector) :
-		audio_player.stream = critique_bad_order_sound
-	else :
-		audio_player.stream = bad_order_sound
-	audio_player.play()
+	#if (order.is_inspector) :
+		#audio_player.stream = critique_bad_order_sound
+	#else :
+		#audio_player.stream = bad_order_sound
 	print("fail order:", order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
 	star_manager.remove_star(tige)
