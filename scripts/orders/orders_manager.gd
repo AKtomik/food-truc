@@ -90,7 +90,7 @@ func fail_order(order: Order) -> void:
 	star_manager.remove_star(tige)
 
 func remove_order(order: Order) -> void:
-	order.character_body.play_go()
+	order.character_body.play_quit()
 	#order.character_body = null
 	order_list.remove_at(order_list.find(order))
 	order.queue_free()

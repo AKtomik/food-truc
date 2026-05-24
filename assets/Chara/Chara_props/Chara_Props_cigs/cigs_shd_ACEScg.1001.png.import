@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi6iqs6oi4da0"
-path.s3tc="res://.godot/imported/microWave_shdCEScg.1001.png-6b3e72f9497cd77e55fca4d57d67370a.s3tc.ctex"
+uid="uid://dpai6xmltoacx"
+path="res://.godot/imported/cigs_shd_ACEScg.1001.png-be20f503a068f11150baecc0734f8e86.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TXT/enviro/microWave_shdCEScg.1001.png"
-dest_files=["res://.godot/imported/microWave_shdCEScg.1001.png-6b3e72f9497cd77e55fca4d57d67370a.s3tc.ctex"]
+source_file="res://assets/Chara/Chara_props/Chara_Props_cigs/cigs_shd_ACEScg.1001.png"
+dest_files=["res://.godot/imported/cigs_shd_ACEScg.1001.png-be20f503a068f11150baecc0734f8e86.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
