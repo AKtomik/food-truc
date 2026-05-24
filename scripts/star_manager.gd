@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 
 func remove_star(remove: float) -> void:
 	p_bar.value -= remove
+	# TODO: lose condition
