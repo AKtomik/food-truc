@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpxue3c5l7d66" path="res://scenes/item_slot.tscn" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://bp3c7cumpoded" path="res://scripts/animation/slide_cam.gd" id="5_ty1g6"]
 [ext_resource type="Texture2D" uid="uid://5j6q0imgcarv" path="res://assets/Icons/ui_fleche.png" id="5_vc5cj"]
+[ext_resource type="PackedScene" uid="uid://cicvmw4tovmig" path="res://scenes/ending/start_bubble.tscn" id="6_0loja"]
 [ext_resource type="PackedScene" uid="uid://bbecxug5nqj3h" path="res://scenes/cat_plane.tscn" id="6_choun"]
 [ext_resource type="PackedScene" uid="uid://bd5gknuconhqj" path="res://scenes/sm_truck_wall.tscn" id="7_cjqg0"]
 [ext_resource type="Script" uid="uid://xr7ofby8pke0" path="res://face_picker.gd" id="7_o6xl0"]
@@ -125,6 +126,10 @@ unique_name_in_owner = true
 scale = Vector2(0.25, 0.25)
 icon = ExtResource("5_vc5cj")
 
+[node name="GoodEnding" parent="CanvasLayer" unique_id=1385782559 instance=ExtResource("6_0loja")]
+
+[node name="StartLayer" type="CanvasLayer" parent="." unique_id=1974952040]
+
 [node name="Player" type="Node3D" parent="." unique_id=960234431]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1753833, -0.044129163, 2.5505323)
 
@@ -226,9 +231,11 @@ visible = false
 [node name="SM_bucket_yellow" parent="Environement/PaintPots/PaintPotYellow" unique_id=104149380 instance=ExtResource("17_qkpxi")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
+[node name="PaintPotGreen" parent="Environement/PaintPots" unique_id=21521070 instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.6268585, 0, -0.023789823)
-hand = NodePath("../../../Hand")
+script = ExtResource("28_dnhof")
+inkable_item = ExtResource("14_y6deb")
+inked_item = ExtResource("30_1v6qk")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotGreen" index="0" unique_id=2123288689]
 transform = Transform3D(-0.8799056, 0, 0.47514802, 0, 1, 0, -0.47514802, 0, -0.8799056, 0.016174793, 0, 0.09186268)
