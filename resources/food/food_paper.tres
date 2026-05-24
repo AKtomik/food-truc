@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://7o31k3qaf0y7"]
+
+[ext_resource type="PackedScene" uid="uid://bae236plsypfg" path="res://scenes/food/food_fake_lettuce.tscn" id="1_k671n"]
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_my1nc"]
+
+[resource]
+script = ExtResource("2_my1nc")
+model_scene = ExtResource("1_k671n")
+metadata/_custom_type_script = "uid://blvwf8kjqyhqi"

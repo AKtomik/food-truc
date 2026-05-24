@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://ca3u6rx8qmcto"]
+
+[ext_resource type="PackedScene" uid="uid://de63pbp53y5ks" path="res://scenes/food/food_legit_tomato.tscn" id="1_6750b"]
+[ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_4m83b"]
+
+[resource]
+script = ExtResource("2_4m83b")
+model_scene = ExtResource("1_6750b")
+metadata/_custom_type_script = "uid://blvwf8kjqyhqi"
