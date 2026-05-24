@@ -16,7 +16,7 @@ func refresh():
 	if str_amount.length() > _max_digits:
 		label.text = str_amount.substr(0, _max_digits) + "..." + "$"
 	else:
-		label.text = "%.2f$" % _money + "$"
+		label.text = "%.2f$" % _money 
 
 func get_money() -> int:
 	return _money
