@@ -8,14 +8,14 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 static func spawn(def: CharacterResource, parent: Node3D, critique : bool,
-	face_picker : FacePicker, order : OrderResource) -> Node3D:
+	face_picker : FacePicker, order_resource : OrderResource) -> CharacterBody:
 
 	var characterScene = CHARACTER_SCENE.instantiate()
 	characterScene.face_picker = face_picker
-	characterScene.order = order
+	characterScene.order_resource = order_resource
 	parent.add_child(characterScene)
 
-	var character = characterScene.get_node("SM_chara_base") 
+	var character = characterScene.get_node("SM_chara_base")
 	character.get_node("Hat").mesh = def.hat_mesh
 	character.get_node("Hair").mesh = def.hair_mesh
 	character.get_node("Eyes").mesh = def.eyes_mesh
