@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://dl3de35ub5w4c"]
 
+[ext_resource type="Script" uid="uid://b4wdj6l3vroq8" path="res://scripts/tools/start_phone.gd" id="1_w8hmb"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uej2j"]
 size = Vector3(0.1, 0.3, 0.1)
 
-[node name="Phone" type="Area3D" unique_id=852733474]
+[node name="Phone" type="Area3D" unique_id=852733474 node_paths=PackedStringArray("collision")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_w8hmb")
+collision = NodePath("CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=242103665]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21985364, -0.063984334, -1.9859095)
