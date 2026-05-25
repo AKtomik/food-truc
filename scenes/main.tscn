@@ -41,7 +41,6 @@
 [ext_resource type="Resource" uid="uid://b8omovfgn2xx3" path="res://resources/food/food_cardboard.tres" id="21_fv21b"]
 [ext_resource type="PackedScene" uid="uid://bsrb16pmwac0w" path="res://assets/Truck/buckets/sm_bucket_red.tscn" id="22_dgi5k"]
 [ext_resource type="Script" uid="uid://ctkwkggx8x05f" path="res://scripts/tools/paint_pot.gd" id="26_dnhof"]
-[ext_resource type="Resource" uid="uid://fb7rdycjop6l" path="res://resources/food/food_bad_salad.tres" id="31_1v6qk"]
 [ext_resource type="PackedScene" path="res://scenes/sm_bucket.tscn" id="31_bu4jf"]
 [ext_resource type="Script" uid="uid://n6y7so5w8cgy" path="res://scripts/orders/orders_manager.gd" id="33_5q0nq"]
 [ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/orders/order_resource.gd" id="38_chjal"]
@@ -175,6 +174,7 @@ mesh = ExtResource("14_o7ddy")
 
 [node name="CollisionShape3D" parent="Environement/CatPlane" index="0" unique_id=992181962]
 transform = Transform3D(1, -1.0658141e-14, -5.3290705e-15, 0, 1, 6.3607034e-16, 0, 6.360704e-16, 1, 7.1525574e-07, -1.2122924, -0.46225023)
+debug_color = Color(0.05490196, 0.6509804, 0, 1)
 
 [node name="CashMachine" parent="Environement" unique_id=1177224426 instance=ExtResource("7_ya4ey")]
 transform = Transform3D(0.16174164, 0, 0.98683316, 0, 1, 0, -0.98683316, 0, 0.16174164, 0.9980892, 1.0022496, -2.355078)
@@ -226,7 +226,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 transform = Transform3D(-0.32041472, 0, -0.9472775, 0, 1, 0, 0.9472775, 0, -0.32041472, -0.6268585, 0, -0.023789823)
 script = ExtResource("26_dnhof")
 inkable_item = ExtResource("14_y6deb")
-inked_item = ExtResource("31_1v6qk")
+inked_item = ExtResource("16_2wyq8")
 hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotGreen" index="0" unique_id=2123288689]
@@ -356,19 +356,8 @@ unlock_turn_resources = Dictionary[int, ExtResource("38_chjal")]({
 2: ExtResource("40_vchkt"),
 5: ExtResource("41_txyw0")
 })
-ORDER_NEVER_EMPTY = null
-ORDER_GENERATE_DELAY_MIN = null
-ORDER_GENERATE_DELAY_MAX = null
-ORDER_FIRST_DELAY = null
-STARTING_SPEED = null
-SPEED_STRENGTH = null
-SPEED_UP_SUCCESS = null
-SLOW_DOWN_FAILURE = null
-INSPECTION_TURN_DELAY_MIN = null
-INSPECTION_TURN_DELAY_MAX = null
-INSPECTION_FIRST_DELAY = null
-FAIL_NORMAL_UNSTAR = null
-FAIL_INSPECTOR_UNSTAR = null
+ORDER_GENERATE_DELAY_MIN = 0.0
+ORDER_GENERATE_DELAY_MAX = 5.0
 audio_player = NodePath("AudioStreamPlayer")
 good_order_sound = ExtResource("52_dnhof")
 bad_order_sound = ExtResource("53_1v6qk")
