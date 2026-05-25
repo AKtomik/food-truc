@@ -356,8 +356,6 @@ unlock_turn_resources = Dictionary[int, ExtResource("38_chjal")]({
 2: ExtResource("40_vchkt"),
 5: ExtResource("41_txyw0")
 })
-ORDER_GENERATE_DELAY_MIN = 0.0
-ORDER_GENERATE_DELAY_MAX = 5.0
 audio_player = NodePath("AudioStreamPlayer")
 good_order_sound = ExtResource("52_dnhof")
 bad_order_sound = ExtResource("53_1v6qk")
