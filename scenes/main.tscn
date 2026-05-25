@@ -32,7 +32,6 @@
 [ext_resource type="Resource" uid="uid://bvgnpeurlvepr" path="res://resources/food/food_bad_fries.tres" id="16_fv21b"]
 [ext_resource type="Script" uid="uid://cq2s68rq3jusb" path="res://scripts/recipe/simple_recipe_resource.gd" id="16_vc5cj"]
 [ext_resource type="PackedScene" path="res://scenes/sm_truck_interior.tscn" id="16_vchkt"]
-[ext_resource type="Resource" uid="uid://b5ngjmnw7h108" path="res://resources/recipe/stove_bad_steak.tres" id="17_nvyfr"]
 [ext_resource type="PackedScene" uid="uid://bl3j27y2w4ia5" path="res://assets/Truck/buckets/sm_bucket_yellow.tscn" id="17_qkpxi"]
 [ext_resource type="Resource" uid="uid://dxyxbije6am7c" path="res://resources/food/food_raw_meat.tres" id="17_vxglm"]
 [ext_resource type="Resource" uid="uid://byevm8bappfvy" path="res://resources/food/food_bread.tres" id="18_2f3dj"]
@@ -191,7 +190,7 @@ game_manager = NodePath("../..")
 [node name="StoveCollider" parent="Environement" unique_id=387607937 node_paths=PackedStringArray("audio_player") instance=ExtResource("15_vchkt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.67624307, 1.1657498, -2.409309)
 audio_player = NodePath("StoveAudioPlayer")
-recipes = Array[ExtResource("16_vc5cj")]([ExtResource("17_nvyfr"), ExtResource("18_ty1g6")])
+recipes = Array[ExtResource("16_vc5cj")]([ExtResource("18_ty1g6")])
 
 [node name="StoveAudioPlayer" type="AudioStreamPlayer" parent="Environement/StoveCollider" unique_id=975520194]
 volume_db = -5.474
