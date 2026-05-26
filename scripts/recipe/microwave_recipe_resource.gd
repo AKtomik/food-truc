@@ -5,17 +5,19 @@ class_name MicrowaveRecipeResource
 @export var result: ItemResource
 @export var cooking_time: float
 
-func _contains_ingredient(item: Item) -> bool:
-	for ingredient in ingredients:
-		#print("ingredient:",ingredient)
-		if ingredient.is_scene(item):
-			return true
-	return false
-
 func is_valid_ingredients(items: Array[Item]) -> bool:
+	var leftovers = ingredients.duplicate()
+
 	for item in items:
-		#print("item:",item)
-		if (!_contains_ingredient(item)): return false
+
+		var valid = false
+		for i in range(leftovers.size()):
+			if leftovers[i].is_scene(item):
+				valid = true
+				leftovers.remove_at(i)
+				break
+		if (valid == false): return false
+
 	return true
 	
 func is_full_ingredients(items: Array[Item]) -> bool:
