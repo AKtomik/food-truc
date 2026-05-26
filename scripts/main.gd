@@ -1,6 +1,9 @@
 class_name GameManager
 extends Node3D
 
+@export var skip_tutorial : bool = false
+@export var skip_ring : bool = true
+
 @export var cam : SlideCamera
 @export var hand : Hand
 @export var typewriter_label : TypeWriter
@@ -18,13 +21,11 @@ var tutoResourceSalad : OrderResource = load("res://resources/order/order_salad.
 
 func _ready() -> void:
 	face_picker.setup()
-	order_manager.finish_command.connect(manage_spawn_tuto)
-	_stop_time()
-	phone_audio_player.stream = load("res://assets/sounds/ringtone.mp3")
-	phone_audio_player.stream.loop = true
-	phone_audio_player.play()
 	# TEMPORARY
-	start_game()
+	if (skip_tutorial):
+		start_game()
+	else:
+		start_tuto()
 
 func _process(_delta: float) -> void:
 	pass
@@ -35,7 +36,51 @@ func _stop_time():
 func _start_time():
 	Engine.time_scale = 1
 
+# game
+
 func start_game():
+	order_manager.set_flow_enable(true)
+	# redo
+	_start_time()
+	cam.set_enable_move(true)
+	hand.set_enable_click(true)
+
+# tuto
+
+func start_tuto():
+	order_manager.finish_command.connect(order_step_tuto)
+	if (skip_ring):
+		first_call()
+	else:
+		zero_call()
+
+func finish_tuto():
+	in_tuto = false
+	order_manager.finish_command.disconnect(order_step_tuto)
+	start_game()
+
+func phone_call_tuto():
+	pass
+
+func order_step_tuto(_order: Order, _success: bool):
+	if (!in_tuto):
+		return
+	tuto_order_count += 1
+	if (tuto_order_count == 1):
+		order_manager.call_infinite_order(tutoResourceSteak)
+		order_manager.call_infinite_order(tutoResourceFries)
+	elif (tuto_order_count == 3):
+		phone_audio_player.play()
+	elif (tuto_order_count == 4):
+		finish_tuto()
+
+func zero_call():
+	_stop_time()
+	phone_audio_player.stream = load("res://assets/sounds/ringtone.mp3")
+	phone_audio_player.stream.loop = true
+	phone_audio_player.play()
+
+func first_call():
 	_start_time()
 	phone_audio_player.stop()
 	typewriter_label.display("Si tu veux pas d’emmerdes, écoute-moi bien. J’me répéterai pas.", load("res://assets/sounds/rendu-002.wav"), 0.8, 0.045)
@@ -49,20 +94,7 @@ func start_game():
 	await get_tree().create_timer(3.4).timeout
 	typewriter_label.display("Que les clients bouffent mal, j’m’en fous. Fais rentrer le pognon dans la caisse.")
 
-func manage_spawn_tuto(order: Order, success: bool) :
-	if (!in_tuto) :
-		return
-	tuto_order_count += 1
-	if (tuto_order_count == 1) :
-		order_manager.call_infinite_order(tutoResourceSteak)
-		order_manager.call_infinite_order(tutoResourceFries)
-	elif (tuto_order_count == 3) :
-		phone_audio_player.play()
-	elif (tuto_order_count == 4) :
-		end_tuto()
-			
-
-func tutorial_critique() :
+func second_call():
 	phone_audio_player.stop()
 	typewriter_label.display("Si tu vois un mec un peu chelou en costard, lui tu me le foires pas.", load("res://assets/sounds/rendu-003.wav"), 0, 0.045)
 	await get_tree().create_timer(3.2).timeout
@@ -80,10 +112,8 @@ func tutorial_critique() :
 	music_audio_player.stream =  load("res://assets/sounds/Main_theme.mp3")
 	music_audio_player.stream.loop = true
 	music_audio_player.play()
-			
-func end_tuto() :
-	in_tuto = false
-	order_manager.set_flow_enable(true)
+
+# endings
 
 func to_good_ending():
 	get_tree().change_scene_to_file("res://scenes/ending/good_ending.tscn")

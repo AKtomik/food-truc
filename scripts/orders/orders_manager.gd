@@ -172,12 +172,12 @@ func generate_order() -> void:
 
 # special function if you want an order to never expire
 func call_infinite_order(new_order_resource: OrderResource, inspection: bool = false) -> void:
-	call_order(new_order_resource, inspection, 1.79769e308)
+	call_order(new_order_resource, inspection, 1.79769e30)#1.79769e308 is a lot
 
 func call_first_critique(new_order_resource: OrderResource) -> void :
 	var new_order_instance = packed_order.instantiate() as Order
 	var new_character = character_queue.generate_first_critique(new_order_resource)
-	new_order_instance.setup(new_order_resource, new_character, true, 1.79769e308)
+	new_order_instance.setup(new_order_resource, new_character, true, 1.79769e30)
 	ticket_container.add_child(new_order_instance)
 	ticket_container.move_child(new_order_instance, 0)
 	order_list.append(new_order_instance)
