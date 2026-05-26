@@ -186,13 +186,17 @@ func call_order(new_order_resource: OrderResource, inspection: bool = false, tim
 	print("add a new order!", new_order_resource)
 	var new_order_instance = packed_order.instantiate() as Order
 	var new_character = character_queue.generate_random_character(new_order_resource, inspection)
+	print("add0", new_order_resource)
 	new_order_instance.setup(new_order_resource, new_character, inspection, time_scale)
 
+	print("add1", new_order_resource)
 	ticket_container.add_child(new_order_instance)
 	ticket_container.move_child(new_order_instance, 0)
 	order_list.append(new_order_instance)
+	print("add2", new_order_resource)
 	check_move_next()
 
+	print("add3", new_order_resource)
 	count_client(inspection)
 	#new_command.emit(new_order_instance)
 	print("added a new order.")

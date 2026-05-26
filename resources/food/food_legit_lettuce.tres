@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://cgpdc6tmpesum"]
 
-[ext_resource type="PackedScene" uid="uid://bub206f86wsch" path="res://scenes/food/food_fake_lettuce.tscn" id="1_lg7d5"]
+[ext_resource type="PackedScene" uid="uid://b3e2yli47g64b" path="res://scenes/food/food_legit_lettuce.tscn" id="1_lg7d5"]
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="1_wcfku"]
 
 [resource]
