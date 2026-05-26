@@ -16,7 +16,7 @@ func apply_critique_texture(face_mesh : MeshInstance3D) -> void:
 func apply_random_texture(face_mesh : MeshInstance3D) -> void :
 	var texture: Texture2D = face_bank.faces.pick_random()
 	while texture == culinary_critique_texture :
-		face_bank.faces.pick_random()
+		texture = face_bank.faces.pick_random()
 	_apply_texture(texture, face_mesh)
 
 func _apply_texture(texture: Texture2D, face_mesh : MeshInstance3D) -> void:
