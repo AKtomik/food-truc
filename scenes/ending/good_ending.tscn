@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvrac5sydclhm"]
 
 [ext_resource type="Texture2D" uid="uid://dwv83mdto8ux2" path="res://assets/ui/good_ending.png" id="1_5xg0c"]
-[ext_resource type="Script" uid="uid://1ua7eygiicwi" path="res://scripts/ui/retry_button.gd" id="2_1o60b"]
+[ext_resource type="Script" path="res://scripts/ui/retry_button.gd" id="2_1o60b"]
 [ext_resource type="Texture2D" uid="uid://dhqafspgq0qg" path="res://assets/ui/retry_ui.png" id="2_2l6lv"]
 
 [node name="GoodEnding" type="Control" unique_id=1385782559]

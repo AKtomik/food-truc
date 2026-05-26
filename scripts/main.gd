@@ -33,11 +33,11 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-#func _stop_time():
-#	Engine.time_scale = 0
+func _stop_time():
+	Engine.time_scale = 0
 
-#func _start_time():
-#	Engine.time_scale = 1
+func _start_time():
+	Engine.time_scale = 1
 
 func start_tuto():
 	_start_time()
