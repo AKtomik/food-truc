@@ -24,7 +24,7 @@ func _ready() -> void:
 	phone_audio_player.stream.loop = true
 	phone_audio_player.play()
 	# TEMPORARY
-	#start_game()
+	start_game()
 
 func _process(_delta: float) -> void:
 	pass

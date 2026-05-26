@@ -184,7 +184,7 @@ func call_first_critique(new_order_resource: OrderResource) -> void :
 	check_move_next()
 
 	count_client(true)
-	new_command.emit(new_order_instance)
+	#new_command.emit(new_order_instance)
 	
 
 # build your own order on order
@@ -200,7 +200,8 @@ func call_order(new_order_resource: OrderResource, inspection: bool = false, tim
 	check_move_next()
 
 	count_client(inspection)
-	new_command.emit(new_order_instance)
+	#new_command.emit(new_order_instance)
+	print("added a new order.")
 
 # -- finish --
 
@@ -209,9 +210,10 @@ func given_food(item: Item) -> void:
 	var order = last_order()
 	var happy = order.given_happy(item)
 	finish_order(order, happy)
+	print("order is finish!")
 
 func finish_order(order: Order, success: bool) -> void:
-	finish_command.emit(order, success)
+	#finish_command.emit(order, success)
 	if (success):
 		_successful_order(order)
 	else:
@@ -231,7 +233,7 @@ func _successful_order(order: Order) -> void:
 	#else :
 		#audio_player.stream = good_order_sound
 	print("successful order:", order)
-	successful_command.emit(order)
+	#successful_command.emit(order)
 	money_manager.earn(order.resource.price)
 
 func _fail_order(order: Order) -> void:
@@ -240,6 +242,6 @@ func _fail_order(order: Order) -> void:
 	#else :
 		#audio_player.stream = bad_order_sound
 	print("fail order:", order)
-	fail_command.emit(order)
+	#fail_command.emit(order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
 	star_manager.remove_star(tige)
