@@ -13,7 +13,9 @@ func can_take(_item: Item) -> bool:
 	return false#dont touch!
 	
 func clicked():
-	if (game_manager.tuto_order_count != 3) :
-		return
-	collision.disabled = true# works once
-	game_manager.tutorial_critique()
+	if (!game_manager.in_tuto): return
+	if (game_manager.tuto_call_count == 0):
+		game_manager.first_call()
+	if (game_manager.tuto_call_count == 1 && game_manager.tuto_order_count == 3):
+		collision.disabled = true# kill the phone
+		game_manager.second_call()

@@ -175,19 +175,10 @@ func generate_order() -> void:
 
 # special function if you want an order to never expire
 func call_infinite_order(new_order_resource: OrderResource, inspection: bool = false) -> void:
-	call_order(new_order_resource, inspection, 1.79769e30)#1.79769e308 is a lot
+	call_order(new_order_resource, inspection, 1.79769e30)#1.79769e308 is the max but 1.79769e30 is still a lot
 
-func call_first_critique(new_order_resource: OrderResource) -> void :
-	var new_order_instance = packed_order.instantiate() as Order
-	var new_character = character_queue.generate_first_critique(new_order_resource)
-	new_order_instance.setup(new_order_resource, new_character, true, 1.79769e30)
-	ticket_container.add_child(new_order_instance)
-	ticket_container.move_child(new_order_instance, 0)
-	order_list.append(new_order_instance)
-	check_move_next()
-
-	count_client(true)
-	#new_command.emit(new_order_instance)
+func call_infinite_critique(new_order_resource: OrderResource) -> void:
+	call_order(new_order_resource, true, 1.79769e30)
 	
 
 # build your own order on order
@@ -216,7 +207,7 @@ func given_food(item: Item) -> void:
 	print("order is finish!")
 
 func finish_order(order: Order, success: bool) -> void:
-	#finish_command.emit(order, success)
+	finish_command.emit(order, success)
 	if (success):
 		_successful_order(order)
 	else:
@@ -236,7 +227,7 @@ func _successful_order(order: Order) -> void:
 	#else :
 		#audio_player.stream = good_order_sound
 	print("successful order:", order)
-	#successful_command.emit(order)
+	successful_command.emit(order)
 	money_manager.earn(order.resource.price)
 
 func _fail_order(order: Order) -> void:
@@ -245,6 +236,6 @@ func _fail_order(order: Order) -> void:
 	#else :
 		#audio_player.stream = bad_order_sound
 	print("fail order:", order)
-	#fail_command.emit(order)
+	fail_command.emit(order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
 	star_manager.remove_star(tige)

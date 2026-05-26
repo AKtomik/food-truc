@@ -12,9 +12,12 @@ extends Node3D
 
 @onready var phone_audio_player : AudioStreamPlayer = %PhoneAudioStream
 @onready var music_audio_player : AudioStreamPlayer = %MusicAudioPlayer
-@onready var in_tuto : bool = true
+
+var in_tuto : bool = false
+var started_music : bool = false
 
 var tuto_order_count = 0
+var tuto_call_count = 0
 var tutoResourceFries : OrderResource = load("res://resources/order/order_fries.tres")
 var tutoResourceSteak : OrderResource = load("res://resources/order/order_steak.tres")
 var tutoResourceSalad : OrderResource = load("res://resources/order/order_salad.tres")
@@ -36,18 +39,27 @@ func _stop_time():
 func _start_time():
 	Engine.time_scale = 1
 
+func _start_music():
+	if (started_music): return
+	music_audio_player.stream =  load("res://assets/sounds/Main_theme.mp3")
+	music_audio_player.stream.loop = true
+	music_audio_player.play()
+
 # game
 
 func start_game():
 	order_manager.set_flow_enable(true)
 	# redo
 	_start_time()
+	_start_music()
 	cam.set_enable_move(true)
 	hand.set_enable_click(true)
 
 # tuto
 
 func start_tuto():
+	print("start tuto")
+	in_tuto = true
 	order_manager.finish_command.connect(order_step_tuto)
 	if (skip_ring):
 		first_call()
@@ -55,6 +67,7 @@ func start_tuto():
 		zero_call()
 
 func finish_tuto():
+	print("finish tuto")
 	in_tuto = false
 	order_manager.finish_command.disconnect(order_step_tuto)
 	start_game()
@@ -63,8 +76,8 @@ func phone_call_tuto():
 	pass
 
 func order_step_tuto(_order: Order, _success: bool):
-	if (!in_tuto):
-		return
+	print("step tuto")
+	if (!in_tuto): return
 	tuto_order_count += 1
 	if (tuto_order_count == 1):
 		order_manager.call_infinite_order(tutoResourceSteak)
@@ -82,6 +95,7 @@ func zero_call():
 
 func first_call():
 	_start_time()
+	tuto_call_count += 1
 	phone_audio_player.stop()
 	typewriter_label.display("Si tu veux pas d’emmerdes, écoute-moi bien. J’me répéterai pas.", load("res://assets/sounds/rendu-002.wav"), 0.8, 0.045)
 	await get_tree().create_timer(4.0).timeout
@@ -96,9 +110,10 @@ func first_call():
 
 func second_call():
 	phone_audio_player.stop()
+	tuto_call_count += 1
 	typewriter_label.display("Si tu vois un mec un peu chelou en costard, lui tu me le foires pas.", load("res://assets/sounds/rendu-003.wav"), 0, 0.045)
 	await get_tree().create_timer(3.2).timeout
-	order_manager.call_first_critique(tutoResourceSalad)
+	order_manager.call_infinite_critique(tutoResourceSalad)
 	typewriter_label.display("Ce gars, C’est un enfoiré de critique culinaire, il traîne toujour autour de mes magouilles.", null, 0, 0.045)
 	await get_tree().create_timer(4.2).timeout
 	typewriter_label.display("sert lui de la qualité, il faut que ce soit irréprochable", null, 0, 0.045)
@@ -109,9 +124,7 @@ func second_call():
 	await get_tree().create_timer(4.5).timeout
 	typewriter_label.display("Quoi !? Qu'est ce qui est arrivé a ton prédecesseur ? Depuis quand t'as le droit de poser des question toi ?", null, 0, 0.032)
 	await get_tree().create_timer(5.5).timeout
-	music_audio_player.stream =  load("res://assets/sounds/Main_theme.mp3")
-	music_audio_player.stream.loop = true
-	music_audio_player.play()
+	_start_music()
 
 # endings
 
