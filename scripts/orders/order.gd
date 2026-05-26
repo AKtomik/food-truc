@@ -6,7 +6,7 @@ var character_body: Node3D
 var is_inspector: bool
 var time_max: float
 var time_remain: float
-var number: int
+static var number: int
 
 @export var ui_image: TextureRect
 @export var ui_label: Label
@@ -19,7 +19,7 @@ func setup(order_resource: OrderResource, character: CharacterBody, inspection: 
 	time_max = order_resource.expiration_time * time_scale
 	time_remain = time_max
 	is_inspector = inspection
-	number = randi() % 10000
+	number += 1
 
 	ui_image.texture = order_resource.kaway_image
 	ui_label.text = "commande #"+str(number)
