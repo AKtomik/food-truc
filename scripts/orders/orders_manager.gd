@@ -64,6 +64,9 @@ var total_inspection_count: int = 0
 var next_client_time: float = -1
 var next_inspection_turn_count: int
 
+func has_order() -> bool:
+	return !order_list.is_empty()
+
 func last_order() -> Order:
 	if (order_list.is_empty()): return null
 	return order_list[0]
