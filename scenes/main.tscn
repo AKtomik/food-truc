@@ -42,6 +42,7 @@
 [ext_resource type="Script" uid="uid://ctkwkggx8x05f" path="res://scripts/tools/paint_pot.gd" id="26_dnhof"]
 [ext_resource type="Resource" uid="uid://cuhegihfyyyqv" path="res://resources/food/food_fake_lettuce.tres" id="30_ids8r"]
 [ext_resource type="PackedScene" path="res://scenes/sm_bucket.tscn" id="31_bu4jf"]
+[ext_resource type="Resource" uid="uid://b6ahr7vn4w063" path="res://resources/food/food_bad_steak.tres" id="32_1v6qk"]
 [ext_resource type="Script" uid="uid://n6y7so5w8cgy" path="res://scripts/orders/orders_manager.gd" id="33_5q0nq"]
 [ext_resource type="Script" uid="uid://dw0lbhucaf4i4" path="res://scripts/orders/order_resource.gd" id="38_chjal"]
 [ext_resource type="Resource" uid="uid://cqx7xrcvg7snf" path="res://resources/order/order_fries.tres" id="39_cjqg0"]
@@ -50,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://buo6eq0yav7un" path="res://scenes/order.tscn" id="43_nvyfr"]
 [ext_resource type="Script" uid="uid://bieaqyeteieb0" path="res://scripts/character_queue.gd" id="47_vc5cj"]
 [ext_resource type="Script" uid="uid://cbeyw0nu5rsbi" path="res://scripts/typewriter.gd" id="49_ty1g6"]
+[ext_resource type="Resource" uid="uid://gq07ydj0qkea" path="res://resources/order/order_burger.tres" id="51_dnhof"]
 [ext_resource type="Texture2D" uid="uid://vdsf6twe52hw" path="res://assets/Icons/fond_decor_test1.png" id="52_bu4jf"]
 [ext_resource type="AudioStream" uid="uid://cmht63j2tj1f2" path="res://assets/sounds/good gye.wav" id="52_dnhof"]
 [ext_resource type="AudioStream" uid="uid://cww8aqrqk02fg" path="res://assets/sounds/bad gye.wav" id="53_1v6qk"]
@@ -253,6 +255,7 @@ transform = Transform3D(-0.87964857, 0, 0.47562426, 0, 1, 0, -0.47562426, 0, -0.
 
 [node name="PaintPotRed" parent="Environement/PaintPots" unique_id=302690736 node_paths=PackedStringArray("hand") instance=ExtResource("14_yq6so")]
 transform = Transform3D(-0.6568094, 0, 0.75405675, 0, 1, 0, -0.75405675, 0, -0.6568094, -0.9445238, 0, -0.12630808)
+inked_item2 = ExtResource("32_1v6qk")
 hand = NodePath("../../../Hand")
 
 [node name="SM_bucket" parent="Environement/PaintPots/PaintPotRed" index="0" unique_id=2123288689]
@@ -375,8 +378,9 @@ packed_order = ExtResource("43_nvyfr")
 ticket_container = NodePath("../Environement/Truck/OrdersPinPos/OrdersPinLayer/OrderContainer")
 inital_resources = Array[ExtResource("38_chjal")]([ExtResource("39_cjqg0")])
 unlock_turn_resources = Dictionary[int, ExtResource("38_chjal")]({
-2: ExtResource("40_vchkt"),
-5: ExtResource("41_txyw0")
+5: ExtResource("40_vchkt"),
+10: ExtResource("41_txyw0"),
+20: ExtResource("51_dnhof")
 })
 audio_player = NodePath("AudioStreamPlayer")
 good_order_sound = ExtResource("52_dnhof")

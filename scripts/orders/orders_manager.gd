@@ -17,7 +17,9 @@ extends Node
 @export var unlock_turn_resources: Dictionary[int, OrderResource]
 
 @export_category("orders")
-@export var ORDER_NEVER_EMPTY: bool = true
+@export var ORDER_REFILL_EMPTY: bool = true
+@export var ORDER_REFILL_DELAY_MIN: float = 1
+@export var ORDER_REFILL_DELAY_MAX: float = 2
 @export var ORDER_GENERATE_DELAY_MIN: float = 10 # inclusive
 @export var ORDER_GENERATE_DELAY_MAX: float = 20 # inclusive
 @export var ORDER_FIRST_DELAY: float = 0
@@ -29,7 +31,7 @@ extends Node
 @export var SLOW_DOWN_FAILURE: float = 5
 
 @export_category("inspection")
-@export var INSPECTION_TURN_DELAY_MIN: int = 4 # inclusive
+@export var INSPECTION_TURN_DELAY_MIN: int = 2 # inclusive
 @export var INSPECTION_TURN_DELAY_MAX: int = 9 # inclusive
 @export var INSPECTION_FIRST_DELAY: int = 3
 
@@ -73,11 +75,16 @@ func last_order() -> Order:
 
 # call that each time you edit order_list
 func check_move_next():
-	if (order_list.is_empty()): return
-	var now_order_last = last_order()
-	if (moved_order_last == now_order_last): return
-	moved_order_last = now_order_last
-	moved_order_last.character_body.play_arrive()
+
+	if (order_list.is_empty()):
+		if (ORDER_REFILL_EMPTY):
+			var new_delta : float = randf_range(ORDER_REFILL_DELAY_MIN, ORDER_REFILL_DELAY_MAX)
+			next_client_time = min(new_delta, next_client_time)
+	else:
+		var now_order_last = last_order()
+		if (moved_order_last == now_order_last): return
+		moved_order_last = now_order_last
+		moved_order_last.character_body.play_arrive()
 
 func set_flow_enable(state: bool):
 	flow_enabled = state
@@ -161,7 +168,7 @@ func _process(delta: float) -> void:
 	
 	# creation
 	next_client_time -= delta
-	if (next_client_time < 0 || ORDER_NEVER_EMPTY && order_list.is_empty()):
+	if (next_client_time < 0):
 		generate_order()
 	
 

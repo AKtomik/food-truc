@@ -4,6 +4,8 @@ extends ItemTool
 @export var game_manager: GameManager
 @export var collision: CollisionShape3D
 
+signal pickup()
+
 func can_put(_item: Item) -> bool:
 	clicked()
 	return false#dont touch!
@@ -13,6 +15,7 @@ func can_take(_item: Item) -> bool:
 	return false#dont touch!
 	
 func clicked():
+	pickup.emit()
 	if (!game_manager.in_tuto): return
 	if (game_manager.tuto_call_count == 0):
 		game_manager.first_call()
