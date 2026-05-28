@@ -13,7 +13,8 @@ config_version=5
 config/name="Food Truc"
 run/main_scene="uid://ja056cep4hms"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="uid://c3ltjk3jy8q3e"
+config/icon="uid://c3ltjk3jy8q3e"
 
 [input]
 

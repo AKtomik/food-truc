@@ -5,19 +5,25 @@
 
 [node name="StarManager" type="Control" unique_id=1340713327 node_paths=PackedStringArray("p_bar")]
 layout_mode = 3
-anchor_right = 0.33100003
-anchor_bottom = 0.372
-offset_right = -230.31204
-offset_bottom = -210.056
+anchor_left = 0.201
+anchor_right = 0.201
+offset_left = -231.552
+offset_right = 0.44799805
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0fbet")
 p_bar = NodePath("TextureProgressBar")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1568266707]
-layout_mode = 0
-offset_right = 499.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.075
+anchor_right = 1.075
+offset_left = -249.40001
+offset_right = 249.59999
 offset_bottom = 106.0
 scale = Vector2(0.5, 0.5)
+value = 80.0
 fill_mode = 1
 texture_progress = ExtResource("2_r8mi8")

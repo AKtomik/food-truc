@@ -90,6 +90,21 @@ environment = SubResource("Environment_jyhfs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=195654680]
 
+[node name="StarContainer" type="FlowContainer" parent="CanvasLayer" unique_id=1632224343]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+last_wrap_alignment = 1
+
+[node name="StarManager" parent="CanvasLayer/StarContainer" unique_id=1340713327 node_paths=PackedStringArray("mana") instance=ExtResource("3_jyhfs")]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+mana = NodePath("../../..")
+
 [node name="TypeWriter" type="Label" parent="CanvasLayer" unique_id=1783967629]
 anchors_preset = 7
 anchor_left = 0.5
@@ -109,14 +124,12 @@ metadata/_custom_type_script = "uid://cbeyw0nu5rsbi"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/TypeWriter" unique_id=334717385]
 unique_name_in_owner = true
 
-[node name="StarManager" parent="CanvasLayer" unique_id=1340713327 node_paths=PackedStringArray("mana") instance=ExtResource("3_jyhfs")]
-unique_name_in_owner = true
-mana = NodePath("../..")
-
 [node name="SidestepButton" parent="CanvasLayer" unique_id=1965430449 instance=ExtResource("4_qkpxi")]
 unique_name_in_owner = true
 scale = Vector2(0.25, 0.25)
 icon = ExtResource("5_vc5cj")
+
+[node name="StartCanvas" type="CanvasLayer" parent="." unique_id=1843122244]
 
 [node name="Player" type="Node3D" parent="." unique_id=960234431]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1753833, -0.044129163, 2.5505323)
@@ -354,7 +367,7 @@ script = ExtResource("7_o6xl0")
 script = ExtResource("33_5q0nq")
 flow_enabled = false
 imediate_order = false
-star_manager = NodePath("../CanvasLayer/StarManager")
+star_manager = NodePath("../CanvasLayer/StarContainer/StarManager")
 character_queue = NodePath("../CharacterQueue")
 face_picker = NodePath("../FacePicker")
 money_manager = NodePath("../Environement/CashMachine")
