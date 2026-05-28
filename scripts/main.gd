@@ -81,6 +81,7 @@ func order_step_tuto(_order: Order, _success: bool):
 	tuto_order_count += 1
 	if (tuto_order_count == 1):
 		order_manager.call_infinite_order(tutoResourceSteak)
+		await get_tree().create_timer(1).timeout
 		order_manager.call_infinite_order(tutoResourceFries)
 	elif (tuto_order_count == 3):
 		phone_audio_player.play()
@@ -113,7 +114,7 @@ func second_call():
 	tuto_call_count += 1
 	typewriter_label.display("Si tu vois un mec un peu chelou en costard, lui tu me le foires pas.", load("res://assets/sounds/rendu-003.wav"), 0, 0.045)
 	await get_tree().create_timer(3.2).timeout
-	order_manager.call_infinite_critique(tutoResourceSalad)
+	order_manager.call_first_critique(tutoResourceSalad)
 	typewriter_label.display("Ce gars, C’est un enfoiré de critique culinaire, il traîne toujour autour de mes magouilles.", null, 0, 0.045)
 	await get_tree().create_timer(4.2).timeout
 	typewriter_label.display("sert lui de la qualité, il faut que ce soit irréprochable", null, 0, 0.045)
