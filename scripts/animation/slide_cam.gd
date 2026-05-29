@@ -31,11 +31,6 @@ func _process(delta: float) -> void:
 		sidestep_button.notify_started_moving()
 		_move()
 	
-	if (Input.is_action_just_pressed("ui_down")) :
-		progress_bar.remove_star(0.5)
-	if (Input.is_action_just_pressed("ui_up")) :
-		progress_bar.remove_star(-0.5)
-	
 	if _timer > 0.0:
 		_timer -= delta
 		global_position += _velocity * delta
