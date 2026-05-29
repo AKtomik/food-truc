@@ -83,6 +83,7 @@ albedo_texture = ExtResource("12_bu4jf")
 
 [node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("cam", "hand", "typewriter_label", "face_picker", "order_manager", "start_canvas")]
 script = ExtResource("1_o5qli")
+skip_tutorial = false
 cam = NodePath("Player/Camera3D")
 hand = NodePath("Hand")
 typewriter_label = NodePath("CanvasLayer/TypeWriter")
