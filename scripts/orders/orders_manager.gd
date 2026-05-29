@@ -243,19 +243,23 @@ func finish_order(order: Order, success: bool) -> void:
 	count_service(success)
 
 func _successful_order(order: Order) -> void:
-	#if (order.is_inspector) :
-		#audio_player.stream = critique_good_order_sound
-	#else :
-		#audio_player.stream = good_order_sound
+	if (order.is_inspector) :
+		audio_player.stream = critique_good_order_sound
+		audio_player.play(0)
+	else :
+		audio_player.stream = good_order_sound
+		audio_player.play(0)
 	print("successful order:", order)
 	successful_command.emit(order)
 	money_manager.earn(order.resource.price)
 
 func _fail_order(order: Order) -> void:
-	#if (order.is_inspector) :
-		#audio_player.stream = critique_bad_order_sound
-	#else :
-		#audio_player.stream = bad_order_sound
+	if (order.is_inspector) :
+		audio_player.stream = critique_bad_order_sound
+		audio_player.play(0)
+	else :
+		audio_player.stream = bad_order_sound
+		audio_player.play(0)
 	print("fail order:", order)
 	fail_command.emit(order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
