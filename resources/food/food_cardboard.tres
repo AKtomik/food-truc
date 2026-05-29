@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://b8omovfgn2xx3"]
 
-[ext_resource type="PackedScene" uid="uid://d3ubikrydywbi" path="res://scenes/food/food_cardboard.tscn" id="1_gg7ji"]
+[ext_resource type="PackedScene" uid="uid://cdqwid7xusaii" path="res://scenes/food/food_cardboard.tscn" id="1_gg7ji"]
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="1_hq3jg"]
 
 [resource]

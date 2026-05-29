@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://fb7rdycjop6l"]
 
-[ext_resource type="PackedScene" uid="uid://csirk8vqko2gl" path="res://scenes/food/food_bad_salad.tscn" id="1_cbydk"]
+[ext_resource type="PackedScene" uid="uid://df68x0d0gphex" path="res://scenes/food/food_bad_salad.tscn" id="1_cbydk"]
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_xk1dx"]
 
 [resource]
