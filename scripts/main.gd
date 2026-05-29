@@ -1,14 +1,15 @@
 class_name GameManager
 extends Node3D
 
-@export var skip_tutorial : bool = false
-@export var skip_ring : bool = true
+@export var skip_tutorial : bool = true
+@export var skip_ring : bool = false
 
 @export var cam : SlideCamera
 @export var hand : Hand
 @export var typewriter_label : TypeWriter
 @export var face_picker : FacePicker
 @export var order_manager : OrdersManager
+@export var start_canvas : CanvasLayer
 
 @onready var phone_audio_player : AudioStreamPlayer = %PhoneAudioStream
 @onready var music_audio_player : AudioStreamPlayer = %MusicAudioPlayer
@@ -25,14 +26,21 @@ var tutoResourceSalad : OrderResource = load("res://resources/order/order_salad.
 func _ready() -> void:
 	face_picker.setup()
 	money.reset()
-	# TEMPORARY
-	if (skip_tutorial):
-		start_game()
+	if (skip_ring):
+		start()
 	else:
-		start_tuto()
+		zero_call()
 
 func _process(_delta: float) -> void:
 	pass
+
+func start() -> void:
+	phone_audio_player.stop()
+	start_canvas.visible = false
+	if (skip_tutorial):
+		_start_game()
+	else:
+		_start_tuto()
 
 func _stop_time():
 	Engine.time_scale = 0
@@ -48,7 +56,7 @@ func _start_music():
 
 # game
 
-func start_game():
+func _start_game():
 	order_manager.set_flow_enable(true)
 	# redo
 	_start_time()
@@ -58,20 +66,17 @@ func start_game():
 
 # tuto
 
-func start_tuto():
+func _start_tuto():
 	print("start tuto")
 	in_tuto = true
 	order_manager.finish_command.connect(order_step_tuto)
-	if (skip_ring):
-		first_call()
-	else:
-		zero_call()
+	first_call()
 
 func finish_tuto():
 	print("finish tuto")
 	in_tuto = false
 	order_manager.finish_command.disconnect(order_step_tuto)
-	start_game()
+	_start_game()
 
 func phone_call_tuto():
 	pass
