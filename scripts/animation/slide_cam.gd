@@ -15,6 +15,7 @@ var _can_move: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_enable_move(false)
+	switch_collidable()
 
 func set_enable_move(state: bool) -> void:
 	sidestep_button.visible = state
@@ -25,10 +26,12 @@ func _process(delta: float) -> void:
 	if (!_can_move || delta == 0): return
 	if Input.is_action_just_pressed("sidestep_left") and _timer <= 0.0 and _hasmoved :
 		sidestep_button.notify_started_moving()
+		switch_collidable(false)
 		_move()
 		
 	if Input.is_action_just_pressed("sidestep_right") and _timer <= 0.0 and !_hasmoved :
 		sidestep_button.notify_started_moving()
+		switch_collidable(true)
 		_move()
 	
 	if _timer > 0.0:
@@ -48,3 +51,16 @@ func _move() -> void:
 	_velocity = direction * speed
 	_timer = distance / speed
 	_hasmoved = !_hasmoved
+
+# collisions
+
+@export var exclusive_collision_left : Array[CollisionShape3D]
+@export var exclusive_collision_right : Array[CollisionShape3D]
+
+func switch_collidable(is_side_right: bool = false):
+	set_collidable(exclusive_collision_left, !is_side_right)
+	set_collidable(exclusive_collision_right, is_side_right)
+
+func set_collidable(collisions: Array[CollisionShape3D], collidable: bool = true):
+	for collision in collisions:
+		collision.disabled = !collidable
