@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvrac5sydclhm"]
 
 [ext_resource type="Texture2D" uid="uid://dwv83mdto8ux2" path="res://assets/ui/good_ending.png" id="1_5xg0c"]
-[ext_resource type="Script" path="res://scripts/ui/retry_button.gd" id="2_1o60b"]
+[ext_resource type="Script" uid="uid://1ua7eygiicwi" path="res://scripts/ui/retry_button.gd" id="2_1o60b"]
 [ext_resource type="Texture2D" uid="uid://dhqafspgq0qg" path="res://assets/ui/retry_ui.png" id="2_2l6lv"]
 
 [node name="GoodEnding" type="Control" unique_id=1385782559]
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=370706992]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=510680035]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,16 +22,30 @@ grow_vertical = 2
 texture = ExtResource("1_5xg0c")
 expand_mode = 2
 
-[node name="Button" type="Button" parent="." unique_id=1303919658]
+[node name="Button2" type="Button" parent="." unique_id=667333818]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.0034722222
+anchor_top = 0.6574074
+anchor_right = 0.9965278
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 script = ExtResource("2_1o60b")
+metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Button" unique_id=1321613021]
-position = Vector2(586, 303)
+[node name="TextureRect" type="TextureRect" parent="Button2" unique_id=1915742433]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -218.5
+offset_top = -180.0
+offset_right = 218.5
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_2l6lv")
+stretch_mode = 4

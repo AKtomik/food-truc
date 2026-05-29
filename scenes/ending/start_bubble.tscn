@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cicvmw4tovmig"]
 
 [ext_resource type="Texture2D" uid="uid://n5giw16ygjfh" path="res://assets/ui/bulle_ui.png" id="1_6ip3u"]
-[ext_resource type="Script" path="res://scripts/ui/retry_button.gd" id="2_e8ify"]
+[ext_resource type="Script" uid="uid://1ua7eygiicwi" path="res://scripts/ui/retry_button.gd" id="2_e8ify"]
 
 [node name="GoodEnding" type="Control" unique_id=1385782559]
 layout_mode = 3
@@ -11,21 +11,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="." unique_id=1303919658]
+[node name="StartButton" type="Button" parent="." unique_id=1556199452]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_e8ify")
 
-[node name="Sprite2D" type="Sprite2D" parent="Button" unique_id=1321613021]
-position = Vector2(498, 395)
-scale = Vector2(0.6, 0.6)
+[node name="StartBuble" type="TextureRect" parent="StartButton" unique_id=2107623460]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1071.0
+offset_top = -536.0
+grow_horizontal = 0
+grow_vertical = 0
 texture = ExtResource("1_6ip3u")
+expand_mode = 2
+stretch_mode = 4
