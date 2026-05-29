@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://bl3f6ln57swwh"]
 
 [ext_resource type="Texture2D" uid="uid://dhm14dpuxe4sr" path="res://assets/ui/bad_ending.png" id="1_0xi0n"]
-[ext_resource type="Script" path="res://scripts/ui/retry_button.gd" id="2_aidhh"]
+[ext_resource type="Script" uid="uid://1ua7eygiicwi" path="res://scripts/ui/retry_button.gd" id="2_aidhh"]
+[ext_resource type="FontFile" uid="uid://cthemqkwhu5e0" path="res://assets/Orange Kid.otf" id="2_nwyx1"]
+[ext_resource type="Script" uid="uid://b2klgpw7buanj" path="res://scripts/ui/money_label.gd" id="3_8k0v2"]
 [ext_resource type="Texture2D" uid="uid://dhqafspgq0qg" path="res://assets/ui/retry_ui.png" id="3_nwyx1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8k0v2"]
+font = ExtResource("2_nwyx1")
+font_size = 100
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="GoodEnding" type="Control" unique_id=1385782559]
 layout_mode = 3
@@ -21,6 +30,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0xi0n")
 expand_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1938206284]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.43800002
+offset_bottom = -73.824005
+grow_horizontal = 2
+text = "score: 10000$"
+label_settings = SubResource("LabelSettings_8k0v2")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_8k0v2")
 
 [node name="Button" type="Button" parent="." unique_id=1303919658]
 self_modulate = Color(1, 1, 1, 0)

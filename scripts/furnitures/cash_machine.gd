@@ -14,6 +14,7 @@ func _ready() -> void:
 	refresh()
 
 func refresh():
+	money.set_money(_money)
 	var str_amount = "%d" % _money
 
 	if str_amount.length() > _max_digits:

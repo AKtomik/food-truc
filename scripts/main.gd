@@ -24,6 +24,7 @@ var tutoResourceSalad : OrderResource = load("res://resources/order/order_salad.
 
 func _ready() -> void:
 	face_picker.setup()
+	money.reset()
 	# TEMPORARY
 	if (skip_tutorial):
 		start_game()

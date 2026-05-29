@@ -3,6 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://dwv83mdto8ux2" path="res://assets/ui/good_ending.png" id="1_5xg0c"]
 [ext_resource type="Script" uid="uid://1ua7eygiicwi" path="res://scripts/ui/retry_button.gd" id="2_1o60b"]
 [ext_resource type="Texture2D" uid="uid://dhqafspgq0qg" path="res://assets/ui/retry_ui.png" id="2_2l6lv"]
+[ext_resource type="FontFile" uid="uid://cthemqkwhu5e0" path="res://assets/Orange Kid.otf" id="2_sn8gs"]
+[ext_resource type="Script" uid="uid://b2klgpw7buanj" path="res://scripts/ui/money_label.gd" id="3_1g7ar"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwbht"]
+font = ExtResource("2_sn8gs")
+font_size = 100
+font_color = Color(0, 1, 0.116666794, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="GoodEnding" type="Control" unique_id=1385782559]
 layout_mode = 3
@@ -21,6 +30,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5xg0c")
 expand_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1807498698]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.43800002
+offset_bottom = -73.824005
+grow_horizontal = 2
+text = "score: 10000$"
+label_settings = SubResource("LabelSettings_nwbht")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_1g7ar")
 
 [node name="Button2" type="Button" parent="." unique_id=667333818]
 self_modulate = Color(1, 1, 1, 0)
