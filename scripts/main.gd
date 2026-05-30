@@ -50,6 +50,7 @@ func _start_time():
 
 func _start_music():
 	if (started_music): return
+	started_music = true
 	music_audio_player.stream =  load("res://assets/sounds/Main_theme.mp3")
 	music_audio_player.stream.loop = true
 	music_audio_player.play()
