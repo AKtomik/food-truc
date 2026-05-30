@@ -9,6 +9,10 @@
 [node name="CashMachine" type="Area3D" unique_id=1177224426 node_paths=PackedStringArray("label")]
 script = ExtResource("1_y64xk")
 label = NodePath("Label3D")
+happy_color = Color(0.21568628, 0.6862745, 0, 1)
+angry_color = Color(0.80784315, 0.3137255, 0, 1)
+netral_color = Color(1, 0.9166666, 0, 1)
+default_color = Color(1, 1, 1, 1)
 
 [node name="SM_cashRegister2" parent="." unique_id=743664664 instance=ExtResource("2_tvijx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234, 0.003, -0.029)

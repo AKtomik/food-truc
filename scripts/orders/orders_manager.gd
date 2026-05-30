@@ -254,6 +254,7 @@ func _successful_order(order: Order) -> void:
 	print("successful order:", order)
 	successful_command.emit(order)
 	money_manager.earn(order.resource.price)
+	money_manager.satisfaction(money_manager.MoneySatisfaction.HAPPY_CLIENT)
 
 func _fail_order(order: Order) -> void:
 	if (order.is_inspector) :
@@ -266,3 +267,4 @@ func _fail_order(order: Order) -> void:
 	fail_command.emit(order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
 	star_manager.remove_star(tige)
+	money_manager.satisfaction(money_manager.MoneySatisfaction.ANGRY_CLIENT)#!

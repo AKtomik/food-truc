@@ -17,6 +17,7 @@ func put(_item: Item) -> bool:
 
 func take() -> Item:
 	money_manager.pay(price)
+	money_manager.satisfaction(money_manager.MoneySatisfaction.NETRAL_COOKING)
 	var item = item_resource.model_scene.instantiate()
 	add_child(item)
 	return item
