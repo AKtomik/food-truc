@@ -4,7 +4,19 @@ extends ItemTool
 @export var game_manager: GameManager
 @export var collision: CollisionShape3D
 
+@onready var sound_ring: AudioStreamPlayer = $%PhoneAudio
+
 signal pickup()
+
+func ring(ringing = true):
+	if (ringing):
+		sound_ring.play()
+	else:
+		sound_ring.stop()
+
+	# now in editor:
+	#phone_audio_player.stream = load("res://assets/sounds/ringtone.mp3")
+	#phone_audio_player.stream.loop = true
 
 func can_put(_item: Item) -> bool:
 	clicked()

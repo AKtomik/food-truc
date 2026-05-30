@@ -6,12 +6,12 @@ extends Node3D
 
 @export var cam : SlideCamera
 @export var hand : Hand
+@export var phone : StartPhone
 @export var typewriter_label : TypeWriter
 @export var face_picker : FacePicker
 @export var order_manager : OrdersManager
 @export var start_canvas : CanvasLayer
 
-@onready var phone_audio_player : AudioStreamPlayer = %PhoneAudioStream
 @onready var music_audio_player : AudioStreamPlayer = %MusicAudioPlayer
 
 var in_tuto : bool = false
@@ -35,7 +35,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func start() -> void:
-	phone_audio_player.stop()
+	phone.ring(false)
 	start_canvas.visible = false
 	if (skip_tutorial):
 		_start_game()
@@ -91,20 +91,18 @@ func order_step_tuto(_order: Order, _success: bool):
 		await get_tree().create_timer(1).timeout
 		order_manager.call_infinite_order(tutoResourceFries)
 	elif (tuto_order_count == 3):
-		phone_audio_player.play()
+		phone.ring(true)
 	elif (tuto_order_count == 4):
 		finish_tuto()
 
 func zero_call():
 	_stop_time()
-	phone_audio_player.stream = load("res://assets/sounds/ringtone.mp3")
-	phone_audio_player.stream.loop = true
-	phone_audio_player.play()
+	phone.ring(true)
 
 func first_call():
 	_start_time()
 	tuto_call_count += 1
-	phone_audio_player.stop()
+	phone.ring(false)
 	typewriter_label.display("Si tu veux pas d’emmerdes, écoute-moi bien. J’me répéterai pas.", load("res://assets/sounds/rendu-002.wav"), 0.8, 0.045)
 	await get_tree().create_timer(4.0).timeout
 	typewriter_label.display("Tu dois faire tourner la boutique. Si tu te foires, c’est game over", null, 0, 0.035)
@@ -117,8 +115,8 @@ func first_call():
 	typewriter_label.display("Que les clients bouffent mal, j’m’en fous. Fais rentrer le pognon dans la caisse.")
 
 func second_call():
-	phone_audio_player.stop()
 	tuto_call_count += 1
+	phone.ring(false)
 	typewriter_label.display("Si tu vois un mec un peu chelou en costard, lui tu me le foires pas.", load("res://assets/sounds/rendu-003.wav"), 0, 0.045)
 	await get_tree().create_timer(3.2).timeout
 	order_manager.call_first_critique(tutoResourceSalad)

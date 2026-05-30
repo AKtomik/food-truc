@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://3465ihq0jqma" path="res://scripts/ui/start_button.gd" id="7_tm6hj"]
 [ext_resource type="PackedScene" uid="uid://cjq01mw7c4hcv" path="res://scenes/furnitures/cash_machine.tscn" id="7_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dbkyhu1unlntr" path="res://scenes/tools/cubishop.tscn" id="8_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://buo7aw73jxrkq" path="res://scenes/sm_phone.tscn" id="10_vchkt"]
 [ext_resource type="PackedScene" uid="uid://ceqcu3hsg3nlr" path="res://scenes/tools/trash.tscn" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bpbr8rdycvo7w" path="res://scenes/ui/orders_pin_pos.tscn" id="11_txyw0"]
 [ext_resource type="PackedScene" uid="uid://qglx87c82jac" path="res://scenes/tools/microwave.tscn" id="11_ya4ey"]
@@ -86,11 +85,12 @@ blend_mode = 1
 albedo_color = Color(0.18717614, 0.18717614, 0.18717614, 1)
 albedo_texture = ExtResource("12_bu4jf")
 
-[node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("cam", "hand", "typewriter_label", "face_picker", "order_manager", "start_canvas")]
+[node name="Main" type="Node3D" unique_id=1955109357 node_paths=PackedStringArray("cam", "hand", "phone", "typewriter_label", "face_picker", "order_manager", "start_canvas")]
 script = ExtResource("1_o5qli")
 skip_tutorial = false
 cam = NodePath("Player/Camera3D")
 hand = NodePath("Hand")
+phone = NodePath("Environement/StartPhone")
 typewriter_label = NodePath("CanvasLayer/TypeWriter")
 face_picker = NodePath("FacePicker")
 order_manager = NodePath("OrdersManager")
@@ -205,13 +205,6 @@ rotation_edit_mode = 2
 
 [node name="SM_truckInterior" parent="Environement/Truck" unique_id=667884104 instance=ExtResource("16_vchkt")]
 
-[node name="SM_phone" parent="Environement/Truck" unique_id=1667207949 instance=ExtResource("10_vchkt")]
-transform = Transform3D(0.978509, 0, 0.20620419, 0, 1, 0, -0.20620419, 0, 0.978509, 0.022, 1.001, 0.985)
-
-[node name="PhoneAudioStream" type="AudioStreamPlayer" parent="Environement/Truck/SM_phone" unique_id=206276547]
-unique_name_in_owner = true
-volume_db = -8.211
-
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
 transform = Transform3D(-9.313226e-09, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -9.313226e-09, 1.5543122e-15, 0.53794277, 2.1511936, -2.2037988)
 
@@ -240,7 +233,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.00
 orders_manager = NodePath("../../OrdersManager")
 
 [node name="StartPhone" parent="Environement" unique_id=852733474 node_paths=PackedStringArray("game_manager") instance=ExtResource("15_j2jfr")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.67624307, 1.1657498, -2.409309)
+transform = Transform3D(0.9890134, 0, 0.14782669, 0, 1, 0, -0.14782669, 0, 0.9890134, 1.2980201, 1.0193484, -2.2163544)
 collision_layer = 8
 game_manager = NodePath("../..")
 
