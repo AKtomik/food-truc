@@ -9,7 +9,7 @@ func can_put(_item: Item) -> bool:
 	return false
 
 func can_take(_item: Item) -> bool:
-	return money_manager.get_money()
+	return true# money_manager.get_money() >= price
 
 func put(_item: Item) -> bool:
 	push_error("can't put anything in cubishop")
