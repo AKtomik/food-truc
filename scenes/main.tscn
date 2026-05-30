@@ -232,10 +232,9 @@ mana = NodePath("../..")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0073182583, 1.6252874, -2.9667244)
 orders_manager = NodePath("../../OrdersManager")
 
-[node name="StartPhone" parent="Environement" unique_id=852733474 node_paths=PackedStringArray("game_manager") instance=ExtResource("15_j2jfr")]
+[node name="StartPhone" parent="Environement" unique_id=852733474 instance=ExtResource("15_j2jfr")]
 transform = Transform3D(0.9890134, 0, 0.14782669, 0, 1, 0, -0.14782669, 0, 0.9890134, 1.2980201, 1.0193484, -2.2163544)
 collision_layer = 8
-game_manager = NodePath("../..")
 
 [node name="StoveCollider" parent="Environement" unique_id=387607937 node_paths=PackedStringArray("audio_player") instance=ExtResource("15_vchkt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.67624307, 1.1657498, -2.409309)

@@ -1,7 +1,6 @@
 class_name StartPhone
 extends ItemTool
 
-@export var game_manager: GameManager
 @export var collision: CollisionShape3D
 
 @onready var sound_ring: AudioStreamPlayer = $%PhoneAudio
@@ -10,6 +9,7 @@ extends ItemTool
 signal pickup()
 
 func ring(ringing = true):
+	collision.disabled = !ringing
 	label.visible = ringing
 	if (ringing):
 		sound_ring.play()
@@ -26,9 +26,3 @@ func can_take(_item: Item) -> bool:
 	
 func clicked():
 	pickup.emit()
-	if (!game_manager.in_tuto): return
-	if (game_manager.tuto_call_count == 0):
-		game_manager.first_call()
-	if (game_manager.tuto_call_count == 1 && game_manager.tuto_order_count == 3):
-		collision.disabled = true# kill the phone
-		game_manager.second_call()

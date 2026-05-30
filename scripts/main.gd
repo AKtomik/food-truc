@@ -79,8 +79,12 @@ func finish_tuto():
 	order_manager.finish_command.disconnect(order_step_tuto)
 	_start_game()
 
-func phone_call_tuto():
-	pass
+func phone_pickup():
+	#if (!in_tuto): return
+	if (tuto_call_count == 0):
+		start()
+	if (tuto_call_count == 1 && tuto_order_count == 3):
+		second_call()
 
 func order_step_tuto(_order: Order, _success: bool):
 	print("step tuto")
@@ -97,6 +101,7 @@ func order_step_tuto(_order: Order, _success: bool):
 
 func zero_call():
 	_stop_time()
+	phone.pickup.connect(phone_pickup)
 	phone.ring(true)
 
 func first_call():
