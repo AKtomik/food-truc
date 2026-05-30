@@ -210,7 +210,7 @@ unique_name_in_owner = true
 volume_db = -8.211
 
 [node name="OrdersPinPos" parent="Environement/Truck" unique_id=1237496899 instance=ExtResource("11_txyw0")]
-transform = Transform3D(-1.8626451e-08, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -1.8626451e-08, 1.5543122e-15, 0.70424294, 2.1511936, -10.070711)
+transform = Transform3D(-9.313226e-09, -0.8, 3.4969112e-08, 0, -3.4969112e-08, -0.8, 0.8, -9.313226e-09, 1.5543122e-15, 0.53794277, 2.1511936, -2.2037988)
 
 [node name="SmWindowFrame" type="MeshInstance3D" parent="Environement/Truck" unique_id=1011107732]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.751, 1.269, 0.009)
@@ -404,7 +404,6 @@ script = ExtResource("7_o6xl0")
 
 [node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager", "character_queue", "face_picker", "money_manager", "ticket_container", "audio_player")]
 script = ExtResource("33_5q0nq")
-flow_enabled = false
 imediate_order = false
 star_manager = NodePath("../CanvasLayer/StarContainer/StarManager")
 character_queue = NodePath("../CharacterQueue")
@@ -418,6 +417,8 @@ unlock_turn_resources = Dictionary[int, ExtResource("38_chjal")]({
 10: ExtResource("41_txyw0"),
 20: ExtResource("51_dnhof")
 })
+ORDER_GENERATE_DELAY_MIN = 1.0
+ORDER_GENERATE_DELAY_MAX = 2.0
 audio_player = NodePath("AudioStreamPlayer")
 good_order_sound = ExtResource("52_dnhof")
 bad_order_sound = ExtResource("53_1v6qk")
