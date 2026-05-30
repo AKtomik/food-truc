@@ -404,6 +404,7 @@ script = ExtResource("7_o6xl0")
 
 [node name="OrdersManager" type="Node" parent="." unique_id=1416883034 node_paths=PackedStringArray("star_manager", "character_queue", "face_picker", "money_manager", "ticket_container", "audio_player")]
 script = ExtResource("33_5q0nq")
+flow_enabled = false
 imediate_order = false
 star_manager = NodePath("../CanvasLayer/StarContainer/StarManager")
 character_queue = NodePath("../CharacterQueue")
@@ -417,8 +418,6 @@ unlock_turn_resources = Dictionary[int, ExtResource("38_chjal")]({
 10: ExtResource("41_txyw0"),
 20: ExtResource("51_dnhof")
 })
-ORDER_GENERATE_DELAY_MIN = 1.0
-ORDER_GENERATE_DELAY_MAX = 2.0
 audio_player = NodePath("AudioStreamPlayer")
 good_order_sound = ExtResource("52_dnhof")
 bad_order_sound = ExtResource("53_1v6qk")

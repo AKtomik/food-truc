@@ -23,6 +23,8 @@ extends Node
 @export var ORDER_GENERATE_DELAY_MIN: float = 10 # inclusive
 @export var ORDER_GENERATE_DELAY_MAX: float = 20 # inclusive
 @export var ORDER_FIRST_DELAY: float = 0
+@export var ORDER_GENERATE_MAX_QUEUE: int = 5
+#@export var ORDER_DISPLAY_MAX: int = 5
 
 @export_category("speed")
 @export var STARTING_SPEED: float = 0
@@ -168,7 +170,7 @@ func _process(delta: float) -> void:
 	
 	# creation
 	next_client_time -= delta
-	if (next_client_time < 0):
+	if (next_client_time < 0 && order_list.size() < ORDER_GENERATE_MAX_QUEUE):
 		generate_order()
 	
 
