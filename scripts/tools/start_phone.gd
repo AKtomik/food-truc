@@ -5,18 +5,16 @@ extends ItemTool
 @export var collision: CollisionShape3D
 
 @onready var sound_ring: AudioStreamPlayer = $%PhoneAudio
+@onready var label: Label3D = $%ExclamationLabel
 
 signal pickup()
 
 func ring(ringing = true):
+	label.visible = ringing
 	if (ringing):
 		sound_ring.play()
 	else:
 		sound_ring.stop()
-
-	# now in editor:
-	#phone_audio_player.stream = load("res://assets/sounds/ringtone.mp3")
-	#phone_audio_player.stream.loop = true
 
 func can_put(_item: Item) -> bool:
 	clicked()
