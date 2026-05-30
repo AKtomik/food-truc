@@ -51,7 +51,12 @@
 [ext_resource type="Resource" uid="uid://bax80o8bcdrms" path="res://resources/order/order_salad.tres" id="40_vchkt"]
 [ext_resource type="Resource" uid="uid://do4rfi07at1ga" path="res://resources/order/order_steak.tres" id="41_txyw0"]
 [ext_resource type="PackedScene" uid="uid://buo6eq0yav7un" path="res://scenes/order.tscn" id="43_nvyfr"]
+[ext_resource type="Texture2D" uid="uid://c3q3hr241eaf4" path="res://assets/posters/carte_postale.png" id="45_kf5aa"]
+[ext_resource type="Texture2D" uid="uid://c85q0qn7ff4dh" path="res://assets/posters/recette_frites.png" id="46_od4ux"]
 [ext_resource type="Script" uid="uid://bieaqyeteieb0" path="res://scripts/character_queue.gd" id="47_vc5cj"]
+[ext_resource type="Texture2D" uid="uid://d3ycohbsf4572" path="res://assets/posters/recette_steak.png" id="47_xhfw6"]
+[ext_resource type="Texture2D" uid="uid://ih6x1e4jyi2f" path="res://assets/posters/recette_salad.png" id="48_1epgm"]
+[ext_resource type="Texture2D" uid="uid://k0qqbnvtojjc" path="res://assets/posters/recette_burger.png" id="49_152kg"]
 [ext_resource type="Script" uid="uid://cbeyw0nu5rsbi" path="res://scripts/typewriter.gd" id="49_ty1g6"]
 [ext_resource type="Resource" uid="uid://gq07ydj0qkea" path="res://resources/order/order_burger.tres" id="51_dnhof"]
 [ext_resource type="Texture2D" uid="uid://vdsf6twe52hw" path="res://assets/Icons/fond_decor_test1.png" id="52_bu4jf"]
@@ -392,6 +397,28 @@ spot_range = 36.324
 spot_attenuation = 0.5
 spot_angle = 65.0
 
+[node name="Posters" type="Node3D" parent="Environement" unique_id=1975173577]
+
+[node name="MaladiveSprite" type="Sprite3D" parent="Environement/Posters" unique_id=1442887781]
+transform = Transform3D(0.039621912, -0.005486718, -1.652678e-11, 0.005486718, 0.039621912, 2.3983204e-10, -1.6526669e-11, -2.3983207e-10, 0.04, 0.18821871, 1.1772673, -2.8629394)
+texture = ExtResource("45_kf5aa")
+
+[node name="RecipeFriesSprite" type="Sprite3D" parent="Environement/Posters" unique_id=1645166461]
+transform = Transform3D(0.049864057, 0.0036845366, -5.9423577e-12, -0.0036845366, 0.049864057, -1.6105622e-10, -5.9421357e-12, 1.6105618e-10, 0.049999997, 1.3651398, 1.4620998, -2.8629394)
+texture = ExtResource("46_od4ux")
+
+[node name="RecipeSteak" type="Sprite3D" parent="Environement/Posters" unique_id=325579032]
+transform = Transform3D(0.049342506, -0.008081915, -2.87399e-11, 0.008081915, 0.049342506, 3.532717e-10, -2.8740121e-11, -3.5327175e-10, 0.049999997, 2.042062, 1.35767, -2.8629394)
+texture = ExtResource("47_xhfw6")
+
+[node name="RecipeSalad" type="Sprite3D" parent="Environement/Posters" unique_id=624863291]
+transform = Transform3D(0.049342506, -0.008081915, -2.87399e-11, 0.008081915, 0.049342506, 3.532717e-10, -2.8740121e-11, -3.5327175e-10, 0.049999997, 1.3437338, 1.9491371, -2.8983088)
+texture = ExtResource("48_1epgm")
+
+[node name="RecipeBurger" type="Sprite3D" parent="Environement/Posters" unique_id=1008314268]
+transform = Transform3D(0.049888447, 0.0033380734, -4.8758775e-12, -0.0033380734, 0.049888447, -1.4591187e-10, -4.8760995e-12, 1.4591185e-10, 0.049999993, 2.034285, 1.8652527, -2.8983088)
+texture = ExtResource("49_152kg")
+
 [node name="CharacterQueue" type="Node3D" parent="." unique_id=413541609 node_paths=PackedStringArray("face_picker")]
 script = ExtResource("47_vc5cj")
 mesh_library = ExtResource("2_tefeu")
@@ -424,7 +451,7 @@ critique_good_order_sound = ExtResource("55_tm6hj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="OrdersManager" unique_id=1075099276]
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1400874940]
+[node name="BackGroundSprite" type="Sprite3D" parent="." unique_id=1400874940]
 transform = Transform3D(-6.5567085e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.5567085e-09, -3, 0.5, 2.2000003)
 texture = ExtResource("52_bu4jf")
 
