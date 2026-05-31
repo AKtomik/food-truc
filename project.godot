@@ -11,8 +11,11 @@ config_version=5
 [application]
 
 config/name="Food Truc"
+config/description="\"Food Truc\" est un jeu de cuisine original où le but est de servir un maximum de commandes en transformant les ingrédients que tu as sous la main en plats présentables, tout en servant de vrais repas (très chers à préparer!) aux critiques qui se cachent parmis les clients."
+config/version="1.2"
 run/main_scene="uid://ja056cep4hms"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.29803923, 0.7254902, 0.91764706, 1)
 boot_splash/image="uid://c3ltjk3jy8q3e"
 config/icon="uid://c3ltjk3jy8q3e"
 
