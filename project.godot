@@ -19,6 +19,10 @@ boot_splash/bg_color=Color(0.29803923, 0.7254902, 0.91764706, 1)
 boot_splash/image="uid://c3ltjk3jy8q3e"
 config/icon="uid://c3ltjk3jy8q3e"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 sidestep={

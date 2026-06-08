@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hp8grywyed33"
-path.s3tc="res://.godot/imported/T_phone_Roughness_Utility - Raw.png-cd8b88cf26ff5fd1c2ee76969ef3543d.s3tc.ctex"
+uid="uid://djaaysadbe8dx"
+path.s3tc="res://.godot/imported/T_microwave_Metallic_Utility - Raw.png-40882c367d4d971fe123a45c6678b113.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/TXT/enviro/T_phone_Roughness_Utility - Raw.png"
-dest_files=["res://.godot/imported/T_phone_Roughness_Utility - Raw.png-cd8b88cf26ff5fd1c2ee76969ef3543d.s3tc.ctex"]
+source_file="res://assets/TXT/enviro/T_microwave_Metallic_Utility - Raw.png"
+dest_files=["res://.godot/imported/T_microwave_Metallic_Utility - Raw.png-40882c367d4d971fe123a45c6678b113.s3tc.ctex"]
 
 [params]
 
