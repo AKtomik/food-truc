@@ -4,9 +4,9 @@ extends Control
 var resource: OrderResource
 var character_body: Node3D
 var is_inspector: bool
-var time_max: float
-var time_remain: float
-var number: int
+var time_max: float = 0
+var time_remain: float = 0	
+static var number: int
 
 @export var ui_image: TextureRect
 @export var ui_label: Label
@@ -14,15 +14,17 @@ var number: int
 
 # init
 func setup(order_resource: OrderResource, character: CharacterBody, inspection: bool = false, time_scale: float = 1):
+	print("ui order setup")
 	resource = order_resource
 	character_body = character
 	time_max = order_resource.expiration_time * time_scale
 	time_remain = time_max
 	is_inspector = inspection
-	number = randi() % 10000
+	number += 1
 
 	ui_image.texture = order_resource.kaway_image
 	ui_label.text = "commande #"+str(number)
+	print("ui order setuped")
 
 # loop
 func _process(delta: float) -> void:

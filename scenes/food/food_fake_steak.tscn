@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dfrhamy73gqqd" path="res://scripts/items/item.gd" id="1_7n6r3"]
 [ext_resource type="ArrayMesh" uid="uid://bwddobdvj3lc" path="res://assets/Food/SM_food_component_rottenSteak_geo.obj" id="1_x127h"]
-[ext_resource type="Texture2D" uid="uid://cd3dre7ikp8ct" path="res://assets/TXT/Props_TXT/rotten_steak_cooked_ACEScg.1001.png" id="2_lfkw0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kexu"]
 shading_mode = 2
-albedo_color = Color(0.9843438, 0.72610664, 0.3202691, 1)
-albedo_texture = ExtResource("2_lfkw0")
+albedo_color = Color(0.3882353, 0, 0, 1)
 
 [node name="FoodFakeSteak" type="Node3D" unique_id=230256206]
 script = ExtResource("1_7n6r3")

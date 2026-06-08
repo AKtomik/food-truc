@@ -1,8 +1,20 @@
 class_name StartPhone
 extends ItemTool
 
-@export var game_manager: GameManager
 @export var collision: CollisionShape3D
+
+@onready var sound_ring: AudioStreamPlayer = $%PhoneAudio
+@onready var label: Label3D = $%ExclamationLabel
+
+signal pickup()
+
+func ring(ringing = true):
+	collision.disabled = !ringing
+	label.visible = ringing
+	if (ringing):
+		sound_ring.play()
+	else:
+		sound_ring.stop()
 
 func can_put(_item: Item) -> bool:
 	clicked()
@@ -13,6 +25,4 @@ func can_take(_item: Item) -> bool:
 	return false#dont touch!
 	
 func clicked():
-	print("i clicked on the phone WOW")
-	collision.disabled = true# works once
-	game_manager.start_game()
+	pickup.emit()

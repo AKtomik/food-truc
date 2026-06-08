@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://cgfcpxfevbakv" path="res://scripts/animation/chara_scene.gd" id="1_w1mk4"]
 [ext_resource type="Animation" uid="uid://oekcetaw17pe" path="res://animations/Go.res" id="3_asswx"]
 [ext_resource type="ArrayMesh" uid="uid://8kt2h5e6shkn" path="res://assets/Chara/SM_face.obj" id="3_mlviu"]
+[ext_resource type="Texture2D" uid="uid://dpai6xmltoacx" path="res://assets/Chara/Chara_props/Chara_Props_cigs/cigs_shd_ACEScg.1001.png" id="3_oenri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcyqy"]
+albedo_texture = ExtResource("3_oenri")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlviu"]
 
@@ -95,6 +99,7 @@ transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 
 [node name="Mouth" type="MeshInstance3D" parent="SM_chara_base" unique_id=888818528]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bcyqy")
 
 [node name="Neck" type="MeshInstance3D" parent="SM_chara_base" unique_id=1785497933]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)

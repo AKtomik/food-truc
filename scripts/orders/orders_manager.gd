@@ -17,10 +17,14 @@ extends Node
 @export var unlock_turn_resources: Dictionary[int, OrderResource]
 
 @export_category("orders")
-@export var ORDER_NEVER_EMPTY: bool = true
+@export var ORDER_REFILL_EMPTY: bool = true
+@export var ORDER_REFILL_DELAY_MIN: float = 1
+@export var ORDER_REFILL_DELAY_MAX: float = 2
 @export var ORDER_GENERATE_DELAY_MIN: float = 10 # inclusive
 @export var ORDER_GENERATE_DELAY_MAX: float = 20 # inclusive
 @export var ORDER_FIRST_DELAY: float = 0
+@export var ORDER_GENERATE_MAX_QUEUE: int = 5
+#@export var ORDER_DISPLAY_MAX: int = 5
 
 @export_category("speed")
 @export var STARTING_SPEED: float = 0
@@ -29,7 +33,7 @@ extends Node
 @export var SLOW_DOWN_FAILURE: float = 5
 
 @export_category("inspection")
-@export var INSPECTION_TURN_DELAY_MIN: int = 4 # inclusive
+@export var INSPECTION_TURN_DELAY_MIN: int = 2 # inclusive
 @export var INSPECTION_TURN_DELAY_MAX: int = 9 # inclusive
 @export var INSPECTION_FIRST_DELAY: int = 3
 
@@ -64,17 +68,25 @@ var total_inspection_count: int = 0
 var next_client_time: float = -1
 var next_inspection_turn_count: int
 
+func has_order() -> bool:
+	return !order_list.is_empty()
+
 func last_order() -> Order:
 	if (order_list.is_empty()): return null
 	return order_list[0]
 
 # call that each time you edit order_list
 func check_move_next():
-	if (order_list.is_empty()): return
-	var now_order_last = last_order()
-	if (moved_order_last == now_order_last): return
-	moved_order_last = now_order_last
-	moved_order_last.character_body.play_arrive()
+
+	if (order_list.is_empty()):
+		if (ORDER_REFILL_EMPTY):
+			var new_delta : float = randf_range(ORDER_REFILL_DELAY_MIN, ORDER_REFILL_DELAY_MAX)
+			next_client_time = min(new_delta, next_client_time)
+	else:
+		var now_order_last = last_order()
+		if (moved_order_last == now_order_last): return
+		moved_order_last = now_order_last
+		moved_order_last.character_body.play_arrive()
 
 func set_flow_enable(state: bool):
 	flow_enabled = state
@@ -158,7 +170,7 @@ func _process(delta: float) -> void:
 	
 	# creation
 	next_client_time -= delta
-	if (next_client_time < 0 || ORDER_NEVER_EMPTY && order_list.is_empty()):
+	if (next_client_time < 0 && order_list.size() < ORDER_GENERATE_MAX_QUEUE):
 		generate_order()
 	
 
@@ -172,13 +184,19 @@ func generate_order() -> void:
 
 # special function if you want an order to never expire
 func call_infinite_order(new_order_resource: OrderResource, inspection: bool = false) -> void:
-	call_order(new_order_resource, inspection, 1.79769e308)
+	call_order(new_order_resource, inspection, 1.79769e30)#1.79769e308 is the max but 1.79769e30 is still a lot
+
+func call_infinite_critique(new_order_resource: OrderResource) -> void:
+	call_order(new_order_resource, true, 1.79769e30)
+	
 
 # build your own order on order
 func call_order(new_order_resource: OrderResource, inspection: bool = false, time_scale: float = 1) -> void:
 	print("add a new order!", new_order_resource)
 	var new_order_instance = packed_order.instantiate() as Order
+	print("add order: BEFORE THE SOMETIMES CRASH", new_order_resource)
 	var new_character = character_queue.generate_random_character(new_order_resource, inspection)
+	print("add order: AFTER THE SOMETIMES CRASH", new_order_resource)
 	new_order_instance.setup(new_order_resource, new_character, inspection, time_scale)
 
 	ticket_container.add_child(new_order_instance)
@@ -187,6 +205,19 @@ func call_order(new_order_resource: OrderResource, inspection: bool = false, tim
 	check_move_next()
 
 	count_client(inspection)
+	#new_command.emit(new_order_instance)
+	print("added a new order.")
+
+func call_first_critique(new_order_resource: OrderResource) -> void :
+	var new_order_instance = packed_order.instantiate() as Order
+	var new_character = character_queue.generate_first_critique(new_order_resource)
+	new_order_instance.setup(new_order_resource, new_character, true, 1.79769e30)
+	ticket_container.add_child(new_order_instance)
+	ticket_container.move_child(new_order_instance, 0)
+	order_list.append(new_order_instance)
+	check_move_next()
+
+	count_client(true)
 	new_command.emit(new_order_instance)
 
 # -- finish --
@@ -196,6 +227,7 @@ func given_food(item: Item) -> void:
 	var order = last_order()
 	var happy = order.given_happy(item)
 	finish_order(order, happy)
+	print("order is finish!")
 
 func finish_order(order: Order, success: bool) -> void:
 	finish_command.emit(order, success)
@@ -213,20 +245,26 @@ func finish_order(order: Order, success: bool) -> void:
 	count_service(success)
 
 func _successful_order(order: Order) -> void:
-	#if (order.is_inspector) :
-		#audio_player.stream = critique_good_order_sound
-	#else :
-		#audio_player.stream = good_order_sound
+	if (order.is_inspector) :
+		audio_player.stream = critique_good_order_sound
+		audio_player.play(0)
+	else :
+		audio_player.stream = good_order_sound
+		audio_player.play(0)
 	print("successful order:", order)
 	successful_command.emit(order)
 	money_manager.earn(order.resource.price)
+	money_manager.satisfaction(money_manager.MoneySatisfaction.HAPPY_CLIENT)
 
 func _fail_order(order: Order) -> void:
-	#if (order.is_inspector) :
-		#audio_player.stream = critique_bad_order_sound
-	#else :
-		#audio_player.stream = bad_order_sound
+	if (order.is_inspector) :
+		audio_player.stream = critique_bad_order_sound
+		audio_player.play(0)
+	else :
+		audio_player.stream = bad_order_sound
+		audio_player.play(0)
 	print("fail order:", order)
 	fail_command.emit(order)
 	var tige = FAIL_INSPECTOR_UNSTAR if (order.is_inspector) else FAIL_NORMAL_UNSTAR
 	star_manager.remove_star(tige)
+	money_manager.satisfaction(money_manager.MoneySatisfaction.ANGRY_CLIENT)#!

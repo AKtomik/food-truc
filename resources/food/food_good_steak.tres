@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://bukiis7m8bcm2"]
 
-[ext_resource type="PackedScene" uid="uid://cpeya5lkj6qcj" path="res://scenes/food/food_legit_steak.tscn" id="1_at22t"]
+[ext_resource type="PackedScene" uid="uid://dx2dgyf3bn7uf" path="res://scenes/food/food_legit_steak.tscn" id="1_at22t"]
 [ext_resource type="Script" uid="uid://blvwf8kjqyhqi" path="res://scripts/items/item_resource.gd" id="2_q8glm"]
 
 [resource]
